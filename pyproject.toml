@@ -22,7 +22,7 @@ dependencies = [
 ]
 
 [project.scripts]
-evee-ms = "evee_manuscript.cli:app"
+evee-ms = "src.cli:app"
 
 [tool.hatch.build.targets.wheel]
-packages = ["evee_manuscript", "theme"]
+packages = ["src", "theme"]

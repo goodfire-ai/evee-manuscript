@@ -3,4 +3,4 @@
 import subprocess
 import sys
 
-sys.exit(subprocess.call([sys.executable, "-m", "evee_manuscript.cli", "figures"]))
+sys.exit(subprocess.call([sys.executable, "-m", "src.cli", "figures"]))
