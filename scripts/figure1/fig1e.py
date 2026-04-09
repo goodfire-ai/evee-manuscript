@@ -29,35 +29,8 @@ from _umap_common import load_combined_umap, cleanup_axes, format_legend, SCATTE
 OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1e"
 
 # ---------------------------------------------------------------------------
-# Custom palette
-# ---------------------------------------------------------------------------
-PALETTE = {
-    "Cerulean":        "#00709d",
-    "Brick Ember":     "#bd2600",
-    "Forest Moss":     "#6d9916",
-    "Amethyst":        "#b03bb0",
-    "Sunflower Gold":  "#ebb000",
-    "Cinnamon Wood":   "#ab734d",
-    "Brilliant Azure": "#2685d2",
-    "Autumn Leaf":     "#eb6200",
-    "Grey Olive":      "#858585",
-}
-
-# ---------------------------------------------------------------------------
-# Logical ordering (most damaging → least specific) and color assignments
-#
-#   Damaging / loss-of-function  → warm reds/oranges
-#     Nonsense   – complete LoF  → Brick Ember  (deep red)
-#     Frameshift – LoF           → Autumn Leaf  (orange)
-#     Splice     – LoF / altered → Sunflower Gold (gold)
-#   Moderate / coding change     → blues/purple
-#     Missense   – amino-acid Δ  → Cerulean     (teal-blue)
-#     In-frame   – length Δ      → Amethyst     (purple)
-#   Benign / non-coding          → greens/neutrals
-#     Synonymous – silent        → Forest Moss  (green)
-#     UTR        – regulatory    → Brilliant Azure (bright blue)
-#     Intronic   – deep intronic → Cinnamon Wood (brown)
-#     Other      – catch-all     → Grey Olive   (gray)
+# Unified palette — consistent with EVEE website (UmapCanvas.svelte).
+# Ordered by functional severity (most damaging → least specific).
 # ---------------------------------------------------------------------------
 CONSEQ_ORDER_RECOLOR = (
     "Nonsense",
@@ -72,15 +45,15 @@ CONSEQ_ORDER_RECOLOR = (
 )
 
 CONSEQ_COLORS_RECOLOR = {
-    "Nonsense":    PALETTE["Brick Ember"],
-    "Frameshift":  PALETTE["Autumn Leaf"],
-    "Splice":      PALETTE["Sunflower Gold"],
-    "Missense":    PALETTE["Cerulean"],
-    "In-frame":    PALETTE["Amethyst"],
-    "Synonymous":  PALETTE["Forest Moss"],
-    "UTR":         PALETTE["Brilliant Azure"],
-    "Intronic":    PALETTE["Cinnamon Wood"],
-    "Other":       PALETTE["Grey Olive"],
+    "Missense":    "#d98033",
+    "Synonymous":  "#66b366",
+    "Frameshift":  "#cc4040",
+    "Nonsense":    "#c97088",
+    "Splice":      "#8c4db3",
+    "Intronic":    "#8099b3",
+    "In-frame":    "#c4a035",
+    "UTR":         "#2685d2",
+    "Other":       "#b0b0b0",
 }
 
 apply_theme()
