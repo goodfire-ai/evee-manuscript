@@ -23,7 +23,7 @@ sys.path.insert(0, str(ROOT))
 from theme.mayo_theme import apply_theme, save_figure, COLORS, CONSEQ_COLORS
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "supplement" / "panels" / "supfig_context_window"
+OUT_STEM = ROOT / "figures" / "supplement" / "supfig_context_window"
 
 CSQ_COLORS = {
     "missense":   CONSEQ_COLORS["Missense"],

@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT))
 from theme.mayo_theme import apply_theme, save_figure, add_panel_label, COLORS
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "supplement" / "panels" / "supfig_topk_sweep"
+OUT_STEM = ROOT / "figures" / "supplement" / "supfig_topk_sweep"
 
 apply_theme()
 

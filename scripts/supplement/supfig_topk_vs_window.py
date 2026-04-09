@@ -4,7 +4,7 @@ Supplementary Figure — Top-K divergent vs contiguous window AUROC.
 
 Horizontal grouped bar chart comparing per-consequence AUROC between
 sparse top-K position selection (256 positions) and a dense contiguous
-window (1001 positions). 95% bootstrap CIs shown as error bars.
+window (1024 positions). 95% bootstrap CIs shown as error bars.
 
 Input:  artifacts/topk_vs_window.feather
 Output: figures/supplement/panels/supfig_topk_vs_window.{png,pdf}
@@ -20,10 +20,13 @@ import polars as pl
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-from theme.mayo_theme import apply_theme, save_figure, COLORS
+from theme.mayo_theme import (
+    apply_theme, save_figure, COLORS,
+    FONT_SIZE_TITLE, FONT_SIZE_LABEL,
+)
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "supplement" / "panels" / "supfig_topk_vs_window"
+OUT_STEM = ROOT / "figures" / "supplement" / "supfig_topk_vs_window"
 
 CONSEQUENCE_ORDER = (
     "Overall", "Missense", "Intronic", "Synonymous", "Other",
@@ -32,7 +35,7 @@ CONSEQUENCE_ORDER = (
 
 MODE_STYLE = {
     "topk":   {"color": COLORS["gf_orange"], "label": "Top-K (256 positions)"},
-    "window": {"color": COLORS["steel"],     "label": "Contiguous window (1001 positions)"},
+    "window": {"color": COLORS["steel"],     "label": "Contiguous window (1024 positions)"},
 }
 
 apply_theme()
@@ -40,6 +43,7 @@ apply_theme()
 
 def main():
     df = pl.read_ipc(ARTIFACTS / "topk_vs_window.feather")
+    n_total = int(df.filter((pl.col("mode") == "topk") & (pl.col("consequence") == "Overall"))["n"][0])
 
     consequences = [c for c in CONSEQUENCE_ORDER if c in df["consequence"].to_list()]
     y = np.arange(len(consequences))
@@ -51,7 +55,6 @@ def main():
         style = MODE_STYLE[mode]
         sub = df.filter(pl.col("mode") == mode)
 
-        # Align to consequence order
         lookup = dict(zip(sub["consequence"].to_list(), range(sub.height)))
         vals = np.array([float(sub[lookup[c], "auroc"]) for c in consequences])
         lo = np.array([float(sub[lookup[c], "auroc_lo"]) for c in consequences])
@@ -75,12 +78,21 @@ def main():
     ax.set_yticklabels(labels)
     ax.set_xlim(0.5, 1.0)
     ax.set_xlabel("AUROC (gene-holdout test)")
-    ax.axhline(0.5, color=COLORS["gray"], linewidth=0.3, alpha=0.5)  # separator after Overall
+    ax.axhline(0.5, color=COLORS["gray"], linewidth=0.3, alpha=0.5)
     ax.invert_yaxis()
     ax.grid(axis="x", alpha=0.15)
-    ax.legend(fontsize=7, frameon=False, loc="lower right")
 
-    fig.tight_layout()
+    # Title + subtitle like the heatmap figures
+    fig.suptitle("Top-K divergent vs contiguous window",
+                 fontsize=FONT_SIZE_TITLE + 1, fontweight="semibold", y=0.98)
+    ax.set_title(f"(n={n_total:,} test variants, gene-holdout split)",
+                 fontsize=FONT_SIZE_LABEL, color="#666666", pad=4)
+
+    # Legend above the plot, centered
+    ax.legend(fontsize=7, frameon=False, loc="upper center",
+              bbox_to_anchor=(0.5, 1.02), ncol=2)
+
+    fig.tight_layout(rect=[0, 0, 1, 0.95])
     OUT_STEM.parent.mkdir(parents=True, exist_ok=True)
     save_figure(fig, OUT_STEM)
     print(f"Saved: {OUT_STEM}.png / .pdf")
