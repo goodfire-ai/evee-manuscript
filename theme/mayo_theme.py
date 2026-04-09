@@ -79,19 +79,20 @@ DMS_METHOD_SPEC = {
     "dms_iid_covprobe64":  ("DMS Covariance",    COLORS["gf_orange"]),
 }
 
-# Consequence type colors for UMAP / scatter plots
+# Consequence type colors — unified with EVEE website (UmapCanvas.svelte)
 CONSEQ_COLORS = {
-    "Missense":       COLORS["steel"],       # Blue-gray
-    "Synonymous":     "#E8C547",             # Gold yellow
-    "Nonsense":       COLORS["pathogenic"],   # Warm orange
-    "Splice":         "#F2A7C3",             # Pastel pink
-    "UTR":            "#2E8B57",             # Sea green (dark)
-    "Intronic":       "#C5E6A8",             # Pastel green
-    "Other":          COLORS["light_gray"],
-    # Indel-specific
-    "Frameshift":     COLORS["crimson"],      # Red
-    "In-frame del":   "#8E6BBF",             # Purple — distinct from others
-    "In-frame ins":   "#C77CDB",             # Light purple
+    "Missense":       "#d98033",             # Warm orange
+    "Synonymous":     "#66b366",             # Green
+    "Frameshift":     "#cc4040",             # Red
+    "Nonsense":       "#c97088",             # Dusty pink
+    "Splice":         "#8c4db3",             # Purple
+    "Intronic":       "#8099b3",             # Steel blue
+    "In-frame":       "#c4a035",             # Teal
+    "UTR":            "#2685d2",             # Bright blue
+    "Other":          "#b0b0b0",             # Gray
+    # Legacy keys for supfig5 (indel-specific breakdown)
+    "In-frame del":   "#2a9d8f",
+    "In-frame ins":   "#2a9d8f",
 }
 
 # Ordered categorical palette for fallback / generic plots
