@@ -7,7 +7,7 @@ import polars as pl
 import safetensors.numpy
 
 ROOT = Path(__file__).resolve().parents[2]
-EMBED_DIR = ROOT / "data" / "embeddings"
+EMBED_DIR = ROOT / "artifacts"
 
 # Default scatter kwargs for UMAP plots
 SCATTER_KW = dict(s=5.0, marker="o", rasterized=True, edgecolors="none")

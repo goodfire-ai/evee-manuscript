@@ -27,7 +27,7 @@ from theme.mayo_theme import (
     FONT_SIZE_LEGEND, FONT_SIZE_TITLE,
 )
 
-EMBED_DIR = ROOT / "data" / "embeddings"
+EMBED_DIR = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig_snv_umap"
 
 CONSEQ_ORDER = ("Missense", "Synonymous", "Nonsense", "Splice", "UTR", "Intronic", "Other")

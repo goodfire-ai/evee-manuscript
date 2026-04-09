@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from theme.mayo_theme import apply_theme, save_figure
 
-PANELS = ROOT / "data" / "panels"
+PANELS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig_disrupt_auroc"
 
 apply_theme()

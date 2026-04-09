@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from theme.mayo_theme import apply_theme, save_figure, COLORS, FONT_SIZE_TICK
 
-PANELS = ROOT / "data" / "panels"
+PANELS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig_ksparse"
 
 apply_theme()

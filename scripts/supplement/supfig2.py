@@ -23,7 +23,7 @@ from theme.mayo_theme import (
     FONT_SIZE_TITLE, FONT_SIZE_TICK, FONT_SIZE_CELL,
 )
 
-PANELS = ROOT / "data" / "panels"
+PANELS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig2"
 
 apply_theme()

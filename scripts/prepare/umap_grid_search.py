@@ -25,7 +25,7 @@ import safetensors.numpy as sfnp
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
-PANELS = ROOT / "data" / "panels"
+PANELS = ROOT / "artifacts"
 MAYO = ROOT / "data" / "clinvar" / "evo2-7b"
 CACHE_DIR = ROOT / "figures" / "test" / "umap_grid"
 PCA_CACHE = CACHE_DIR / "_pca_cache.npz"

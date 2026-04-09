@@ -16,7 +16,7 @@ import pandas as pd
 import polars as pl
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "data" / "panels" / "fig2e.csv"
+OUT = ROOT / "artifacts" / "fig2e.csv"
 
 RESULTS_DIR = Path("/mnt/polished-lake/home/ryamamoto/evo_clinvar_pred/eval_probe_autointerp/results")
 ABLATION_CSV = RESULTS_DIR / "ablation_study.csv"

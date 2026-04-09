@@ -23,7 +23,7 @@ from theme.mayo_theme import apply_theme, save_figure
 sys.path.insert(0, str(ROOT / "scripts" / "figure1"))
 from fig1f import plot_lineplot, CONSERVATION_TIERS
 
-PANELS = ROOT / "data" / "panels"
+PANELS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig_missense_conservation"
 
 apply_theme()

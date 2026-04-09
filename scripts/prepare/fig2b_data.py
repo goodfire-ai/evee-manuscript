@@ -14,7 +14,7 @@ from pathlib import Path
 import polars as pl
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "data" / "panels" / "fig2b.csv"
+OUT = ROOT / "artifacts" / "fig2b.csv"
 
 PROBE_DIR = Path(
     "/mnt/polished-lake/artifacts/fellows-shared/life-sciences/genomics/mendelian/website_probes/v4/token"

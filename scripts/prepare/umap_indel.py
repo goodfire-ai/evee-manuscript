@@ -25,9 +25,9 @@ from sklearn.decomposition import PCA
 from umap import UMAP
 
 ROOT = Path(__file__).resolve().parents[2]
-PANELS = ROOT / "data" / "panels"
+PANELS = ROOT / "artifacts"
 EMBED_DIR = ROOT / "data" / "clinvar" / "evo2-7b" / "indels" / "covariance64_pool"
-OUT_DIR = ROOT / "data" / "embeddings"
+OUT_DIR = ROOT / "artifacts"
 
 CONSEQ_MAP = {
     "frameshift_variant": "Frameshift",

@@ -20,7 +20,7 @@ from sklearn.cluster import KMeans
 from umap import UMAP
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "data" / "panels" / "fig2c.csv"
+OUT = ROOT / "artifacts" / "fig2c.csv"
 
 PROBE_DIR = Path(
     "/mnt/polished-lake/artifacts/fellows-shared/life-sciences/genomics/mendelian/website_probes/v4/token"

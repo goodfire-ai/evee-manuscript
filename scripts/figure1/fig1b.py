@@ -24,7 +24,7 @@ from theme.mayo_theme import apply_theme, save_figure
 sys.path.insert(0, str(ROOT / "scripts" / "figure1"))
 from _heatmap_common import prepare, plot_heatmap
 
-PANELS = ROOT / "data" / "panels"
+PANELS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1b"
 
 apply_theme()

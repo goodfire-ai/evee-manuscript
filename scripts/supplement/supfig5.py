@@ -26,7 +26,7 @@ from theme.mayo_theme import (
     FONT_SIZE_TITLE, FONT_SIZE_LEGEND,
 )
 
-EMBED_DIR = ROOT / "data" / "embeddings"
+EMBED_DIR = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig5"
 
 SCATTER = dict(s=0.4, rasterized=True, edgecolors="none")

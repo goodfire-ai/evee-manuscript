@@ -25,12 +25,12 @@ from sklearn.decomposition import PCA
 from umap import UMAP
 
 ROOT = Path(__file__).resolve().parents[2]
-PANELS = ROOT / "data" / "panels"
+PANELS = ROOT / "artifacts"
 MAYO = ROOT / "data" / "clinvar" / "evo2-7b"
 LABELED = MAYO / "labeled"
 INDELS = MAYO / "indels"
 VUS = MAYO / "vus"
-OUT_DIR = ROOT / "data" / "embeddings"
+OUT_DIR = ROOT / "artifacts"
 
 CONSEQ_MAP = {
     "missense_variant": "Missense",
