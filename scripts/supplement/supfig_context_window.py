@@ -6,9 +6,9 @@ Panel A: Overall (gray) + per-consequence AUROC vs context window size.
 Panel B: Gene-clamped vs genomic overall AUROC.
 Panel C: AUROC gain from genomic context (genomic − clamped) per consequence at large windows.
 
-Input:  artifacts/context_window_per_consequence.csv
-        artifacts/context_window_clamped_vs_genomic.csv
-        artifacts/context_window_auroc_diff.csv
+Input:  artifacts/context_window_per_consequence.feather
+        artifacts/context_window_clamped_vs_genomic.feather
+        artifacts/context_window_auroc_diff.feather
 Output: figures/supplement/panels/supfig_context_window.{png,pdf}
 """
 import sys
@@ -98,9 +98,9 @@ def plot_auroc_diff(ax, diff):
 
 
 def main():
-    per_csq = pl.read_csv(ARTIFACTS / "context_window_per_consequence.csv")
-    clamped = pl.read_csv(ARTIFACTS / "context_window_clamped_vs_genomic.csv")
-    diff = pl.read_csv(ARTIFACTS / "context_window_auroc_diff.csv")
+    per_csq = pl.read_ipc(ARTIFACTS / "context_window_per_consequence.feather")
+    clamped = pl.read_ipc(ARTIFACTS / "context_window_clamped_vs_genomic.feather")
+    diff = pl.read_ipc(ARTIFACTS / "context_window_auroc_diff.feather")
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
 

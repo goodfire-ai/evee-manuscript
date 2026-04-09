@@ -3,8 +3,8 @@
 Supplementary Figure 2 — Full heatmap on all consequence types, naive and deconf.
 
 Source: notebooks/2026-03-11-17-18_supplement.ipynb, cell 8
-Input:  data/supplement/supfig2/benchmark_stratified_naive.csv
-        data/supplement/supfig2/benchmark_stratified_deconfv3.csv
+Input:  data/supplement/supfig2/benchmark_stratified_naive.feather
+        data/supplement/supfig2/benchmark_stratified_deconfv3.feather
 Output: figures/supplement/supfig2.{png,pdf}
 """
 import sys
@@ -132,8 +132,8 @@ def plot_heatmap_panel(ax, strat_df, metric, title, method_order):
 
 
 def main():
-    naive_df = _rename_methods(pl.read_csv(PANELS / "supfig2_naive.csv"))
-    deconf_df = _rename_methods(pl.read_csv(PANELS / "supfig2_deconf.csv"))
+    naive_df = _rename_methods(pl.read_ipc(PANELS / "supfig2_naive.feather"))
+    deconf_df = _rename_methods(pl.read_ipc(PANELS / "supfig2_deconf.feather"))
 
     n_naive = int(naive_df.filter(pl.col("consequence") == "Overall")[0, "n_total"])
     n_deconf = int(deconf_df.filter(pl.col("consequence") == "Overall")[0, "n_total"])

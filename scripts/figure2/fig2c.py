@@ -3,7 +3,7 @@
 Figure 2C — UMAP of annotation disruption space with semantic clusters
 and 30+ annotation labels.
 
-Input:  data/panels/fig2c.csv
+Input:  data/panels/fig2c.feather
 Output: figures/figure2/panels/fig2c.{png,pdf}
 """
 import sys
@@ -73,7 +73,7 @@ def _pick_labels(df, n=N_LABELS):
 
 def plot(ax):
     """UMAP scatter with clusters and annotation labels."""
-    df = pl.read_csv(PANELS / "fig2c.csv")
+    df = pl.read_ipc(PANELS / "fig2c.feather")
     coords = df.select("umap1", "umap2").to_numpy()
     cluster_ids = df["cluster_id"].to_numpy()
     heads = df["head"].to_list()

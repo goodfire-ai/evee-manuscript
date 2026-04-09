@@ -4,7 +4,7 @@ Supplementary Figure 1 — Per-position activation delta (|alt - ref|)
 around SNV site, pathogenic vs benign overlaid on single plot.
 
 Source: notebooks/2026-03-11-17-18_supplement.ipynb, cell 38
-Input:  data/panels/supfig1.safetensors
+Input:  data/panels/supfig1.feather
 Output: figures/supplement/supfig1.{png,pdf}
 """
 import sys
@@ -14,7 +14,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
-import safetensors.torch
+import polars as pl_
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
@@ -30,7 +30,7 @@ apply_theme()
 
 
 def main():
-    data = safetensors.torch.load_file(str(PANELS / "supfig1.safetensors"))
+    data = pl.read_ipc(PANELS / "supfig1.feather")
     path_real = data["pathogenic_deltas"].numpy()   # [500, 2001]
     benign_real = data["benign_deltas"].numpy()     # [500, 2001]
     rel_pos = np.arange(2001) - 1000       # -1000 to +1000

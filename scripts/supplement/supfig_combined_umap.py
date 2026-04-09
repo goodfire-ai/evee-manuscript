@@ -5,7 +5,7 @@ Supplementary Figure — Combined UMAP of labeled SNVs + indels + VUS.
 Joint embedding space from covariance64_pool embeddings.
 Two panels: (A) Pathogenic/Benign/VUS, (B) Consequence type.
 
-Reads pre-computed UMAP from data/embeddings/umap_combined.{safetensors,feather}.
+Reads pre-computed UMAP from data/embeddings/umap_combined.feather.
 Run scripts/prepare/umap_combined.py first to generate.
 
 Output: figures/supplement/supfig_combined_umap.{png,pdf}
@@ -18,7 +18,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import polars as pl
-import safetensors.torch
+
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
@@ -44,16 +44,14 @@ apply_theme()
 
 
 def main():
-    tensors_path = EMBED_DIR / "umap_combined.safetensors"
-    meta_path = EMBED_DIR / "umap_combined_meta.feather"
+    path = EMBED_DIR / "umap_combined.feather"
+    
 
-    if not tensors_path.exists() or not meta_path.exists():
-        raise FileNotFoundError("Run scripts/prepare/umap_combined.py first")
 
-    tensors = safetensors.torch.load_file(str(tensors_path))
-    coords = tensors["coords"].numpy()
-    pathogenic = tensors["pathogenic"].numpy()
-    meta = pl.read_ipc(meta_path)
+    df = pl.read_ipc(path)
+    coords = df.select("umap_x", "umap_y").to_numpy().numpy()
+    pathogenic = df["pathogenic"].to_numpy().numpy()
+    
     csq = meta["csq"].to_numpy()
     variant_type = meta["variant_type"].to_numpy()
 

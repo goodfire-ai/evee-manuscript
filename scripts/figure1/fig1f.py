@@ -5,7 +5,7 @@ Figure 1F — Performance robustness across conservation levels.
 AUROC by phyloP100way conservation tier for Evo2 probes, AlphaMissense,
 CADD v1.7, Evo2 loss, and GPN-MSA. All variant types.
 
-Input:  data/panels/fig1c.csv
+Input:  data/panels/fig1c.feather
 Output: figures/figure1/panels/fig1f.{png,pdf}
 """
 import sys
@@ -76,7 +76,7 @@ LINE_MARKERS = {
 
 def plot(ax):
     """Plot Figure 1F onto given axes."""
-    df = pl.read_csv(PANELS / "fig1c.csv")
+    df = pl.read_ipc(PANELS / "fig1c.feather")
     df = df.with_columns(
         pl.col("method").replace_strict(METHOD_RENAME, default=pl.first())
     )

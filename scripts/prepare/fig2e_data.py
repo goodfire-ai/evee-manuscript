@@ -16,11 +16,11 @@ import pandas as pd
 import polars as pl
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "artifacts" / "fig2e.csv"
+OUT = ROOT / "artifacts" / "fig2e.feather"
 
 RESULTS_DIR = Path("/mnt/polished-lake/home/ryamamoto/evo_clinvar_pred/eval_probe_autointerp/results")
-ABLATION_CSV = RESULTS_DIR / "ablation_study.csv"
-SONNET46_CSV = RESULTS_DIR / "ablation_sonnet46.csv"
+ABLATION_CSV = RESULTS_DIR / "ablation_study.feather"
+SONNET46_CSV = RESULTS_DIR / "ablation_sonnet46.feather"
 
 JUDGE_COLS = ["mechanism_coverage", "biological_accuracy", "specificity", "novel_insights"]
 

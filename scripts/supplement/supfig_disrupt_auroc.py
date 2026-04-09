@@ -6,7 +6,7 @@ Per-annotation AUROC of disruption delta (var − ref) for predicting ClinVar
 pathogenicity, grouped by browser annotation category. Only includes variants
 where the reference annotation is present (ref > 0.5).
 
-Input:  data/panels/fig2_disrupt_auroc.csv
+Input:  data/panels/fig2_disrupt_auroc.feather
 Output: figures/supplement/supfig_disrupt_auroc.{png,pdf}
 """
 import sys
@@ -49,7 +49,7 @@ DIR_MARKERS = {"neg": "v", "abs": "D"}  # triangle-down for loss, diamond for |c
 
 def plot(ax):
     """Horizontal boxplot of disruption AUROC by browser group."""
-    df = pl.read_csv(PANELS / "fig2_disrupt_auroc.csv")
+    df = pl.read_ipc(PANELS / "fig2_disrupt_auroc.feather")
 
     # Sort groups by median auroc_best ascending
     group_stats = (

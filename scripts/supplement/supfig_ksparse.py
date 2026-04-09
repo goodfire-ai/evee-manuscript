@@ -6,7 +6,7 @@ Shows AUROC, F1, MCC, and Accuracy for the best SAE configuration
 on the ClinVar deconfounded dataset, with embedding baseline.
 (Demoted from main Figure 2A in the figure overhaul.)
 
-Input:  data/panels/fig2a.csv
+Input:  data/panels/fig2a.feather
 Output: figures/supplement/supfig_ksparse.{png,pdf}
 """
 import sys
@@ -40,7 +40,7 @@ METRIC_STYLE = {
 
 
 def main():
-    df = pl.read_csv(PANELS / "fig2a.csv")
+    df = pl.read_ipc(PANELS / "fig2a.feather")
 
     df_deconf = df.filter(
         (pl.col("dataset") == "deconfounded") & (pl.col("sae_name") != "all_features")

@@ -4,7 +4,7 @@ Supplementary Figure — Top-K position selection sweep.
 
 AUROC vs number of divergent positions (K) used for pathogenicity classification.
 
-Input:  artifacts/topk_sweep_auc.csv
+Input:  artifacts/topk_sweep_auc.feather
 Output: figures/supplement/panels/supfig_topk_sweep.{png,pdf}
 """
 import sys
@@ -26,7 +26,7 @@ apply_theme()
 
 
 def main():
-    df = pl.read_csv(ARTIFACTS / "topk_sweep_auc.csv")
+    df = pl.read_ipc(ARTIFACTS / "topk_sweep_auc.feather")
 
     fig, ax = plt.subplots(figsize=(5, 4))
 

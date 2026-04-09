@@ -5,7 +5,7 @@ Figure 2B — Annotation probe AUROC by category (horizontal boxplot).
 Binary classification heads from clinvar-evo2-probe-v1, grouped by broad
 annotation category (excluding Pathogenicity), sorted by median AUROC.
 
-Input:  data/panels/fig2b.csv
+Input:  data/panels/fig2b.feather
 Output: figures/figure2/panels/fig2b.{png,pdf}
 """
 import sys
@@ -43,7 +43,7 @@ GROUP_COLORS = {
 
 def plot(ax):
     """Horizontal boxplot of binary head AUROC by annotation category."""
-    df = pl.read_csv(PANELS / "fig2b.csv")
+    df = pl.read_ipc(PANELS / "fig2b.feather")
 
     # Group by broad_group, sort by median AUROC ascending
     group_stats = (

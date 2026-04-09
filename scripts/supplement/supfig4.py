@@ -8,7 +8,7 @@ indels), CADD v1.7 InDel, NTv3 subref probe (supervised on indels).
 Strata match Phase 6 layout: Overall | Consequence | Indel size | Direction.
 
 Source: notebooks/2026-03-12-20-35_phase6v2_results_continued_continued.ipynb
-Input:  data/supplement/supfig4/indel_stratified_auroc.csv
+Input:  data/supplement/supfig4/indel_stratified_auroc.feather
 Output: figures/supplement/supfig4.{png,pdf}
 """
 import sys
@@ -46,7 +46,7 @@ SEP_POSITIONS = (0.5, 4.5, 8.5)
 
 
 def main():
-    df = pl.read_csv(PANELS / "supfig4.csv")
+    df = pl.read_ipc(PANELS / "supfig4.feather")
 
     strata = df["stratum"].to_list()
     n_vals = df["n"].to_list()

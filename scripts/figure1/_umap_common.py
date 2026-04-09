@@ -4,7 +4,6 @@ from pathlib import Path
 
 import numpy as np
 import polars as pl
-import safetensors.numpy
 
 ROOT = Path(__file__).resolve().parents[2]
 EMBED_DIR = ROOT / "artifacts"
@@ -20,18 +19,11 @@ CONSEQ_ORDER = ("Missense", "Synonymous", "Nonsense", "Splice", "Intronic",
 @functools.lru_cache(maxsize=1)
 def load_combined_umap():
     """Load combined UMAP data (cached so fig1d + fig1e don't reload)."""
-    tensors_path = EMBED_DIR / "umap_combined.safetensors"
-    meta_path = EMBED_DIR / "umap_combined_meta.feather"
-
-    if not tensors_path.exists() or not meta_path.exists():
-        raise FileNotFoundError("Run scripts/prepare/umap_combined.py first")
-
-    tensors = safetensors.numpy.load_file(str(tensors_path))
-    coords = tensors["coords"]
-    pathogenic = tensors["pathogenic"]
-    meta = pl.read_ipc(meta_path)
-    csq = meta["csq"].to_numpy()
-    variant_type = meta["variant_type"].to_numpy()
+    df = pl.read_ipc(EMBED_DIR / "umap_combined.feather")
+    coords = df.select("umap_x", "umap_y").to_numpy()
+    pathogenic = df["pathogenic"].to_numpy()
+    csq = df["csq"].to_numpy()
+    variant_type = df["variant_type"].to_numpy()
 
     return coords, pathogenic, csq, variant_type
 

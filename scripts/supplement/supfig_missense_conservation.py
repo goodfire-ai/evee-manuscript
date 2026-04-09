@@ -5,7 +5,7 @@ Supplementary Figure — Conservation tiers, missense variants only.
 AUROC by phyloP100way conservation tier, filtered to missense.
 (Demoted from main Figure 1D in the figure overhaul.)
 
-Input:  data/panels/fig1d.csv
+Input:  data/panels/fig1d.feather
 Output: figures/supplement/supfig_missense_conservation.{png,pdf}
 """
 import sys
@@ -30,7 +30,7 @@ apply_theme()
 
 
 def main():
-    df = pl.read_csv(PANELS / "fig1d.csv")
+    df = pl.read_ipc(PANELS / "fig1d.feather")
     fig, ax = plt.subplots(figsize=(8, 4.5))
     plot_lineplot(ax, df, "auroc", "Missense Only", CONSERVATION_TIERS,
                   xlabel="Conservation Tier (phyloP100way)")

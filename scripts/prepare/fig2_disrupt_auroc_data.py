@@ -20,7 +20,7 @@ import pyarrow.feather as pf
 from sklearn.metrics import roc_auc_score
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "artifacts" / "fig2_disrupt_auroc.csv"
+OUT = ROOT / "artifacts" / "fig2_disrupt_auroc.feather"
 
 PROBE_DIR = Path(
     "/mnt/polished-lake/artifacts/fellows-shared/life-sciences/genomics/mendelian/website_probes/v4/token"

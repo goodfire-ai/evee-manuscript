@@ -5,7 +5,7 @@ Figure 1G — DMS generalization: Spearman |rho| barplot, 2x2 faceted by gene.
 Spearman |rho| between predicted scores and continuous DMS functional readouts
 for BRCA1, BRCA2, TP53, and LDLR. Error bars show 95% bootstrap CIs.
 
-Input:  data/panels/fig1f.csv
+Input:  data/panels/fig1f.feather
 Output: figures/figure1/panels/fig1g.{png,pdf}
 """
 import sys
@@ -44,7 +44,7 @@ GENE_ORDER = ("BRCA1", "BRCA2", "TP53", "LDLR")
 
 def _load_and_filter(path: Path) -> pl.DataFrame:
     """Load benchmark CSV and filter to correct eval_set per method."""
-    df = pl.read_csv(path)
+    df = pl.read_ipc(path)
     df = df.filter(
         pl.col("method").is_in(SHOW_METHODS)
         & pl.col("gene").is_in(GENE_ORDER)
@@ -130,7 +130,7 @@ def plot_dms_barplot(axes_2x2, df: pl.DataFrame, metric: str, ylabel: str, ylim:
 
 def plot(axes_2x2):
     """Plot Figure 1G onto a flat array of 4 axes."""
-    df = _load_and_filter(PANELS / "fig1f.csv")
+    df = _load_and_filter(PANELS / "fig1f.feather")
     plot_dms_barplot(axes_2x2, df, metric="spearman",
                      ylabel="Spearman |\u03c1|", ylim=(0.0, 0.8))
 

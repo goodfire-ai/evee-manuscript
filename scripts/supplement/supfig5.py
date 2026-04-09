@@ -4,7 +4,7 @@ Supplementary Figure 5 — UMAP of covariance-probe embeddings for ClinVar indel
 
 Two panels: (A) Pathogenic vs Benign, (B) Consequence type.
 
-Reads pre-computed UMAP from data/embeddings/umap_indel.{safetensors,feather}.
+Reads pre-computed UMAP from data/embeddings/umap_indel.feather.
 Run scripts/prepare/umap_indel.py first to generate.
 
 Output: figures/supplement/supfig5.{png,pdf}
@@ -17,7 +17,6 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import polars as pl
-import safetensors.torch
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
@@ -46,16 +45,10 @@ apply_theme()
 
 
 def main():
-    tensors_path = EMBED_DIR / "umap_indel.safetensors"
-    meta_path = EMBED_DIR / "umap_indel_meta.feather"
-
-    if not tensors_path.exists() or not meta_path.exists():
-        raise FileNotFoundError("Run scripts/prepare/umap_indel.py first")
-
-    tensors = safetensors.torch.load_file(str(tensors_path))
-    coords = tensors["coords"].numpy()
-    pathogenic = tensors["pathogenic"].numpy()
-    csq = pl.read_ipc(meta_path)["csq_type"].to_numpy()
+    df = pl.read_ipc(EMBED_DIR / "umap_indel.feather")
+    coords = df.select("umap_x", "umap_y").to_numpy()
+    pathogenic = df["pathogenic"].to_numpy()
+    csq = df["csq_type"].to_numpy()
 
     ux, uy = coords[:, 0], coords[:, 1]
     n_total = len(ux)

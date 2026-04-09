@@ -5,7 +5,7 @@ Supplementary Figure 6 — DMS AUROC barplot, 2x2 faceted by gene.
 Same data and grouping as Figure 1F but showing AUROC instead of Spearman |ρ|.
 
 Source: dms/01_dms_benchmark.py (benchmark_results.csv)
-Input:  data/figure1/fig1f/benchmark_results.csv
+Input:  data/figure1/fig1f/benchmark_results.feather
 Output: figures/supplement/supfig6.{png,pdf}
 """
 import sys
@@ -27,7 +27,7 @@ apply_theme()
 
 
 def main():
-    df = _load_and_filter(PANELS / "fig1f.csv")
+    df = _load_and_filter(PANELS / "fig1f.feather")
 
     fig, axes = plt.subplots(2, 2, figsize=(8, 6), sharey=True)
     plot_dms_barplot(axes.flat, df, metric="auroc",

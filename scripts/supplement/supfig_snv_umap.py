@@ -18,7 +18,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import polars as pl
-import safetensors.numpy
+
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
@@ -36,14 +36,12 @@ apply_theme()
 
 
 def main():
-    tensors_path = EMBED_DIR / "umap_snv.safetensors"
-    meta_path = EMBED_DIR / "umap_snv_meta.feather"
+    path = EMBED_DIR / "umap_snv.feather"
+    
 
-    if not tensors_path.exists() or not meta_path.exists():
-        raise FileNotFoundError("Run scripts/prepare/umap_snv.py first")
 
-    tensors = safetensors.numpy.load_file(str(tensors_path))
-    coords = tensors["coords"]
+    df = pl.read_ipc(path)
+    coords = df.select("umap_x", "umap_y").to_numpy()
     y = tensors["pathogenic"]
     conseq = pl.read_ipc(meta_path)["consequence"].to_numpy()
 
