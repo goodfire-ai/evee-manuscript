@@ -1,0 +1,155 @@
+#!/usr/bin/env python3
+"""
+Figure 1F — Performance robustness across conservation levels.
+
+AUROC by phyloP100way conservation tier for Evo2 probes, AlphaMissense,
+CADD v1.7, Evo2 loss, and GPN-MSA. All variant types.
+
+Input:  data/panels/fig1c.csv
+Output: figures/figure1/panels/fig1f.{png,pdf}
+"""
+import sys
+from pathlib import Path
+
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import numpy as np
+import polars as pl
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+from theme.mayo_theme import (
+    apply_theme, save_figure, COLORS,
+    FONT_SIZE_TITLE, FONT_SIZE_LABEL, FONT_SIZE_TICK, FONT_SIZE_LEGEND,
+)
+
+PANELS = ROOT / "data" / "panels"
+OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1f"
+
+apply_theme()
+
+CONSERVATION_TIERS = (
+    ("Fast-evolving",        -np.inf, -1.0),
+    ("Weakly conserved",     -1.0,     0.0),
+    ("Low conservation",      0.0,     2.0),
+    ("Moderate conservation", 2.0,     5.0),
+    ("Highly conserved",      5.0,     np.inf),
+)
+
+METHOD_RENAME = {
+    "Evo2 probe (cov-pool)": "Evo2 Covariance",
+    "Evo2 probe (w64 mean)": "Evo2 Mean",
+    "Evo2 cov probe": "Evo2 Covariance",
+    "Evo2 mean probe": "Evo2 Mean",
+    "Evo2 probe+": "Evo2 Covariance",
+    "Evo2 probe": "Evo2 Mean",
+    "Evo2 loss": "Evo2 Loss",
+}
+
+METHOD_ORDER = (
+    "Evo2 Covariance", "Evo2 Mean", "Evo2 Loss",
+    "AlphaMissense", "CADD v1.7", "GPN-MSA",
+)
+
+# ---------------------------------------------------------------------------
+# Colors from fig1g palette (via METHOD_COLORS / DMS_METHOD_SPEC)
+# ---------------------------------------------------------------------------
+LINE_COLORS = {
+    "Evo2 Covariance": COLORS["gf_orange"],   # #db8a48
+    "Evo2 Mean":       COLORS["gf_brown"],     # #bbab8b
+    "Evo2 Loss":       COLORS["gf_beige"],     # #D5CDBA
+    "AlphaMissense":   COLORS["sage"],         # #7B9E87
+    "CADD v1.7":       COLORS["steel"],        # #5A7D9A
+    "GPN-MSA":         COLORS["lavender"],     # #9B8EA8
+}
+
+LINE_WIDTH = 1.5
+LINE_ZORDER = 3
+
+# Markers: triangle-up for probe+, square for probe, circle for everything else
+LINE_MARKERS = {
+    "Evo2 Covariance": "D",
+    "Evo2 Mean":       "s",
+}
+
+
+def plot(ax):
+    """Plot Figure 1F onto given axes."""
+    df = pl.read_csv(PANELS / "fig1c.csv")
+    df = df.with_columns(
+        pl.col("method").replace_strict(METHOD_RENAME, default=pl.first())
+    )
+    df = df.filter(pl.col("tier") != "Overall")
+
+    tier_names = [t[0] for t in CONSERVATION_TIERS]
+    tiers = [t for t in tier_names if t in df["tier"].to_list()]
+    methods = [m for m in METHOD_ORDER if m in df["method"].to_list()]
+
+    # Build tick labels with stats
+    tick_names, tick_stats = [], []
+    for t in tiers:
+        sub = df.filter(pl.col("tier") == t).row(0, named=True)
+        n = int(sub.get("n_total", 0))
+        p = int(sub.get("n_pathogenic", 0))
+        tick_names.append(t)
+        tick_stats.append(f"(n={n:,}, {100*p/n:.1f}% P)" if n else "")
+
+    x = np.arange(len(tiers))
+
+    for m in methods:
+        sub = df.filter(pl.col("method") == m)
+        vals, lo, hi = [], [], []
+        for t in tiers:
+            row = sub.filter(pl.col("tier") == t)
+            if len(row) == 1:
+                vals.append(float(row[0, "auroc"]))
+                lo.append(float(row[0, "auroc_lo"]))
+                hi.append(float(row[0, "auroc_hi"]))
+            else:
+                vals.append(np.nan); lo.append(np.nan); hi.append(np.nan)
+
+        vals, lo, hi = np.array(vals), np.array(lo), np.array(hi)
+        color = LINE_COLORS.get(m, "#B0B0B0")
+        marker = LINE_MARKERS.get(m, "o")
+
+        ax.plot(x, vals, label=m, color=color, linewidth=LINE_WIDTH,
+                zorder=LINE_ZORDER, marker=marker, markersize=5,
+                markeredgecolor="white", markeredgewidth=0.4)
+        if not np.all(np.isnan(lo)):
+            ax.fill_between(x, lo, hi, alpha=0.08, color=color)
+
+    # Angled x-axis labels: bold name + smaller gray parenthetical
+    ax.set_xticks(x)
+    ax.set_xticklabels([])  # clear default labels
+    label_fs = FONT_SIZE_TICK - 1
+    stat_fs = FONT_SIZE_TICK - 2
+    for i, (name, stat) in enumerate(zip(tick_names, tick_stats)):
+        ax.text(x[i], -0.04, name.title(), transform=ax.get_xaxis_transform(),
+                ha="right", va="top", rotation=30,
+                fontsize=label_fs, fontweight="semibold")
+        if stat:
+            ax.text(x[i], -0.10, stat, transform=ax.get_xaxis_transform(),
+                    ha="right", va="top", rotation=30,
+                    fontsize=stat_fs, color="#666666")
+
+    ax.set_ylabel("AUROC", fontsize=FONT_SIZE_LABEL, fontweight="semibold")
+    ax.set_ylim(0.5, 1.0)
+    ax.grid(axis="y", alpha=0.15)
+
+    # Legend inside the plot — bottom-right where there's empty space
+    ax.legend(fontsize=FONT_SIZE_LEGEND, loc="lower right",
+              bbox_to_anchor=(0.99, 0.01), ncol=2, frameon=True,
+              framealpha=0.9, edgecolor="#cccccc", fancybox=False)
+
+
+def main():
+    fig, ax = plt.subplots(figsize=(3.85, 3.5))
+    plot(ax)
+    fig.tight_layout()
+    save_figure(fig, OUT_STEM)
+    print(f"Saved: {OUT_STEM}.png / .pdf")
+
+
+if __name__ == "__main__":
+    main()

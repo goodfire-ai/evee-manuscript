@@ -1,0 +1,237 @@
+head,broad_group,auroc
+interpro_Alpha_Beta_hydrolase_fold,InterPro,0.8184
+interpro_Ankyrin_repeat,InterPro,0.9559
+interpro_Ankyrin_repeat_containing_domain_superfamily,InterPro,0.938
+interpro_Armadillo_like_helical,InterPro,0.9053
+interpro_Armadillo_type_fold,InterPro,0.9315
+interpro_BTB_POZ_domain,InterPro,0.9095
+interpro_C2_domain,InterPro,0.9226
+interpro_C2_domain_superfamily,InterPro,0.9071
+interpro_Cadherin_conserved_site,InterPro,0.9955
+interpro_Cadherin_like,InterPro,0.9946
+interpro_Cadherin_like_superfamily,InterPro,0.9883
+interpro_Calponin_homology_domain,InterPro,0.9024
+interpro_Collagen_triple_helix_repeat,InterPro,0.9962
+interpro_Concanavalin_A_like_lectin_glucanase_domain_superfamily,InterPro,0.8895
+interpro_Cytochrome_P450,InterPro,0.9672
+interpro_Cytochrome_P450_E_class_group_I,InterPro,0.9534
+interpro_DnaJ_domain,InterPro,0.8754
+interpro_EF_Hand_1_calcium_binding_site,InterPro,0.899
+interpro_EF_hand_domain,InterPro,0.8977
+interpro_EF_hand_domain_pair,InterPro,0.8959
+interpro_EGF_like_calcium_binding_conserved_site,InterPro,0.985
+interpro_EGF_like_calcium_binding_domain,InterPro,0.9884
+interpro_EGF_like_domain,InterPro,0.9885
+interpro_EGF_type_aspartate_asparagine_hydroxylation_site,InterPro,0.9995
+interpro_Ets_domain,InterPro,0.9268
+interpro_Fibronectin_type_III,InterPro,0.9749
+interpro_Fibronectin_type_III_superfamily,InterPro,0.9726
+interpro_Fork_head_domain,InterPro,0.8768
+interpro_GPCR_rhodopsin_like_7TM,InterPro,0.9974
+interpro_G_protein_coupled_receptor_rhodopsin_like,InterPro,0.9949
+interpro_Growth_factor_receptor_cysteine_rich_domain_superfamily,InterPro,0.9445
+interpro_Helicase_C_terminal_domain_like,InterPro,0.8864
+interpro_Helicase_superfamily_1_2_ATP_binding_domain,InterPro,0.9121
+interpro_Hemopexin_like_repeats,InterPro,0.9855
+interpro_Homedomain_like_superfamily,InterPro,0.883
+interpro_Homeodomain,InterPro,0.9299
+interpro_Homeodomain_metazoa,InterPro,0.9893
+interpro_IQ_motif_EF_hand_binding_site,InterPro,0.8844
+interpro_Immunoglobulin_E_set,InterPro,0.8301
+interpro_Immunoglobulin_I_set,InterPro,0.9674
+interpro_Immunoglobulin_V_set_domain,InterPro,0.9837
+interpro_Immunoglobulin_domain_subtype,InterPro,0.9827
+interpro_Immunoglobulin_like_domain,InterPro,0.9799
+interpro_Immunoglobulin_like_domain_superfamily,InterPro,0.9823
+interpro_Immunoglobulin_like_fold,InterPro,0.975
+interpro_Immunoglobulin_subtype_2,InterPro,0.9846
+interpro_Intermediate_filament_rod_domain,InterPro,0.9954
+interpro_Kelch_repeat_type_1,InterPro,0.9668
+interpro_Kinesin_motor_domain,InterPro,0.8726
+interpro_Krueppel_associated_box,InterPro,0.9939
+interpro_Krueppel_associated_box_domain_superfamily,InterPro,0.997
+interpro_LDLR_class_B_repeat,InterPro,0.9709
+interpro_LDL_receptor_like_superfamily,InterPro,0.9583
+interpro_Laminin_G_domain,InterPro,0.986
+interpro_Laminin_type_EGF_domain,InterPro,0.9044
+interpro_Leucine_rich_repeat,InterPro,0.9874
+interpro_Leucine_rich_repeat_domain_superfamily,InterPro,0.9455
+interpro_Leucine_rich_repeat_typical_subtype,InterPro,0.9938
+interpro_Low_density_lipoprotein_LDL_receptor_class_A_repeat,InterPro,0.9631
+interpro_MFS_transporter_superfamily,InterPro,0.9637
+interpro_Mitochondrial_carrier_protein_transmembrane_region,InterPro,0.948
+interpro_Myosin_head_motor_domain_like,InterPro,0.9497
+interpro_NOTCH1_EGF_like_calcium_binding_domain,InterPro,0.9878
+interpro_Neurotransmitter_gated_ion_channel,InterPro,0.9646
+interpro_Nucleic_acid_binding_OB_fold,InterPro,0.8355
+interpro_Nucleotide_binding_alpha_beta_plait_domain_superfamily,InterPro,0.9068
+interpro_Olduvai_domain,InterPro,0.9433
+interpro_Olfactory_receptor,InterPro,1.0
+interpro_PDZ_domain,InterPro,0.8698
+interpro_PDZ_superfamily,InterPro,0.8469
+interpro_PH_like_domain_superfamily,InterPro,0.879
+interpro_P_loop_containing_nucleoside_triphosphate_hydrolase,InterPro,0.8853
+interpro_Peptidase_S1A_chymotrypsin_family,InterPro,0.9914
+interpro_Pleckstrin_homology_domain,InterPro,0.9173
+interpro_Protein_kinase_ATP_binding_site,InterPro,0.9523
+interpro_Protein_kinase_domain,InterPro,0.9601
+interpro_Protein_kinase_like_domain_superfamily,InterPro,0.9374
+interpro_RNA_binding_domain_superfamily,InterPro,0.909
+interpro_RNA_recognition_motif_domain,InterPro,0.9247
+interpro_Regulator_of_chromosome_condensation_RCC1,InterPro,0.8748
+interpro_SCAN_domain,InterPro,0.9843
+interpro_SH2_domain,InterPro,0.8813
+interpro_SH2_domain_superfamily,InterPro,0.8459
+interpro_SH3_domain,InterPro,0.8949
+interpro_SH3_like_domain_superfamily,InterPro,0.8908
+interpro_SKP1_BTB_POZ_domain_superfamily,InterPro,0.8973
+interpro_SRCR_domain,InterPro,0.9695
+interpro_S_adenosyl_L_methionine_dependent_methyltransferase_superfamily,InterPro,0.876
+interpro_Serine_proteases_trypsin_domain,InterPro,0.9945
+interpro_Serine_threonine_protein_kinase_active_site,InterPro,0.9684
+interpro_Serine_threonine_tyrosine_protein_kinase_catalytic_domain,InterPro,0.9615
+interpro_Short_chain_dehydrogenase_reductase_SDR,InterPro,0.9207
+interpro_Small_GTPase,InterPro,0.9113
+interpro_Spectrin_alpha_actinin,InterPro,0.9751
+interpro_Spectrin_repeat,InterPro,0.9869
+interpro_Sterile_alpha_motif_domain,InterPro,0.836
+interpro_Sterile_alpha_motif_pointed_domain_superfamily,InterPro,0.82
+interpro_Sushi_SCR_CCP_domain,InterPro,0.9841
+interpro_Sushi_SCR_CCP_superfamily,InterPro,0.9726
+interpro_Tetratricopeptide_like_helical_domain_superfamily,InterPro,0.8835
+interpro_Tetratricopeptide_repeat,InterPro,0.9382
+interpro_Thrombospondin_type_1_TSP1_repeat,InterPro,0.9789
+interpro_Thrombospondin_type_1_repeat_superfamily,InterPro,0.9206
+interpro_Tubulin,InterPro,0.9909
+interpro_VWFC_domain,InterPro,0.9598
+interpro_WD40_YVTN_repeat_like_containing_domain_superfamily,InterPro,0.9236
+interpro_WD40_repeat,InterPro,0.9602
+interpro_WD40_repeat_containing_domain_superfamily,InterPro,0.9372
+interpro_WW_domain,InterPro,0.7902
+interpro_Winged_helix_DNA_binding_domain_superfamily,InterPro,0.742
+interpro_Winged_helix_like_DNA_binding_domain_superfamily,InterPro,0.7569
+interpro_Zinc_finger_C2H2_superfamily,InterPro,0.9836
+interpro_Zinc_finger_C2H2_type,InterPro,0.9856
+interpro_Zinc_finger_RING_FYVE_PHD_type,InterPro,0.8989
+interpro_Zinc_finger_RING_type,InterPro,0.9282
+interpro_von_Willebrand_factor_A_like_domain_superfamily,InterPro,0.8161
+interpro_von_Willebrand_factor_type_A,InterPro,0.8731
+in_active_site,Protein & Structure,0.9268
+in_binding_site,Protein & Structure,0.8541
+in_chain,Protein & Structure,0.9406
+in_coiled_coil,Protein & Structure,0.9406
+in_compositional_bias,Protein & Structure,0.9185
+in_cross_link,Protein & Structure,0.924
+in_disulfide_bond,Protein & Structure,0.9119
+in_dna_binding,Protein & Structure,0.8884
+in_domain,Protein & Structure,0.8374
+in_elm_motif,Protein & Structure,0.7045
+in_initiator_methionine,Protein & Structure,0.9991
+in_interpro_domain,Protein & Structure,0.897
+in_intramembrane,Protein & Structure,0.8955
+in_motif,Protein & Structure,0.7172
+in_propeptide,Protein & Structure,0.8918
+in_ptm,Protein & Structure,0.8671
+in_ptm_subtype,Protein & Structure,0.867
+in_region,Protein & Structure,0.818
+in_repeat,Protein & Structure,0.8728
+in_secondary_structure,Protein & Structure,0.7954
+in_site,Protein & Structure,0.6058
+in_topological_domain,Protein & Structure,0.8312
+in_transit_peptide,Protein & Structure,0.9802
+in_transmembrane,Protein & Structure,0.9552
+in_zinc_finger,Protein & Structure,0.9487
+is_allosteric,Protein & Structure,0.6477
+is_alt_cds,Protein & Structure,0.834
+is_alu,Protein & Structure,0.9991
+is_any_repeat,Protein & Structure,0.9199
+is_buried,Protein & Structure,0.9167
+is_constitutive_exon,Protein & Structure,0.8328
+is_cpg_island,Protein & Structure,0.9854
+is_disordered,Protein & Structure,0.801
+is_dna_transposon,Protein & Structure,0.9267
+is_line,Protein & Structure,0.9166
+is_linear_interacting,Protein & Structure,0.7563
+is_low_plddt,Protein & Structure,0.9749
+is_ltr,Protein & Structure,0.9735
+is_polypyrimidine_tract,Protein & Structure,0.9984
+is_ppi_interface,Protein & Structure,0.6406
+is_ptc_region,Protein & Structure,0.9915
+is_segdup,Protein & Structure,0.7878
+is_simple_repeat_rmsk,Protein & Structure,0.9394
+is_sine,Protein & Structure,0.9699
+is_start_codon,Protein & Structure,0.9971
+is_stop_codon,Protein & Structure,0.6737
+is_trf,Protein & Structure,0.9549
+is_uorf,Protein & Structure,0.976
+atacseq_fetal_brain_peak,Regulatory,0.9667
+atacseq_gm12878_peak,Regulatory,0.84
+atacseq_k562_peak,Regulatory,0.852
+atacseq_liver_peak,Regulatory,0.8955
+atacseq_lung_peak,Regulatory,0.974
+atacseq_muscle_peak,Regulatory,0.8636
+atacseq_tcell_peak,Regulatory,0.9195
+ccre_tf_binding,Regulatory,0.622
+chipseq_h3k27ac_fetal_brain_peak,Regulatory,0.8016
+chipseq_h3k27ac_gm12878_peak,Regulatory,0.8552
+chipseq_h3k27ac_k562_peak,Regulatory,0.8975
+chipseq_h3k27ac_liver_peak,Regulatory,0.8444
+chipseq_h3k27ac_lung_peak,Regulatory,0.8895
+chipseq_h3k27ac_monocyte_peak,Regulatory,0.7674
+chipseq_h3k27ac_muscle_peak,Regulatory,0.833
+chipseq_h3k27ac_tcell_peak,Regulatory,0.9332
+chipseq_h3k27me3_fetal_brain_peak,Regulatory,0.8468
+chipseq_h3k27me3_gm12878_peak,Regulatory,0.8706
+chipseq_h3k27me3_k562_peak,Regulatory,0.809
+chipseq_h3k27me3_liver_peak,Regulatory,0.9405
+chipseq_h3k27me3_lung_peak,Regulatory,0.8873
+chipseq_h3k27me3_monocyte_peak,Regulatory,0.8419
+chipseq_h3k27me3_muscle_peak,Regulatory,0.8985
+chipseq_h3k27me3_tcell_peak,Regulatory,0.8842
+chipseq_h3k36me3_fetal_brain_peak,Regulatory,0.882
+chipseq_h3k36me3_gm12878_peak,Regulatory,0.8856
+chipseq_h3k36me3_k562_peak,Regulatory,0.88
+chipseq_h3k36me3_liver_peak,Regulatory,0.8231
+chipseq_h3k36me3_lung_peak,Regulatory,0.8632
+chipseq_h3k36me3_monocyte_peak,Regulatory,0.8689
+chipseq_h3k36me3_muscle_peak,Regulatory,0.8527
+chipseq_h3k36me3_tcell_peak,Regulatory,0.8606
+chipseq_h3k4me1_fetal_brain_peak,Regulatory,0.85
+chipseq_h3k4me1_gm12878_peak,Regulatory,0.7131
+chipseq_h3k4me1_k562_peak,Regulatory,0.766
+chipseq_h3k4me1_liver_peak,Regulatory,0.8264
+chipseq_h3k4me1_lung_peak,Regulatory,0.8596
+chipseq_h3k4me1_monocyte_peak,Regulatory,0.7819
+chipseq_h3k4me1_muscle_peak,Regulatory,0.8059
+chipseq_h3k4me1_tcell_peak,Regulatory,0.7941
+chipseq_h3k4me3_fetal_brain_peak,Regulatory,0.9614
+chipseq_h3k4me3_gm12878_peak,Regulatory,0.9179
+chipseq_h3k4me3_k562_peak,Regulatory,0.9621
+chipseq_h3k4me3_liver_peak,Regulatory,0.9567
+chipseq_h3k4me3_lung_peak,Regulatory,0.972
+chipseq_h3k4me3_monocyte_peak,Regulatory,0.8934
+chipseq_h3k4me3_muscle_peak,Regulatory,0.9367
+chipseq_h3k4me3_tcell_peak,Regulatory,0.9429
+chipseq_h3k9me3_fetal_brain_peak,Regulatory,0.8134
+chipseq_h3k9me3_gm12878_peak,Regulatory,0.8799
+chipseq_h3k9me3_k562_peak,Regulatory,0.8648
+chipseq_h3k9me3_liver_peak,Regulatory,0.9113
+chipseq_h3k9me3_lung_peak,Regulatory,0.9352
+chipseq_h3k9me3_monocyte_peak,Regulatory,0.8483
+chipseq_h3k9me3_muscle_peak,Regulatory,0.9332
+chipseq_h3k9me3_tcell_peak,Regulatory,0.8691
+is_branchpoint_region,Splicing,0.9971
+is_exon_to_intron,Splicing,0.9994
+is_intron_to_exon,Splicing,0.9991
+is_splice_acceptor,Splicing,0.999
+is_splice_donor,Splicing,0.9992
+elm_DOC,Substitution & Motif,0.7522
+elm_LIG,Substitution & Motif,0.8023
+elm_MOD,Substitution & Motif,0.6088
+elm_TRG,Substitution & Motif,0.828
+ptm_acetylation,Substitution & Motif,0.9625
+ptm_glycosylation,Substitution & Motif,0.9876
+ptm_methylation,Substitution & Motif,0.9252
+ptm_phosphorylation,Substitution & Motif,0.9862
+ptm_sumoylation,Substitution & Motif,0.9664
+ptm_ubiquitination,Substitution & Motif,0.9189
