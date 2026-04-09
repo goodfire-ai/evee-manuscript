@@ -36,6 +36,7 @@ FIGURE_SCRIPTS = (
     "supplement/supfig_missense_conservation.py",
     "supplement/supfig_snv_umap.py",
     "supplement/supfig_topk_sweep.py",
+    "supplement/supfig_topk_vs_window.py",
 )
 
 # Prepare scripts (require goodfire-core, torch, raw data)
