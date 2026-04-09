@@ -67,32 +67,36 @@ def main():
         ax.errorbar(vals, y + offset, xerr=[vals - lo, hi - vals],
                     fmt="none", color="black", capsize=2, lw=0.6)
 
-    # Consequence labels with sample size
+    # Consequence labels: bold name + gray (n=...) like heatmap y-axis
     n_lookup = dict(zip(
         df.filter(pl.col("mode") == "topk")["consequence"].to_list(),
         df.filter(pl.col("mode") == "topk")["n"].to_list(),
     ))
-    labels = [f"{c}  (n={n_lookup[c]:,})" for c in consequences]
 
     ax.set_yticks(y)
-    ax.set_yticklabels(labels)
+    ax.set_yticklabels([])
+    for i, c in enumerate(consequences):
+        ax.text(-0.02, i, c, transform=ax.get_yaxis_transform(),
+                ha="right", va="center", fontweight="semibold")
+        ax.text(-0.02, i + 0.25, f"(n={n_lookup[c]:,})",
+                transform=ax.get_yaxis_transform(),
+                ha="right", va="center", fontsize=FONT_SIZE_LABEL - 1, color="#444444")
+
     ax.set_xlim(0.5, 1.0)
     ax.set_xlabel("AUROC (gene-holdout test)")
     ax.axhline(0.5, color=COLORS["gray"], linewidth=0.3, alpha=0.5)
     ax.invert_yaxis()
     ax.grid(axis="x", alpha=0.15)
 
-    # Title + subtitle like the heatmap figures
     fig.suptitle("Top-K divergent vs contiguous window",
-                 fontsize=FONT_SIZE_TITLE + 1, fontweight="semibold", y=0.98)
-    ax.set_title(f"(n={n_total:,} test variants, gene-holdout split)",
-                 fontsize=FONT_SIZE_LABEL, color="#666666", pad=4)
+                 fontsize=FONT_SIZE_TITLE + 1, fontweight="semibold", y=0.99)
 
-    # Legend above the plot, centered
+    # Legend outside plot, right below title
     ax.legend(fontsize=7, frameon=False, loc="upper center",
-              bbox_to_anchor=(0.5, 1.02), ncol=2)
+              bbox_to_anchor=(0.5, -0.02), ncol=2,
+              bbox_transform=fig.transFigure)
 
-    fig.tight_layout(rect=[0, 0, 1, 0.95])
+    fig.tight_layout(rect=[0, 0, 1, 0.94])
     OUT_STEM.parent.mkdir(parents=True, exist_ok=True)
     save_figure(fig, OUT_STEM)
     print(f"Saved: {OUT_STEM}.png / .pdf")
