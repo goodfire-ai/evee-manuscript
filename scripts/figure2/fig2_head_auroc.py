@@ -27,7 +27,7 @@ from theme.mayo_theme import (
     FONT_SIZE_TITLE, FONT_SIZE_LABEL, FONT_SIZE_TICK,
 )
 
-EVAL_JSON = Path("/mnt/data/artifacts/public/variant-viewer/website_probes/v5/token/eval.json")
+EVAL_JSON = ROOT / "artifacts" / "token_eval.json"
 HEADS_FEATHER = ROOT / "artifacts" / "heads.feather"
 OUT_STEM = ROOT / "figures" / "figure2" / "panels" / "fig2_head_auroc"
 
