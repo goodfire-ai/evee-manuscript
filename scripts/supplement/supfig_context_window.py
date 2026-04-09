@@ -62,10 +62,11 @@ def plot_per_consequence(ax, df):
         ax.plot(windows, vals, **style)
 
     _format_xticks(ax, windows)
-    ax.set_title("A. AUROC with increasing context length", fontweight="semibold")
+    ax.set_title("A. Context size sweep (unclamped)", fontweight="semibold")
     ax.set_ylabel("AUROC")
     ax.set_ylim(0.5, 1.0)
-    ax.legend(fontsize=6, frameon=False, ncol=3, loc="lower right")
+    ax.legend(fontsize=6, frameon=False, ncol=3, loc="upper center",
+              bbox_to_anchor=(0.5, 0.99))
 
 
 def plot_auroc_diff(ax, df):
@@ -101,8 +102,9 @@ def plot_auroc_diff(ax, df):
 
     ymax = max(abs(ax.get_ylim()[0]), abs(ax.get_ylim()[1])) * 1.15
     ax.set_ylim(-ymax, ymax)
-    ax.set_title("B. Effect of gene-boundary clamping", fontweight="semibold")
-    ax.legend(fontsize=6, frameon=False, ncol=3, loc="upper right")
+    ax.set_title("B. Gene clamping versus unclamped", fontweight="semibold")
+    ax.legend(fontsize=6, frameon=False, ncol=3, loc="upper center",
+              bbox_to_anchor=(0.5, 0.99))
 
 
 def main():
