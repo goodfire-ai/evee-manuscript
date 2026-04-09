@@ -18,7 +18,8 @@ import polars as pl
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "artifacts" / "fig2e.feather"
 
-RESULTS_DIR = Path("/mnt/polished-lake/home/ryamamoto/evo_clinvar_pred/eval_probe_autointerp/results")
+DATA = ROOT / "data"
+RESULTS_DIR = DATA / "autointerp"            # symlink to autointerp results
 ABLATION_CSV = RESULTS_DIR / "ablation_study.feather"
 SONNET46_CSV = RESULTS_DIR / "ablation_sonnet46.feather"
 

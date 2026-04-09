@@ -22,9 +22,8 @@ from umap import UMAP
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "artifacts" / "fig2c.feather"
 
-PROBE_DIR = Path(
-    "/mnt/polished-lake/artifacts/fellows-shared/life-sciences/genomics/mendelian/website_probes/v4/token"
-)
+DATA = ROOT / "data"
+PROBE_DIR = DATA / "probes" / "token"       # symlink to probe checkpoint dir
 SCORES_FEATHER = PROBE_DIR / "scores.feather"
 
 # Head prefix → semantic type for cluster labeling

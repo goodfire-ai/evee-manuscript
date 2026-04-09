@@ -16,11 +16,10 @@ import polars as pl
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "artifacts" / "fig2b.feather"
 
-PROBE_DIR = Path(
-    "/mnt/polished-lake/artifacts/fellows-shared/life-sciences/genomics/mendelian/website_probes/v4/token"
-)
+DATA = ROOT / "data"
+PROBE_DIR = DATA / "probes" / "token"       # symlink to probe checkpoint dir
 EVAL_JSON = PROBE_DIR / "eval.json"
-HEADS_JSON = Path("/mnt/polished-lake/home/ryamamoto/variant-viewer/heads.json")
+HEADS_JSON = DATA / "viewer" / "heads.json"  # symlink to variant-viewer heads
 
 
 def assign_viewer_group(head: str, viewer_heads_map: dict) -> str:

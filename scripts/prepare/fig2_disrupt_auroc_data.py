@@ -22,15 +22,11 @@ from sklearn.metrics import roc_auc_score
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "artifacts" / "fig2_disrupt_auroc.feather"
 
-PROBE_DIR = Path(
-    "/mnt/polished-lake/artifacts/fellows-shared/life-sciences/genomics/mendelian/website_probes/v4/token"
-)
+DATA = ROOT / "data"
+PROBE_DIR = DATA / "probes" / "token"        # symlink to probe checkpoint dir
 SCORES_FEATHER = PROBE_DIR / "scores.feather"
-LABELS_FEATHER = Path(
-    "/mnt/polished-lake/artifacts/fellows-shared/life-sciences/genomics/mendelian"
-    "/mayo-mendelian/mayo_manuscript/data/clinvar/evo2-7b/labeled/split.feather"
-)
-HEADS_JSON = Path("/mnt/polished-lake/home/ryamamoto/variant-viewer/heads.json")
+LABELS_FEATHER = DATA / "clinvar" / "split.feather"  # symlink to labeled split
+HEADS_JSON = DATA / "viewer" / "heads.json"  # symlink to variant-viewer heads
 
 MIN_VARIANTS = 50  # minimum variants per head after filtering
 
