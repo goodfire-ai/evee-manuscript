@@ -4,7 +4,7 @@ Supplementary Figure 5 — UMAP of covariance-probe embeddings for ClinVar indel
 
 Two panels: (A) Pathogenic vs Benign, (B) Consequence type.
 
-Reads pre-computed UMAP from data/embeddings/umap_indel.feather.
+Reads pre-computed UMAP from artifacts/umap_indel.feather.
 Run scripts/prepare/umap_indel.py first to generate.
 
 Output: figures/supplement/supfig5.{png,pdf}
@@ -25,7 +25,7 @@ from theme.mayo_theme import (
     FONT_SIZE_TITLE, FONT_SIZE_LEGEND,
 )
 
-EMBED_DIR = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig5"
 
 SCATTER = dict(s=0.4, rasterized=True, edgecolors="none")
@@ -45,7 +45,7 @@ apply_theme()
 
 
 def main():
-    df = pl.read_ipc(EMBED_DIR / "umap_indel.feather")
+    df = pl.read_ipc(ARTIFACTS / "umap_indel.feather")
     coords = df.select("umap_x", "umap_y").to_numpy()
     pathogenic = df["pathogenic"].to_numpy()
     csq = df["csq_type"].to_numpy()

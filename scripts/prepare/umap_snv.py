@@ -6,8 +6,8 @@ Loads 30K test-set embeddings from covariance64_pool, computes PCA(100) + UMAP,
 saves coords and metadata for downstream plotting.
 
 Input:  data/clinvar/evo2-7b/deconfounded/covariance64_pool/
-Output: data/embeddings/umap_snv.safetensors  (coords, pathogenic)
-        data/embeddings/umap_snv_meta.feather  (consequence strings)
+Output: artifacts/umap_snv.feather  (coords, pathogenic)
+        artifacts/umap_snv_meta.feather  (consequence strings)
 
 Usage:
     python scripts/prepare/umap_snv.py [--force]
@@ -25,7 +25,7 @@ from sklearn.decomposition import PCA
 from umap import UMAP
 
 ROOT = Path(__file__).resolve().parents[2]
-PANELS = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 DATASET = ROOT / "data" / "clinvar" / "evo2-7b" / "deconfounded"
 EMBED_DIR = DATASET / "covariance64_pool"
 OUT_DIR = ROOT / "artifacts"
@@ -65,9 +65,9 @@ def main():
         return
 
     # Load test-set IDs and metadata from local feathers
-    split = pl.read_ipc(PANELS / "split_deconfounded.feather")
+    split = pl.read_ipc(ARTIFACTS / "split_deconfounded.feather")
     test_ids = set(split.filter(pl.col("split") == "test")["variant_id"].to_list())
-    meta = pl.read_ipc(PANELS / "metadata_deconfounded.feather").with_columns(
+    meta = pl.read_ipc(ARTIFACTS / "metadata_deconfounded.feather").with_columns(
         (pl.col("label") == "pathogenic").cast(pl.Int32).alias("pathogenic"),
     )
 

@@ -6,7 +6,7 @@ Reads eval.json from the clinvar-evo2-probe-v1 run and heads.json from
 variant-viewer to assign viewer groups, then maps to broad categories.
 
 Input:  clinvar-evo2-probe-v1/eval.json, variant-viewer/heads.json
-Output: data/panels/fig2b.csv
+Output: artifacts/fig2b.feather
 """
 import json
 from pathlib import Path

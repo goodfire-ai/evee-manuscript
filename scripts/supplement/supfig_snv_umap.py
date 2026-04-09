@@ -5,7 +5,7 @@ Supplementary Figure — SNV-only UMAP of CovarianceProbe embeddings.
 Two panels: pathogenic vs benign (left), consequence type (right).
 (Demoted from main Figure 1E in the figure overhaul.)
 
-Reads pre-computed UMAP from data/embeddings/umap_snv.*.
+Reads pre-computed UMAP from artifacts/umap_snv.*.
 Run scripts/prepare/umap_snv.py first to generate.
 
 Output: figures/supplement/supfig_snv_umap.{png,pdf}
@@ -27,7 +27,7 @@ from theme.mayo_theme import (
     FONT_SIZE_LEGEND, FONT_SIZE_TITLE,
 )
 
-EMBED_DIR = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig_snv_umap"
 
 CONSEQ_ORDER = ("Missense", "Synonymous", "Nonsense", "Splice", "UTR", "Intronic", "Other")
@@ -36,10 +36,7 @@ apply_theme()
 
 
 def main():
-    path = EMBED_DIR / "umap_snv.feather"
-    
-
-
+    path = ARTIFACTS / "umap_snv.feather"
     df = pl.read_ipc(path)
     coords = df.select("umap_x", "umap_y").to_numpy()
     y = df["pathogenic"].to_numpy()

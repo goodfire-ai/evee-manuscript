@@ -6,8 +6,8 @@ Loads up to 30K indel embeddings from covariance64_pool, computes PCA(100) + UMA
 saves coords and metadata for downstream plotting.
 
 Input:  data/clinvar/evo2-7b/indels/covariance64_pool/
-Output: data/embeddings/umap_indel.safetensors  (coords, pathogenic)
-        data/embeddings/umap_indel_meta.feather  (csq_type strings)
+Output: artifacts/umap_indel.feather  (coords, pathogenic)
+        artifacts/umap_indel_meta.feather  (csq_type strings)
 
 Usage:
     python scripts/prepare/umap_indel.py [--force]
@@ -25,7 +25,7 @@ from sklearn.decomposition import PCA
 from umap import UMAP
 
 ROOT = Path(__file__).resolve().parents[2]
-PANELS = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 EMBED_DIR = ROOT / "data" / "clinvar" / "evo2-7b" / "indels" / "covariance64_pool"
 OUT_DIR = ROOT / "artifacts"
 
@@ -59,7 +59,7 @@ def main():
         return
 
     # Load metadata from local feather
-    meta = pl.read_ipc(PANELS / "metadata_labeled_indels.feather").with_columns(
+    meta = pl.read_ipc(ARTIFACTS / "metadata_labeled_indels.feather").with_columns(
         (pl.col("label") == "pathogenic").cast(pl.Int32).alias("pathogenic"),
         pl.col("consequence").replace(CONSEQ_MAP).alias("csq_type"),
     )

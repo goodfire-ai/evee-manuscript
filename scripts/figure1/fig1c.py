@@ -7,7 +7,7 @@ Evo2 mean probe (supervised), CADD v1.7 InDel, and NTv3 subref probe
 on 73,961 ClinVar indels stratified by consequence type and direction.
 (Size categories omitted; full version in supplement.)
 
-Input:  data/panels/supfig4.feather
+Input:  artifacts/supfig4.feather
 Output: figures/figure1/panels/fig1c.{png,pdf}
 """
 import sys
@@ -27,7 +27,7 @@ from theme.mayo_theme import (
     FONT_SIZE_TICK, FONT_SIZE_CELL,
 )
 
-PANELS = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1c"
 
 apply_theme()
@@ -50,7 +50,7 @@ SEP_POSITIONS = (0.5, 4.5)
 
 def plot(ax, aspect="equal"):
     """Plot indel benchmark heatmap onto given axes (strata=y, methods=x)."""
-    df = pl.read_ipc(PANELS / "supfig4.feather")
+    df = pl.read_ipc(ARTIFACTS / "supfig4.feather")
     df = df.filter(pl.col("stratum").is_in(list(KEEP_STRATA)))
 
     strata = df["stratum"].to_list()

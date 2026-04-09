@@ -5,7 +5,7 @@ Supplementary Figure — Full indel benchmark: stratified AUROC heatmap.
 All strata including size categories (1 bp, 2-5 bp, 6-20 bp, >20 bp).
 Vertical orientation (strata on y-axis, methods on x-axis).
 
-Input:  data/panels/supfig4.feather
+Input:  artifacts/supfig4.feather
 Output: figures/supplement/supfig_indel_full.{png,pdf}
 """
 import sys
@@ -25,7 +25,7 @@ from theme.mayo_theme import (
     FONT_SIZE_TITLE, FONT_SIZE_TICK, FONT_SIZE_CELL, FONT_SIZE_LABEL,
 )
 
-PANELS = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig_indel_full"
 
 apply_theme()
@@ -42,7 +42,7 @@ SEP_POSITIONS = (0.5, 4.5, 8.5)
 
 
 def main():
-    df = pl.read_ipc(PANELS / "supfig4.feather")
+    df = pl.read_ipc(ARTIFACTS / "supfig4.feather")
 
     strata = df["stratum"].to_list()
     n_vals = df["n"].to_list()

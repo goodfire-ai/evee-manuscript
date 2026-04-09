@@ -7,7 +7,7 @@ annotation head, subsamples 30k variants, runs UMAP, clusters with KMeans,
 and exports coordinates + labels.
 
 Input:  website_probes/v4/token/scores.feather
-Output: data/panels/fig2c.csv
+Output: artifacts/fig2c.feather
 
 Requires: pyarrow, umap-learn, scikit-learn, pandas (~2 min)
 """

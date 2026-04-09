@@ -6,7 +6,7 @@ import numpy as np
 import polars as pl
 
 ROOT = Path(__file__).resolve().parents[2]
-EMBED_DIR = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 
 # Default scatter kwargs for UMAP plots
 SCATTER_KW = dict(s=5.0, marker="o", rasterized=True, edgecolors="none")
@@ -19,7 +19,7 @@ CONSEQ_ORDER = ("Missense", "Synonymous", "Nonsense", "Splice", "Intronic",
 @functools.lru_cache(maxsize=1)
 def load_combined_umap():
     """Load combined UMAP data (cached so fig1d + fig1e don't reload)."""
-    df = pl.read_ipc(EMBED_DIR / "umap_combined.feather")
+    df = pl.read_ipc(ARTIFACTS / "umap_combined.feather")
     coords = df.select("umap_x", "umap_y").to_numpy()
     pathogenic = df["pathogenic"].to_numpy()
     csq = df["csq"].to_numpy()

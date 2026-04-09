@@ -7,7 +7,7 @@ then computes per-(model, config) composite SCV judge scores.
 
 Input:  eval_probe_autointerp/results/ablation_study.csv
         eval_probe_autointerp/results/ablation_sonnet46.csv
-Output: data/panels/fig2e.csv
+Output: artifacts/fig2e.feather
 """
 from pathlib import Path
 

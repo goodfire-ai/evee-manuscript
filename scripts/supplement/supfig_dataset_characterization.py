@@ -4,7 +4,7 @@ Supplementary Figure 3 — Dataset characterization: consequence/pathogenic
 ratios, ClinVar Star>=1 vs CADD-deconfounded.
 
 Source: notebooks/2026-03-11-17-18_supplement.ipynb, cell 14 (revised)
-Input:  data/supplement/supfig3/dataset_characterization.feather
+Input:  artifacts/supfig3/dataset_characterization.feather
 Output: figures/supplement/supfig3.{png,pdf}
 """
 import sys
@@ -23,7 +23,7 @@ from theme.mayo_theme import (
     FONT_SIZE_TITLE, FONT_SIZE_LABEL, FONT_SIZE_TICK, FONT_SIZE_LEGEND,
 )
 
-PANELS = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig3"
 
 apply_theme()
@@ -35,7 +35,7 @@ COLOR_DECONF = COLORS["gf_brown"]  # Goodfire warm brown
 
 
 def main():
-    comp_df = pl.read_ipc(PANELS / "supfig3.feather")
+    comp_df = pl.read_ipc(ARTIFACTS / "supfig3.feather")
 
     # Rename "Naive (834K)" → "ClinVar Star≥1 (834K)"
     comp_df = comp_df.with_columns(

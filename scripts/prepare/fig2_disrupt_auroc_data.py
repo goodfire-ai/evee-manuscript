@@ -9,7 +9,7 @@ reference annotation is present (ref > 0.5).
 Input:  website_probes/v4/token/scores.feather
         clinvar/evo2-7b/labeled/split.feather (pathogenicity labels)
         variant-viewer/heads.json (browser groups)
-Output: data/panels/fig2_disrupt_auroc.csv
+Output: artifacts/fig2_disrupt_auroc.feather
 """
 import json
 from pathlib import Path

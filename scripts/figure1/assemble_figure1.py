@@ -11,7 +11,7 @@ Layout:
     Row 2: [E UMAP pathogenicity]  [F UMAP consequence]
     Row 3: [G DMS bars — 1x4 subgrid]
 
-Input:  data/panels/*, data/embeddings/*
+Input:  artifacts/*, artifacts/*
 Output: figures/figure1/figure1_assembled.{png,pdf}
         + individual panels in figures/figure1/panels/
 """

@@ -6,7 +6,7 @@ AUROC heatmap for Evo2 covariance probe, Evo2 mean probe, Evo2 loss,
 CADD v1.7, AlphaMissense, GPN-MSA, NTv3, and AlphaGenome
 on 833,970 variants from genes <= 100 kb with >= 1 star review status.
 
-Input:  data/panels/fig1a.feather
+Input:  artifacts/fig1a.feather
 Output: figures/figure1/panels/fig1b.{png,pdf}
 """
 import sys
@@ -24,7 +24,7 @@ from theme.mayo_theme import apply_theme, save_figure
 sys.path.insert(0, str(ROOT / "scripts" / "figure1"))
 from _heatmap_common import prepare, plot_heatmap
 
-PANELS = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1b"
 
 apply_theme()
@@ -32,7 +32,7 @@ apply_theme()
 
 def plot(ax, aspect="equal"):
     """Plot Figure 1B onto given axes."""
-    strat_df = pl.read_ipc(PANELS / "fig1a.feather")
+    strat_df = pl.read_ipc(ARTIFACTS / "fig1a.feather")
     df = prepare(strat_df)
     plot_heatmap(ax, df, "auroc", aspect=aspect)
 

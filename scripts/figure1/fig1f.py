@@ -5,7 +5,7 @@ Figure 1F — Performance robustness across conservation levels.
 AUROC by phyloP100way conservation tier for Evo2 probes, AlphaMissense,
 CADD v1.7, Evo2 loss, and GPN-MSA. All variant types.
 
-Input:  data/panels/fig1c.feather
+Input:  artifacts/fig1c.feather
 Output: figures/figure1/panels/fig1f.{png,pdf}
 """
 import sys
@@ -24,7 +24,7 @@ from theme.mayo_theme import (
     FONT_SIZE_TITLE, FONT_SIZE_LABEL, FONT_SIZE_TICK, FONT_SIZE_LEGEND,
 )
 
-PANELS = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1f"
 
 apply_theme()
@@ -160,7 +160,7 @@ def plot_lineplot(ax, df, metric, title, tiers=None,
 
 def plot(ax):
     """Plot Figure 1F onto given axes."""
-    df = pl.read_ipc(PANELS / "fig1c.feather")
+    df = pl.read_ipc(ARTIFACTS / "fig1c.feather")
     plot_lineplot(ax, df, "auroc", title=None)
 
 

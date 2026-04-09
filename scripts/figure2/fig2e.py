@@ -7,7 +7,7 @@ Shows composite SCV judge scores (avg of mechanism_coverage,
 biological_accuracy, specificity, novel_insights) for 6 ablation
 configurations across Haiku 4.5, Sonnet 4.6, and Opus 4.6.
 
-Input:  data/panels/fig2e.feather
+Input:  artifacts/fig2e.feather
 Output: figures/figure2/panels/fig2e.{png,pdf}
 """
 import sys
@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from theme.mayo_theme import apply_theme, save_figure, FONT_SIZE_TICK
 
-PANELS = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "figure2" / "panels" / "fig2e"
 
 apply_theme()
@@ -44,7 +44,7 @@ MODELS = ["haiku", "sonnet", "opus"]
 
 def plot(ax):
     """Line plot of composite score progression across prompt configs."""
-    df = pl.read_ipc(PANELS / "fig2e.feather")
+    df = pl.read_ipc(ARTIFACTS / "fig2e.feather")
 
     for model in MODELS:
         sub = df.filter(pl.col("model") == model).sort("config")

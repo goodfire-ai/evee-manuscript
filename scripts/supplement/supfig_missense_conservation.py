@@ -5,7 +5,7 @@ Supplementary Figure — Conservation tiers, missense variants only.
 AUROC by phyloP100way conservation tier, filtered to missense.
 (Demoted from main Figure 1D in the figure overhaul.)
 
-Input:  data/panels/fig1d.feather
+Input:  artifacts/fig1d.feather
 Output: figures/supplement/supfig_missense_conservation.{png,pdf}
 """
 import sys
@@ -23,14 +23,14 @@ from theme.mayo_theme import apply_theme, save_figure
 sys.path.insert(0, str(ROOT / "scripts" / "figure1"))
 from fig1f import plot_lineplot, CONSERVATION_TIERS
 
-PANELS = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig_missense_conservation"
 
 apply_theme()
 
 
 def main():
-    df = pl.read_ipc(PANELS / "fig1d.feather")
+    df = pl.read_ipc(ARTIFACTS / "fig1d.feather")
     fig, ax = plt.subplots(figsize=(8, 4.5))
     plot_lineplot(ax, df, "auroc", "Missense Only", CONSERVATION_TIERS,
                   xlabel="Conservation Tier (phyloP100way)")

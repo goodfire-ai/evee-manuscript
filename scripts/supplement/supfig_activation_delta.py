@@ -4,7 +4,7 @@ Supplementary Figure 1 — Per-position activation delta (|alt - ref|)
 around SNV site, pathogenic vs benign overlaid on single plot.
 
 Source: notebooks/2026-03-11-17-18_supplement.ipynb, cell 38
-Input:  data/panels/supfig1.feather
+Input:  artifacts/supfig1.feather
 Output: figures/supplement/supfig1.{png,pdf}
 """
 import sys
@@ -23,14 +23,14 @@ from theme.mayo_theme import (
     FONT_SIZE_LABEL, FONT_SIZE_LEGEND, FONT_SIZE_TICK,
 )
 
-PANELS = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig1"
 
 apply_theme()
 
 
 def main():
-    data = pl.read_ipc(PANELS / "supfig1.feather")
+    data = pl.read_ipc(ARTIFACTS / "supfig1.feather")
     path_real = np.array(data.filter(pl.col("label") == "pathogenic")["deltas"].to_list())
     benign_real = np.array(data.filter(pl.col("label") == "benign")["deltas"].to_list())
     rel_pos = np.arange(2001) - 1000       # -1000 to +1000

@@ -7,7 +7,7 @@ sparse top-K position selection (256 positions) and a dense contiguous
 window (1024 positions). 95% bootstrap CIs shown as error bars.
 
 Input:  artifacts/topk_vs_window.feather
-Output: figures/supplement/panels/supfig_topk_vs_window.{png,pdf}
+Output: figures/supplement/supfig_topk_vs_window.{png,pdf}
 """
 import sys
 from pathlib import Path

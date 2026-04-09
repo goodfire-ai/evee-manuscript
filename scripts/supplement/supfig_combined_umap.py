@@ -5,7 +5,7 @@ Supplementary Figure — Combined UMAP of labeled SNVs + indels + VUS.
 Joint embedding space from covariance64_pool embeddings.
 Two panels: (A) Pathogenic/Benign/VUS, (B) Consequence type.
 
-Reads pre-computed UMAP from data/embeddings/umap_combined.feather.
+Reads pre-computed UMAP from artifacts/umap_combined.feather.
 Run scripts/prepare/umap_combined.py first to generate.
 
 Output: figures/supplement/supfig_combined_umap.{png,pdf}
@@ -27,7 +27,7 @@ from theme.mayo_theme import (
     FONT_SIZE_TITLE, FONT_SIZE_LEGEND,
 )
 
-EMBED_DIR = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig_combined_umap"
 
 CONSEQ_ORDER = ("Missense", "Synonymous", "Nonsense", "Splice", "Intronic",
@@ -44,10 +44,7 @@ apply_theme()
 
 
 def main():
-    path = EMBED_DIR / "umap_combined.feather"
-    
-
-
+    path = ARTIFACTS / "umap_combined.feather"
     df = pl.read_ipc(path)
     coords = df.select("umap_x", "umap_y").to_numpy()
     pathogenic = df["pathogenic"].to_numpy()

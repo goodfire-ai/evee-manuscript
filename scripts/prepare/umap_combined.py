@@ -6,8 +6,8 @@ Loads 10K each of labeled SNVs (test set), indels, and VUS. L2-normalizes,
 computes PCA(100) + UMAP, saves coords and metadata.
 
 Input:  data/clinvar/evo2-7b/{labeled,indels,vus}/covariance64_pool/
-Output: data/embeddings/umap_combined.safetensors  (coords, pathogenic)
-        data/embeddings/umap_combined_meta.feather  (csq, variant_type)
+Output: artifacts/umap_combined.feather  (coords, pathogenic)
+        artifacts/umap_combined_meta.feather  (csq, variant_type)
 
 Usage:
     python scripts/prepare/umap_combined.py [--force]
@@ -25,7 +25,7 @@ from sklearn.decomposition import PCA
 from umap import UMAP
 
 ROOT = Path(__file__).resolve().parents[2]
-PANELS = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 MAYO = ROOT / "data" / "clinvar" / "evo2-7b"
 LABELED = MAYO / "labeled"
 INDELS = MAYO / "indels"
@@ -82,12 +82,12 @@ def main():
     rng = np.random.RandomState(42)
 
     # --- Labeled SNVs (test set only) ---
-    split = pl.read_ipc(PANELS / "split_deconfounded.feather")
+    split = pl.read_ipc(ARTIFACTS / "split_deconfounded.feather")
     test_ids = split.filter(pl.col("split") == "test")["variant_id"].to_list()
     rng.shuffle(test_ids)
     labeled_sample = test_ids[:N_PER]
 
-    labeled_meta = pl.read_ipc(PANELS / "metadata_deconfounded.feather").with_columns(
+    labeled_meta = pl.read_ipc(ARTIFACTS / "metadata_deconfounded.feather").with_columns(
         (pl.col("label") == "pathogenic").cast(pl.Int32).alias("pathogenic"),
     )
 
@@ -97,7 +97,7 @@ def main():
     ).with_columns(pl.lit("SNV").alias("variant_type"))
 
     # --- Indels ---
-    indel_meta = pl.read_ipc(PANELS / "metadata_labeled_indels.feather").with_columns(
+    indel_meta = pl.read_ipc(ARTIFACTS / "metadata_labeled_indels.feather").with_columns(
         (pl.col("label") == "pathogenic").cast(pl.Int32).alias("pathogenic"),
     )
     indel_all = indel_meta["variant_id"].to_list()
@@ -110,7 +110,7 @@ def main():
     ).with_columns(pl.lit("Indel").alias("variant_type"))
 
     # --- VUS ---
-    vus_meta = pl.read_ipc(PANELS / "metadata_vus.feather")
+    vus_meta = pl.read_ipc(ARTIFACTS / "metadata_vus.feather")
     vus_all = vus_meta["variant_id"].to_list()
     rng.shuffle(vus_all)
     vus_sample = vus_all[:min(N_PER, len(vus_all))]

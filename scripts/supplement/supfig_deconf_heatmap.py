@@ -5,7 +5,7 @@ Supplementary Figure — Deconfounded ClinVar heatmap.
 AUROC heatmap on CADD-deconfounded v3 ClinVar dataset.
 (Demoted from main Figure 1B in the figure overhaul.)
 
-Input:  data/panels/fig1b.feather
+Input:  artifacts/fig1b.feather
 Output: figures/supplement/supfig_deconf_heatmap.{png,pdf}
 """
 import sys
@@ -23,14 +23,14 @@ from theme.mayo_theme import apply_theme, save_figure
 sys.path.insert(0, str(ROOT / "scripts" / "figure1"))
 from _heatmap_common import prepare, plot_heatmap
 
-PANELS = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig_deconf_heatmap"
 
 apply_theme()
 
 
 def main():
-    strat_df = pl.read_ipc(PANELS / "fig1b.feather")
+    strat_df = pl.read_ipc(ARTIFACTS / "fig1b.feather")
     df = prepare(strat_df)
     ov = df.filter(pl.col("consequence") == "Overall").row(0, named=True)
     title = f"Deconfounded ClinVar (n={int(ov['n_total']):,})"

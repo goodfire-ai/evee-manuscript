@@ -12,8 +12,8 @@ Subsample targets:
   - 1K benign indel, 1K pathogenic indel
 
 Input:  data/clinvar/evo2-7b/{labeled,indels,vus}/covariance64_pool/
-Output: data/embeddings/umap_combined.safetensors  (coords, pathogenic)
-        data/embeddings/umap_combined_meta.feather  (csq, variant_type)
+Output: artifacts/umap_combined.feather  (coords, pathogenic)
+        artifacts/umap_combined_meta.feather  (csq, variant_type)
 
 Usage:
     python scripts/prepare/umap_combined_subsample.py [--force]
@@ -31,7 +31,7 @@ from sklearn.decomposition import PCA
 from umap import UMAP
 
 ROOT = Path(__file__).resolve().parents[2]
-PANELS = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 MAYO = ROOT / "data" / "clinvar" / "evo2-7b"
 OUT_DIR = ROOT / "artifacts"
 
@@ -135,7 +135,7 @@ def main():
     rng = np.random.RandomState(42)
 
     # --- Sample labeled SNVs ---
-    labeled_meta = pl.read_ipc(PANELS / "metadata_deconfounded.feather")
+    labeled_meta = pl.read_ipc(ARTIFACTS / "metadata_deconfounded.feather")
     benign_ids = labeled_meta.filter(pl.col("label") == "benign")["variant_id"].to_list()
     path_ids = labeled_meta.filter(pl.col("label") == "pathogenic")["variant_id"].to_list()
 
@@ -157,7 +157,7 @@ def main():
     print(f"  Loaded {len(ids_snv)} SNV embeddings")
 
     # --- Sample indels ---
-    indel_meta = pl.read_ipc(PANELS / "metadata_labeled_indels.feather")
+    indel_meta = pl.read_ipc(ARTIFACTS / "metadata_labeled_indels.feather")
     indel_benign = indel_meta.filter(pl.col("label") == "benign")["variant_id"].to_list()
     indel_path = indel_meta.filter(pl.col("label") == "pathogenic")["variant_id"].to_list()
 
@@ -179,7 +179,7 @@ def main():
     print(f"  Loaded {len(ids_indel)} indel embeddings")
 
     # --- Sample VUS ---
-    vus_meta = pl.read_ipc(PANELS / "metadata_vus.feather")
+    vus_meta = pl.read_ipc(ARTIFACTS / "metadata_vus.feather")
     vus_all = vus_meta["variant_id"].to_list()
     rng.shuffle(vus_all)
     vus_sample = vus_all[:5_000]

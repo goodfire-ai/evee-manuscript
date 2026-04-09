@@ -7,7 +7,7 @@ A. Per-consequence AUROC vs context window (genomic where available,
 B. AUROC gain from genomic context (genomic − clamped) per consequence.
 
 Input:  artifacts/context_window_sweep.feather
-Output: figures/supplement/panels/supfig_context_window.{png,pdf}
+Output: figures/supplement/supfig_context_window.{png,pdf}
 """
 import sys
 from pathlib import Path

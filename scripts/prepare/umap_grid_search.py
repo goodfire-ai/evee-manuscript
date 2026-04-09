@@ -25,7 +25,7 @@ import safetensors.numpy as sfnp
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
-PANELS = ROOT / "artifacts"
+ARTIFACTS = ROOT / "artifacts"
 MAYO = ROOT / "data" / "clinvar" / "evo2-7b"
 CACHE_DIR = ROOT / "figures" / "test" / "umap_grid"
 PCA_CACHE = CACHE_DIR / "_pca_cache.npz"
@@ -106,7 +106,7 @@ def build_pca_cache():
     rng = np.random.RandomState(42)
 
     # SNVs
-    labeled_meta = pl.read_ipc(PANELS / "metadata_deconfounded.feather")
+    labeled_meta = pl.read_ipc(ARTIFACTS / "metadata_deconfounded.feather")
     benign_ids = labeled_meta.filter(pl.col("label") == "benign")["variant_id"].to_list()
     path_ids = labeled_meta.filter(pl.col("label") == "pathogenic")["variant_id"].to_list()
     rng.shuffle(benign_ids); rng.shuffle(path_ids)
@@ -121,7 +121,7 @@ def build_pca_cache():
     )
 
     # Indels
-    indel_meta = pl.read_ipc(PANELS / "metadata_labeled_indels.feather")
+    indel_meta = pl.read_ipc(ARTIFACTS / "metadata_labeled_indels.feather")
     indel_b = indel_meta.filter(pl.col("label") == "benign")["variant_id"].to_list()
     indel_p = indel_meta.filter(pl.col("label") == "pathogenic")["variant_id"].to_list()
     rng.shuffle(indel_b); rng.shuffle(indel_p)
@@ -136,7 +136,7 @@ def build_pca_cache():
     )
 
     # VUS
-    vus_meta = pl.read_ipc(PANELS / "metadata_vus.feather")
+    vus_meta = pl.read_ipc(ARTIFACTS / "metadata_vus.feather")
     vus_all = vus_meta["variant_id"].to_list()
     rng.shuffle(vus_all)
     vus_sample = vus_all[:5_000]

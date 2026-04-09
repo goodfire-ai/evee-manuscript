@@ -3,7 +3,7 @@
 Figure 1D — UMAP of variant covariance embeddings colored by ClinVar
 pathogenicity label (benign, VUS, pathogenic) for SNVs and indels.
 
-Reads pre-computed combined UMAP from data/embeddings/umap_combined.*.
+Reads pre-computed combined UMAP from artifacts/umap_combined.*.
 Run scripts/prepare/umap_combined.py first to generate.
 
 Output: figures/figure1/panels/fig1d.{png,pdf}

@@ -7,7 +7,7 @@ Consequence types are ordered by functional severity (most damaging → least
 specific) and colors are assigned so that functionally similar categories share
 visually similar hues.
 
-Reads pre-computed combined UMAP from data/embeddings/umap_combined.*.
+Reads pre-computed combined UMAP from artifacts/umap_combined.*.
 Run scripts/prepare/umap_combined.py first to generate.
 
 Output: figures/figure1/panels/fig1e.{png,pdf}
