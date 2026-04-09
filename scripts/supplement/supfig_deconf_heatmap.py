@@ -36,7 +36,8 @@ def main():
     title = f"Deconfounded ClinVar (n={int(ov['n_total']):,})"
 
     fig, ax = plt.subplots(figsize=(9, 7))
-    plot_heatmap(ax, df, "auroc", title)
+    plot_heatmap(ax, df, "auroc")
+    ax.set_title(title, fontweight="semibold")
     fig.tight_layout()
     save_figure(fig, OUT_STEM)
     print(f"Saved: {OUT_STEM}.png / .pdf")

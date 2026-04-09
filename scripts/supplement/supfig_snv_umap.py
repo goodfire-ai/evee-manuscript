@@ -42,8 +42,8 @@ def main():
 
     df = pl.read_ipc(path)
     coords = df.select("umap_x", "umap_y").to_numpy()
-    y = tensors["pathogenic"]
-    conseq = pl.read_ipc(meta_path)["consequence"].to_numpy()
+    y = df["pathogenic"].to_numpy()
+    conseq = df["consequence"].to_numpy()
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4.5))
 

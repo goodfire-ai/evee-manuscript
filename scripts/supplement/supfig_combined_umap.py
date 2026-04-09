@@ -49,11 +49,10 @@ def main():
 
 
     df = pl.read_ipc(path)
-    coords = df.select("umap_x", "umap_y").to_numpy().numpy()
-    pathogenic = df["pathogenic"].to_numpy().numpy()
-    
-    csq = meta["csq"].to_numpy()
-    variant_type = meta["variant_type"].to_numpy()
+    coords = df.select("umap_x", "umap_y").to_numpy()
+    pathogenic = df["pathogenic"].to_numpy()
+    csq = df["csq"].to_numpy()
+    variant_type = df["variant_type"].to_numpy()
 
     ux, uy = coords[:, 0], coords[:, 1]
     is_snv = (variant_type == "SNV") | (variant_type == "VUS")

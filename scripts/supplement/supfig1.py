@@ -14,7 +14,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
-import polars as pl_
+import polars as pl
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
@@ -31,8 +31,8 @@ apply_theme()
 
 def main():
     data = pl.read_ipc(PANELS / "supfig1.feather")
-    path_real = data["pathogenic_deltas"].numpy()   # [500, 2001]
-    benign_real = data["benign_deltas"].numpy()     # [500, 2001]
+    path_real = np.array(data.filter(pl.col("label") == "pathogenic")["deltas"].to_list())
+    benign_real = np.array(data.filter(pl.col("label") == "benign")["deltas"].to_list())
     rel_pos = np.arange(2001) - 1000       # -1000 to +1000
 
     fig, ax = plt.subplots(figsize=(10, 4))

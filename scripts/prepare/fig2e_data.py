@@ -45,7 +45,7 @@ def main():
         })
 
     out = pl.DataFrame(rows).sort("model", "config")
-    out.write_csv(OUT)
+    out.write_ipc(OUT)
     print(f"Saved {len(out)} rows to {OUT}")
 
 

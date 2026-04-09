@@ -150,7 +150,7 @@ def main():
     # 6. Write CSV
     import polars as pl
     df = pl.DataFrame(rows).sort("browser_group", "head")
-    df.write_csv(OUT)
+    df.write_ipc(OUT)
     print(f"\nSaved {len(df)} rows to {OUT}")
     print(df.group_by("browser_group").agg(
         pl.len().alias("n_heads"),

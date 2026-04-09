@@ -182,7 +182,7 @@ def main():
         "cluster_id": cluster_ids.tolist(),
         "cluster_name": [cluster_info[c] for c in cluster_ids],
     })
-    df.write_csv(OUT)
+    df.write_ipc(OUT)
     print(f"\nSaved {len(df)} rows to {OUT}")
     for cid in sorted(cluster_info):
         print(f"  {cluster_info[cid]}: n={(cluster_ids == cid).sum()}")

@@ -20,7 +20,7 @@ from theme.mayo_theme import apply_theme, save_figure
 
 # Reuse shared barplot from fig1f
 sys.path.insert(0, str(ROOT / "scripts" / "figure1"))
-from fig1f import _load_and_filter, plot_dms_barplot, PANELS
+from fig1g import _load_and_filter, plot_dms_barplot, PANELS
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig6"
 
 apply_theme()

@@ -133,7 +133,7 @@ def main():
 
     df = pl.DataFrame(rows)
     df = df.sort("broad_group", "head")
-    df.write_csv(OUT)
+    df.write_ipc(OUT)
     print(f"Saved {len(df)} rows to {OUT}")
 
 

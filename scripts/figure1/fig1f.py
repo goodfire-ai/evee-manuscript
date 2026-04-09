@@ -74,38 +74,52 @@ LINE_MARKERS = {
 }
 
 
-def plot(ax):
-    """Plot Figure 1F onto given axes."""
-    df = pl.read_ipc(PANELS / "fig1c.feather")
+def plot_lineplot(ax, df, metric, title, tiers=None,
+                  xlabel="Conservation Tier (phyloP100way)"):
+    """Reusable lineplot for AUROC by conservation tier.
+
+    Parameters
+    ----------
+    ax : matplotlib Axes
+    df : polars DataFrame with columns: method, tier, {metric}, {metric}_lo, {metric}_hi, n_total, n_pathogenic
+    metric : column name for the y-axis value
+    title : axes title (ignored if None)
+    tiers : optional override for tier definitions, defaults to CONSERVATION_TIERS
+    xlabel : x-axis label
+    """
+    if tiers is None:
+        tiers = CONSERVATION_TIERS
+
     df = df.with_columns(
         pl.col("method").replace_strict(METHOD_RENAME, default=pl.first())
     )
     df = df.filter(pl.col("tier") != "Overall")
 
-    tier_names = [t[0] for t in CONSERVATION_TIERS]
-    tiers = [t for t in tier_names if t in df["tier"].to_list()]
+    tier_names = [t[0] for t in tiers]
+    active_tiers = [t for t in tier_names if t in df["tier"].to_list()]
     methods = [m for m in METHOD_ORDER if m in df["method"].to_list()]
 
-    # Build tick labels with stats
     tick_names, tick_stats = [], []
-    for t in tiers:
+    for t in active_tiers:
         sub = df.filter(pl.col("tier") == t).row(0, named=True)
         n = int(sub.get("n_total", 0))
         p = int(sub.get("n_pathogenic", 0))
         tick_names.append(t)
         tick_stats.append(f"(n={n:,}, {100*p/n:.1f}% P)" if n else "")
 
-    x = np.arange(len(tiers))
+    x = np.arange(len(active_tiers))
+    lo_col, hi_col = f"{metric}_lo", f"{metric}_hi"
+    has_ci = lo_col in df.columns and hi_col in df.columns
 
     for m in methods:
         sub = df.filter(pl.col("method") == m)
         vals, lo, hi = [], [], []
-        for t in tiers:
+        for t in active_tiers:
             row = sub.filter(pl.col("tier") == t)
             if len(row) == 1:
-                vals.append(float(row[0, "auroc"]))
-                lo.append(float(row[0, "auroc_lo"]))
-                hi.append(float(row[0, "auroc_hi"]))
+                vals.append(float(row[0, metric]))
+                lo.append(float(row[0, lo_col]) if has_ci else np.nan)
+                hi.append(float(row[0, hi_col]) if has_ci else np.nan)
             else:
                 vals.append(np.nan); lo.append(np.nan); hi.append(np.nan)
 
@@ -119,9 +133,8 @@ def plot(ax):
         if not np.all(np.isnan(lo)):
             ax.fill_between(x, lo, hi, alpha=0.08, color=color)
 
-    # Angled x-axis labels: bold name + smaller gray parenthetical
     ax.set_xticks(x)
-    ax.set_xticklabels([])  # clear default labels
+    ax.set_xticklabels([])
     label_fs = FONT_SIZE_TICK - 1
     stat_fs = FONT_SIZE_TICK - 2
     for i, (name, stat) in enumerate(zip(tick_names, tick_stats)):
@@ -133,14 +146,22 @@ def plot(ax):
                     ha="right", va="top", rotation=30,
                     fontsize=stat_fs, color="#666666")
 
-    ax.set_ylabel("AUROC", fontsize=FONT_SIZE_LABEL, fontweight="semibold")
+    ax.set_ylabel(metric.upper(), fontsize=FONT_SIZE_LABEL, fontweight="semibold")
     ax.set_ylim(0.5, 1.0)
     ax.grid(axis="y", alpha=0.15)
-
-    # Legend inside the plot — bottom-right where there's empty space
+    if xlabel:
+        ax.set_xlabel(xlabel, fontsize=FONT_SIZE_LABEL, fontweight="semibold")
+    if title:
+        ax.set_title(title, fontsize=FONT_SIZE_TITLE, fontweight="semibold")
     ax.legend(fontsize=FONT_SIZE_LEGEND, loc="lower right",
               bbox_to_anchor=(0.99, 0.01), ncol=2, frameon=True,
               framealpha=0.9, edgecolor="#cccccc", fancybox=False)
+
+
+def plot(ax):
+    """Plot Figure 1F onto given axes."""
+    df = pl.read_ipc(PANELS / "fig1c.feather")
+    plot_lineplot(ax, df, "auroc", title=None)
 
 
 def main():

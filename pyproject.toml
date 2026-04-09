@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "evee-manuscript"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "polars>=1.0",
+    "pyarrow>=15.0",
+    "matplotlib>=3.10",
+    "seaborn>=0.13",
+    "scipy>=1.17",
+    "numpy>=2.0",
+    "scikit-learn>=1.8",
+    "umap-learn>=0.5",
+    "adjusttext>=1.0",
+    "pillow>=12.0",
+    "matplotlib-venn>=1.1",
+    "typer>=0.15",
+]
+
+[project.scripts]
+evee-ms = "evee_manuscript.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["evee_manuscript", "theme"]
