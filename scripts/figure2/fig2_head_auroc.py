@@ -31,20 +31,30 @@ EVAL_JSON = Path("/mnt/data/artifacts/public/variant-viewer/website_probes/v5/to
 HEADS_FEATHER = ROOT / "artifacts" / "heads.feather"
 OUT_STEM = ROOT / "figures" / "figure2" / "panels" / "fig2_head_auroc"
 
+# Merge fine-grained groups into 7 display categories
+MERGE_MAP = {
+    "Region":         "Sequence & Region",
+    "Conservation":   "Sequence & Region",
+    "Splicing":       "Splicing",
+    "ChIP-seq":       "Regulatory",
+    "ATAC-seq":       "Regulatory",
+    "Regulatory":     "Regulatory",
+    "InterPro":       "InterPro",
+    "Protein":        "Protein & Structure",
+    "Structure":      "Protein & Structure",
+    "PTM":            "Protein & Structure",
+    "ELM Motifs":     "Substitution & Motif",
+    "Variant Effect":  "Substitution & Motif",
+}
+
 GROUP_COLORS = {
-    "Splicing":    "#DA8BC3",
-    "Protein":     "#55A868",
-    "Region":      "#937860",
-    "PTM":         "#C44E52",
-    "InterPro":    "#DD8452",
-    "ATAC-seq":    "#4C72B0",
-    "Structure":   "#8172B3",
-    "ChIP-seq":    "#5A7D9A",
-    "ELM Motifs":  "#CCB974",
-    "Other":       "#8C8C8C",
-    "Regulatory":  "#B0B0B0",
-    "Chromatin":   "#7B9E87",
-    "Amino Acid":  "#9B8EA8",
+    "Sequence & Region":    "#C44E52",
+    "Splicing":             "#DA8BC3",
+    "Regulatory":           "#4C72B0",
+    "InterPro":             "#DD8452",
+    "Protein & Structure":  "#55A868",
+    "Substitution & Motif": "#8172B3",
+    "Other":                "#A0A0A0",
 }
 
 
@@ -60,7 +70,10 @@ def plot(ax):
         auc = m.get("auc")
         if auc is None:
             continue
-        group = head_groups.get(h, "Other")
+        raw_group = head_groups.get(h, "Other")
+        if raw_group == "Pathogenicity":
+            continue
+        group = MERGE_MAP.get(raw_group, "Other")
         by_group[group].append(auc)
 
     group_order = sorted(by_group, key=lambda g: np.median(by_group[g]))
@@ -93,14 +106,20 @@ def plot(ax):
                    color=color, edgecolors="none", zorder=3)
 
     ax.set_yticks(positions)
-    ax.set_yticklabels([f"{label}\n(n={count})" for label, count in zip(labels, counts)],
-                       fontsize=FONT_SIZE_TICK)
+    ax.set_yticklabels([])
+    for i, (label, count) in enumerate(zip(labels, counts)):
+        ax.text(-0.02, positions[i] - 0.01, label, transform=ax.get_yaxis_transform(),
+                ha="right", va="center",
+                fontsize=FONT_SIZE_TICK, fontweight="semibold")
+        ax.text(-0.02, positions[i] - 0.21, f"(n={count})", transform=ax.get_yaxis_transform(),
+                ha="right", va="center",
+                fontsize=FONT_SIZE_TICK - 1, fontweight="normal", color="#444444")
 
     ax.set_xlabel("AUROC", fontsize=FONT_SIZE_LABEL)
     ax.axvline(0.5, color="grey", linestyle="--", alpha=0.3, linewidth=0.6)
     ax.set_xlim(0.48, 1.02)
     ax.grid(axis="x", alpha=0.2)
-    ax.set_title("Token Probe AUROC by Annotation Category", fontsize=FONT_SIZE_TITLE)
+    ax.set_title("Probe AUROC by Annotation Category", fontsize=FONT_SIZE_TITLE)
 
 
 def main():
