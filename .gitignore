@@ -2,9 +2,7 @@ __pycache__/
 *.pyc
 .venv/
 figures/
-artifacts/*.feather
 artifacts/*.safetensors
 artifacts/*.pt
-artifacts/*.json
 !artifacts/samples/
 data/
