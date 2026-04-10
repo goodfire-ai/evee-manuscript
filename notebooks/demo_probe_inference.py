@@ -27,8 +27,8 @@ SAMPLES = Path(__file__).resolve().parents[1] / "artifacts" / "samples"
 # 4 pathogenic + 4 benign, across missense, splice, intronic, and synonymous.
 
 # %%
-metadata = pl.read_ipc(SAMPLES / "metadata.feather")
-print(metadata)
+variants = pl.read_ipc(SAMPLES / "variants.feather")
+print(variants)
 
 # %% [markdown]
 # ## 2. Load Activations
@@ -48,7 +48,7 @@ print(metadata)
 # mutation.
 
 # %%
-variant_ids = metadata["variant_id"].to_list()
+variant_ids = variants["variant_id"].to_list()
 activations = []
 for vid in variant_ids:
     safe_name = vid.replace(":", "_")
@@ -64,7 +64,7 @@ var_fwd = activations[0, 0, 0]  # variant, forward direction
 ref_fwd = activations[0, 0, 1]  # reference, forward direction
 diff = var_fwd - ref_fwd
 
-print(f"Variant: {metadata[0, 'variant_id']} ({metadata[0, 'gene_name']}, {metadata[0, 'consequence']})")
+print(f"Variant: {variants[0, 'variant_id']} ({variants[0, 'gene_name']}, {variants[0, 'consequence']})")
 print(f"  Variant activation norm:  {var_fwd.norm(dim=-1).mean():.2f}")
 print(f"  Reference activation norm: {ref_fwd.norm(dim=-1).mean():.2f}")
 print(f"  Difference norm:           {diff.norm(dim=-1).mean():.4f}")
@@ -86,7 +86,7 @@ print(f"  Difference norm:           {diff.norm(dim=-1).mean():.4f}")
 # pathogenicity head.
 
 # %%
-probe = safetensors.torch.load_file(str(SAMPLES / "probe_pathogenicity.safetensors"))
+probe = safetensors.torch.load_file(str(SAMPLES / "probe.safetensors"))
 for name, tensor in probe.items():
     print(f"  {name}: {tensor.shape}")
 
@@ -145,7 +145,7 @@ for vid, score in zip(variant_ids, scores.tolist()):
 # ## 5. Compare to Ground Truth
 
 # %%
-results = metadata.with_columns(
+results = variants.with_columns(
     pl.Series("score", [round(s, 4) for s in scores.tolist()]),
     pl.Series("prediction", ["pathogenic" if s > 0.5 else "benign" for s in scores.tolist()]),
 ).with_columns(
