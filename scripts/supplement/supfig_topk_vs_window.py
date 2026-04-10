@@ -35,7 +35,7 @@ CONSEQUENCE_ORDER = (
 
 MODE_STYLE = {
     "topk":   {"color": COLORS["gf_orange"], "label": "Top-K (256 positions)"},
-    "window": {"color": COLORS["steel"],     "label": "Contiguous window (1024 positions)"},
+    "window": {"color": COLORS["gf_beige"],  "label": "Contiguous window (1024 positions)"},
 }
 
 apply_theme()
@@ -88,15 +88,12 @@ def main():
     ax.invert_yaxis()
     ax.grid(axis="x", alpha=0.15)
 
-    fig.suptitle("Top-K divergent vs contiguous window",
-                 fontsize=FONT_SIZE_TITLE + 1, fontweight="semibold", y=0.99)
+    ax.set_title("Top-K divergent vs contiguous window",
+                 fontsize=FONT_SIZE_TITLE + 1, fontweight="semibold", pad=20)
+    ax.legend(fontsize=7, frameon=False, loc="lower center",
+              bbox_to_anchor=(0.5, 1.005), ncol=2)
 
-    # Legend outside plot, right below title
-    ax.legend(fontsize=7, frameon=False, loc="upper center",
-              bbox_to_anchor=(0.5, -0.02), ncol=2,
-              bbox_transform=fig.transFigure)
-
-    fig.tight_layout(rect=[0, 0, 1, 0.94])
+    fig.tight_layout()
     OUT_STEM.parent.mkdir(parents=True, exist_ok=True)
     save_figure(fig, OUT_STEM)
     print(f"Saved: {OUT_STEM}.png / .pdf")

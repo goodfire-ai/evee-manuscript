@@ -3,4 +3,7 @@ __pycache__/
 .venv/
 figures/
 artifacts/*.feather
+artifacts/*.safetensors
+artifacts/*.pt
+artifacts/*.json
 data/

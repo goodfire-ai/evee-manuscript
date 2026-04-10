@@ -19,6 +19,8 @@ dependencies = [
     "pillow>=12.0",
     "matplotlib-venn>=1.1",
     "typer>=0.15",
+    "safetensors>=0.7.0",
+    "torch>=2.11.0",
 ]
 
 [project.scripts]
