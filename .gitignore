@@ -6,4 +6,5 @@ artifacts/*.feather
 artifacts/*.safetensors
 artifacts/*.pt
 artifacts/*.json
+!artifacts/samples/
 data/
