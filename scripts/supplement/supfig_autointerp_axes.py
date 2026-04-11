@@ -56,7 +56,7 @@ AXES = ["mechanism_score", "biological_accuracy", "specificity"]
 def main():
     df = pl.read_ipc(ARTIFACTS / "supfig_autointerp_axes.feather")
 
-    fig, axes_arr = plt.subplots(1, 3, figsize=(15, 4.5), sharey=True)
+    fig, axes_arr = plt.subplots(3, 1, figsize=(5.5, 10), sharex=True)
 
     for idx, axis_name in enumerate(AXES):
         ax = axes_arr[idx]
@@ -88,10 +88,11 @@ def main():
                                 xytext=(0, 10), ha="center",
                                 fontsize=FONT_SIZE_TICK - 1)
 
-        ax.set_xticks(range(len(CONFIGS)))
-        ax.set_xticklabels([CONFIG_LABELS[c] for c in CONFIGS],
-                           fontsize=FONT_SIZE_TICK)
+        ax.spines["top"].set_visible(True)
+        ax.spines["right"].set_visible(True)
+        ax.set_xlim(-0.5, 4.5)
         ax.set_ylim(0.8, 5.0)
+        ax.set_ylabel("Score (1\u20135)", fontsize=FONT_SIZE_LABEL)
         ax.set_title(AXIS_TITLES[axis_name], fontsize=FONT_SIZE_TITLE)
         ax.grid(axis="y", alpha=0.3)
 
@@ -99,10 +100,12 @@ def main():
         ax.axvspan(3.5, 4.5, alpha=0.04, color="red")
 
         if idx == 0:
-            ax.set_ylabel("Score (1\u20135)", fontsize=FONT_SIZE_LABEL)
-            ax.legend(loc="lower right", fontsize=FONT_SIZE_LEGEND)
+            ax.legend(loc="upper left", fontsize=FONT_SIZE_LEGEND)
 
-        add_panel_label(ax, chr(ord("a") + idx))
+        if idx == len(AXES) - 1:
+            ax.set_xticks(range(len(CONFIGS)))
+            ax.set_xticklabels([CONFIG_LABELS[c] for c in CONFIGS],
+                               fontsize=FONT_SIZE_TICK)
 
     fig.tight_layout()
     save_figure(fig, OUT_STEM)

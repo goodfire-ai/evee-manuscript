@@ -36,7 +36,7 @@ MODEL_LABELS = {"haiku": "Haiku 4.5", "sonnet": "Sonnet 4.6", "opus": "Opus 4.6"
 CONFIG_LABELS = {
     "C-1":    "Coord\nonly",
     "C0":     "+Gene",
-    "C2b":    "+Other\ncontext",
+    "C2b":    "+Gene\nfunction",
     "C0_hgvs": "+HGVSp",
     "C_hgvs": "+Evo2\npredictions",
 }
@@ -77,12 +77,15 @@ def plot(ax):
     ax.set_xticks(range(len(CONFIGS)))
     ax.set_xticklabels([CONFIG_LABELS[c] for c in CONFIGS],
                        fontsize=FONT_SIZE_TICK)
+    ax.spines["top"].set_visible(True)
+    ax.spines["right"].set_visible(True)
     ax.set_ylabel("Composite Score", fontsize=FONT_SIZE_LABEL)
     ax.set_ylim(1.0, 4.3)
-    ax.legend(loc="lower right", fontsize=FONT_SIZE_TICK)
+    ax.legend(loc="upper left", fontsize=FONT_SIZE_TICK)
     ax.grid(axis="y", alpha=0.3)
 
     # Shade no-Evo2 vs Evo2 regions
+    ax.set_xlim(-0.5, 4.5)
     ax.axvspan(-0.5, 3.5, alpha=0.04, color="blue")
     ax.axvspan(3.5, 4.5, alpha=0.04, color="red")
     ax.text(1.5, 1.1, "No Evo2", ha="center",
@@ -92,7 +95,7 @@ def plot(ax):
 
 
 def main():
-    fig, ax = plt.subplots(figsize=(10, 4))
+    fig, ax = plt.subplots(figsize=(7, 4))
     plot(ax)
     fig.tight_layout()
     save_figure(fig, OUT_STEM)

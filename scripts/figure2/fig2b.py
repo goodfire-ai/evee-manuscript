@@ -115,16 +115,17 @@ def plot(ax):
                 ha="right", va="center",
                 fontsize=FONT_SIZE_TICK - 1, fontweight="normal", color="#444444")
 
+    ax.spines["top"].set_visible(True)
+    ax.spines["right"].set_visible(True)
     ax.set_xlabel("AUROC", fontsize=FONT_SIZE_LABEL)
     ax.axvline(0.5, color="grey", linestyle="--", alpha=0.3, linewidth=0.6)
     ax.set_xlim(0.48, 1.02)
     ax.grid(axis="x", alpha=0.2)
-    ax.set_title("Probe AUROC by Annotation Category", fontsize=FONT_SIZE_TITLE)
 
 
 def main():
     apply_theme()
-    fig, ax = plt.subplots(figsize=(6, 5))
+    fig, ax = plt.subplots(figsize=(7, 4))
     plot(ax)
     fig.tight_layout()
     save_figure(fig, OUT_STEM)
