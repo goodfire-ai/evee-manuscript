@@ -12,7 +12,7 @@ uv run evee-ms figures     # generate all 17 figures
 Individual figures:
 
 ```bash
-uv run python scripts/figure1/fig1b.py
+uv run python scripts/figure1/fig_snv_heatmap.py
 uv run python scripts/figure1/assemble_figure1.py   # composite + individual panels
 ```
 
@@ -51,23 +51,20 @@ All data is stored as Apache Arrow feather files in `artifacts/`. Figure scripts
 
 | Panel | Script | Description |
 |-------|--------|-------------|
-| A | `fig1a.py` | Experimental design (placeholder) |
-| B | `fig1b.py` | ClinVar SNV AUROC heatmap |
-| C | `fig1c.py` | Indel stratified AUROC |
-| D | `fig1d.py` | UMAP colored by pathogenicity |
-| E | `fig1e.py` | UMAP colored by consequence |
-| F | `fig1f.py` | AUROC by conservation tier |
-| G | `fig1g.py` | DMS Spearman barplot (4 genes) |
+| B | `fig_snv_heatmap.py` | ClinVar SNV AUROC heatmap |
+| C | `fig_indel_heatmap.py` | Indel stratified AUROC |
+| D | `fig_conservation_lineplot.py` | AUROC by conservation tier |
+| E | `fig_umap_pathogenicity.py` | UMAP colored by pathogenicity |
+| F | `fig_umap_consequence.py` | UMAP colored by consequence |
+| G | `fig_dms_spearman.py` | DMS Spearman barplot (4 genes) |
 
 ### Figure 2 — Interpretability
 
 | Panel | Script | Description |
 |-------|--------|-------------|
-| A | `fig2a.py` | Framework schematic (placeholder) |
-| B | `fig2b.py` | Annotation probe AUROC by category |
-| C | `fig2c.py` | Annotation head UMAP clusters |
-| D | `fig2d.py` | Auto-interpretation example (placeholder) |
-| E | `fig2e.py` | Auto-interpretation benchmarking |
+| B | `fig_probe_auroc_boxplot.py` | Annotation probe AUROC by category |
+| C | `fig_disruption_umap.py` | Annotation head UMAP clusters |
+| E | `fig_autointerp_lineplot.py` | Auto-interpretation benchmarking |
 
 ### Supplementary Figures
 
@@ -79,14 +76,10 @@ All data is stored as Apache Arrow feather files in `artifacts/`. Figure scripts
 | `supfig_indel_heatmap` | Indel stratified AUROC heatmap |
 | `supfig_indel_umap` | Indel UMAP embeddings |
 | `supfig_dms_auroc` | DMS AUROC barplot (4 genes) |
-| `supfig_combined_umap` | Combined SNV + indel + VUS UMAP |
 | `supfig_context_window` | Context window sweep + gene clamping |
 | `supfig_deconf_heatmap` | Deconfounded ClinVar heatmap |
 | `supfig_disrupt_auroc` | Per-annotation disruption AUROC |
 | `supfig_indel_full` | Full indel analysis |
-| `supfig_ksparse` | K-sparse SAE probe performance |
-| `supfig_missense_conservation` | Conservation tiers (missense only) |
-| `supfig_snv_umap` | SNV-only UMAP |
 | `supfig_topk_sweep` | Top-K position selection sweep |
 | `supfig_topk_vs_window` | Top-K divergent vs contiguous window |
 

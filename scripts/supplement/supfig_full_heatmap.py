@@ -3,9 +3,9 @@
 Supplementary Figure 2 — Full heatmap on all consequence types, naive and deconf.
 
 Source: notebooks/2026-03-11-17-18_supplement.ipynb, cell 8
-Input:  artifacts/supfig2/benchmark_stratified_naive.feather
-        artifacts/supfig2/benchmark_stratified_deconfv3.feather
-Output: figures/supplement/supfig2.{png,pdf}
+Input:  artifacts/full_heatmap_naive.feather
+        artifacts/full_heatmap_deconf.feather
+Output: figures/supplement/supfig_full_heatmap.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -24,7 +24,7 @@ from theme.mayo_theme import (
 )
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "supplement" / "supfig2"
+OUT_STEM = ROOT / "figures" / "supplement" / "supfig_full_heatmap"
 
 apply_theme()
 
@@ -132,8 +132,8 @@ def plot_heatmap_panel(ax, strat_df, metric, title, method_order):
 
 
 def main():
-    naive_df = _rename_methods(pl.read_ipc(ARTIFACTS / "supfig2_naive.feather"))
-    deconf_df = _rename_methods(pl.read_ipc(ARTIFACTS / "supfig2_deconf.feather"))
+    naive_df = _rename_methods(pl.read_ipc(ARTIFACTS / "full_heatmap_naive.feather"))
+    deconf_df = _rename_methods(pl.read_ipc(ARTIFACTS / "full_heatmap_deconf.feather"))
 
     n_naive = int(naive_df.filter(pl.col("consequence") == "Overall")[0, "n_total"])
     n_deconf = int(deconf_df.filter(pl.col("consequence") == "Overall")[0, "n_total"])

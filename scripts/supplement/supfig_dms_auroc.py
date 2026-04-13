@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Supplementary Figure 6 — DMS AUROC barplot, 2x2 faceted by gene.
+Supplementary — DMS AUROC barplot, 2x2 faceted by gene.
 
-Same data and grouping as Figure 1F but showing AUROC instead of Spearman |ρ|.
+Same data and grouping as DMS Spearman but showing AUROC instead of Spearman |ρ|.
 
 Source: dms/01_dms_benchmark.py (benchmark_results.csv)
-Input:  artifacts/fig1f/benchmark_results.feather
-Output: figures/supplement/supfig6.{png,pdf}
+Input:  artifacts/dms_benchmark.feather
+Output: figures/supplement/supfig_dms_auroc.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -18,16 +18,16 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from theme.mayo_theme import apply_theme, save_figure
 
-# Reuse shared barplot from fig1f
+# Reuse shared barplot from fig_dms_spearman
 sys.path.insert(0, str(ROOT / "scripts" / "figure1"))
-from fig1g import _load_and_filter, plot_dms_barplot, ARTIFACTS
-OUT_STEM = ROOT / "figures" / "supplement" / "supfig6"
+from fig_dms_spearman import _load_and_filter, plot_dms_barplot, ARTIFACTS
+OUT_STEM = ROOT / "figures" / "supplement" / "supfig_dms_auroc"
 
 apply_theme()
 
 
 def main():
-    df = _load_and_filter(ARTIFACTS / "fig1f.feather")
+    df = _load_and_filter(ARTIFACTS / "dms_benchmark.feather")
 
     fig, axes = plt.subplots(2, 2, figsize=(8, 6), sharey=True)
     plot_dms_barplot(axes.flat, df, metric="auroc",

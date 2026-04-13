@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Figure 2B — Token probe AUROC by annotation category.
+Probe AUROC boxplot — Token probe AUROC by annotation category.
 
 Horizontal boxplot with jittered scatter of per-head AUROC values,
 grouped by annotation category from artifacts/heads.feather.
 Binary heads only (236 heads); categorical heads lack AUROC.
 
 Input:  artifacts/token_eval.json + artifacts/heads.feather
-Output: figures/figure2/panels/fig2b.{png,pdf}
+Output: figures/figure2/panels/fig_probe_auroc_boxplot.{png,pdf}
 """
 import json
 import sys
@@ -29,7 +29,7 @@ from theme.mayo_theme import (
 
 EVAL_JSON = ROOT / "artifacts" / "token_eval.json"
 HEADS_FEATHER = ROOT / "artifacts" / "heads.feather"
-OUT_STEM = ROOT / "figures" / "figure2" / "panels" / "fig2b"
+OUT_STEM = ROOT / "figures" / "figure2" / "panels" / "fig_probe_auroc_boxplot"
 
 # Merge fine-grained groups into 7 display categories
 MERGE_MAP = {

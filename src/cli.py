@@ -27,23 +27,19 @@ FIGURE_SCRIPTS = (
     "supplement/supfig_dataset_characterization.py",
     "supplement/supfig_indel_heatmap.py",
     "supplement/supfig_dms_auroc.py",
-    "supplement/supfig_combined_umap.py",
     "supplement/supfig_context_window.py",
     "supplement/supfig_deconf_heatmap.py",
     "supplement/supfig_disrupt_auroc.py",
     "supplement/supfig_indel_full.py",
-    "supplement/supfig_ksparse.py",
-    "supplement/supfig_missense_conservation.py",
-    "supplement/supfig_snv_umap.py",
     "supplement/supfig_topk_sweep.py",
     "supplement/supfig_topk_vs_window.py",
 )
 
 # Prepare scripts (require goodfire-core, torch, raw data)
 PREPARE_SCRIPTS = (
-    "prepare/fig2b_data.py",
-    "prepare/fig2c_data.py",
-    "prepare/fig2e_data.py",
+    "prepare/probe_auroc_data.py",
+    "prepare/disruption_umap_data.py",
+    "prepare/autointerp_eval_data.py",
     "prepare/fig2_disrupt_auroc_data.py",
     "prepare/umap_snv.py",
     "prepare/umap_combined.py",

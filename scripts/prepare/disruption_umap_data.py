@@ -7,7 +7,7 @@ annotation head, subsamples 30k variants, runs UMAP, clusters with KMeans,
 and exports coordinates + labels.
 
 Input:  website_probes/v4/token/scores.feather
-Output: artifacts/fig2c.feather
+Output: artifacts/disruption_umap.feather
 
 Requires: pyarrow, umap-learn, scikit-learn, pandas (~2 min)
 """
@@ -20,7 +20,7 @@ from sklearn.cluster import KMeans
 from umap import UMAP
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "artifacts" / "fig2c.feather"
+OUT = ROOT / "artifacts" / "disruption_umap.feather"
 
 DATA = ROOT / "data"
 PROBE_DIR = DATA / "probes" / "token"       # symlink to probe checkpoint dir

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Figure 2C — UMAP of annotation disruption space with semantic clusters
+Disruption UMAP — UMAP of annotation disruption space with semantic clusters
 and 30+ annotation labels.
 
-Input:  artifacts/fig2c.feather
-Output: figures/figure2/panels/fig2c.{png,pdf}
+Input:  artifacts/disruption_umap.feather
+Output: figures/figure2/panels/fig_disruption_umap.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -23,7 +23,7 @@ from theme.mayo_theme import (
 )
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "figure2" / "panels" / "fig2c"
+OUT_STEM = ROOT / "figures" / "figure2" / "panels" / "fig_disruption_umap"
 
 apply_theme()
 
@@ -73,7 +73,7 @@ def _pick_labels(df, n=N_LABELS):
 
 def plot(ax):
     """UMAP scatter with clusters and annotation labels."""
-    df = pl.read_ipc(ARTIFACTS / "fig2c.feather")
+    df = pl.read_ipc(ARTIFACTS / "disruption_umap.feather")
     coords = df.select("umap1", "umap2").to_numpy()
     cluster_ids = df["cluster_id"].to_numpy()
     heads = df["head"].to_list()
