@@ -1,6 +1,6 @@
 # EVEE Manuscript Figures
 
-Reproducible figures for [EVEE: Interpretable variant effect prediction from genomic foundation model embeddings]([https://github.com/goodfire-ai/evee-manuscript](https://www.biorxiv.org/content/10.64898/2026.04.10.717844)).
+Reproducible figures for [EVEE: Interpretable variant effect prediction from genomic foundation model embeddings](https://www.biorxiv.org/content/10.64898/2026.04.10.717844).
 
 ## Quick Start
 
