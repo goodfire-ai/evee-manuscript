@@ -139,13 +139,15 @@ def plot_lineplot(ax, df, metric, title, tiers=None,
     stat_fs = FONT_SIZE_TICK - 2
     for i, (name, stat) in enumerate(zip(tick_names, tick_stats)):
         ax.text(x[i], -0.04, name.title(), transform=ax.get_xaxis_transform(),
-                ha="right", va="top", rotation=30,
+                ha="right", va="top", rotation=45,
                 fontsize=label_fs, fontweight="semibold")
         if stat:
             ax.text(x[i], -0.10, stat, transform=ax.get_xaxis_transform(),
-                    ha="right", va="top", rotation=30,
+                    ha="right", va="top", rotation=45,
                     fontsize=stat_fs, color="#666666")
 
+    ax.spines["top"].set_visible(True)
+    ax.spines["right"].set_visible(True)
     ax.set_ylabel(metric.upper(), fontsize=FONT_SIZE_LABEL, fontweight="semibold")
     ax.set_ylim(0.5, 1.0)
     ax.grid(axis="y", alpha=0.15)
@@ -161,7 +163,7 @@ def plot_lineplot(ax, df, metric, title, tiers=None,
 def plot(ax):
     """Plot Figure 1F onto given axes."""
     df = pl.read_ipc(ARTIFACTS / "fig1c.feather")
-    plot_lineplot(ax, df, "auroc", title=None)
+    plot_lineplot(ax, df, "auroc", title=None, xlabel=None)
 
 
 def main():
