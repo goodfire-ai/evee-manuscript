@@ -7,7 +7,7 @@ Two panels: (A) Pathogenic vs Benign, (B) Consequence type.
 Reads pre-computed UMAP from artifacts/umap_indel.feather.
 Run scripts/prepare/umap_indel.py first to generate.
 
-Output: figures/supplement/supfig5.{png,pdf}
+Output: figures/supplement/supfig_indel_umap.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -26,7 +26,7 @@ from theme.mayo_theme import (
 )
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "supplement" / "supfig5"
+OUT_STEM = ROOT / "figures" / "supplement" / "supfig_indel_umap"
 
 SCATTER = dict(s=0.4, rasterized=True, edgecolors="none")
 

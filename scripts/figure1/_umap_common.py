@@ -18,7 +18,7 @@ CONSEQ_ORDER = ("Missense", "Synonymous", "Nonsense", "Splice", "Intronic",
 
 @functools.lru_cache(maxsize=1)
 def load_combined_umap():
-    """Load combined UMAP data (cached so fig1d + fig1e don't reload)."""
+    """Load combined UMAP data (cached so pathogenicity + consequence UMAPs don't reload)."""
     df = pl.read_ipc(ARTIFACTS / "umap_combined.feather")
     coords = df.select("umap_x", "umap_y").to_numpy()
     pathogenic = df["pathogenic"].to_numpy()

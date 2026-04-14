@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Figure 1G — DMS generalization: Spearman |rho| barplot, 2x2 faceted by gene.
+DMS Spearman — DMS generalization: Spearman |rho| barplot, 2x2 faceted by gene.
 
 Spearman |rho| between predicted scores and continuous DMS functional readouts
 for BRCA1, BRCA2, TP53, and LDLR. Error bars show 95% bootstrap CIs.
 
-Input:  artifacts/fig1f.feather
-Output: figures/figure1/panels/fig1g.{png,pdf}
+Input:  artifacts/dms_benchmark.feather
+Output: figures/figure1/panels/fig_dms_spearman.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -25,7 +25,7 @@ from theme.mayo_theme import (
 )
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1g"
+OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig_dms_spearman"
 
 apply_theme()
 
@@ -130,7 +130,7 @@ def plot_dms_barplot(axes_2x2, df: pl.DataFrame, metric: str, ylabel: str, ylim:
 
 def plot(axes_2x2):
     """Plot Figure 1G onto a flat array of 4 axes."""
-    df = _load_and_filter(ARTIFACTS / "fig1f.feather")
+    df = _load_and_filter(ARTIFACTS / "dms_benchmark.feather")
     plot_dms_barplot(axes_2x2, df, metric="spearman",
                      ylabel="Spearman |\u03c1|", ylim=(0.0, 0.8))
 

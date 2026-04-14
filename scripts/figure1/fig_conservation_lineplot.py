@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Figure 1F — Performance robustness across conservation levels.
+Conservation lineplot — Performance robustness across conservation levels.
 
 AUROC by phyloP100way conservation tier for Evo2 probes, AlphaMissense,
 CADD v1.7, Evo2 loss, and GPN-MSA. All variant types.
 
-Input:  artifacts/fig1c.feather
-Output: figures/figure1/panels/fig1f.{png,pdf}
+Input:  artifacts/conservation_benchmark.feather
+Output: figures/figure1/panels/fig_conservation_lineplot.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -25,7 +25,7 @@ from theme.mayo_theme import (
 )
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1f"
+OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig_conservation_lineplot"
 
 apply_theme()
 
@@ -53,7 +53,7 @@ METHOD_ORDER = (
 )
 
 # ---------------------------------------------------------------------------
-# Colors from fig1g palette (via METHOD_COLORS / DMS_METHOD_SPEC)
+# Colors from DMS palette (via METHOD_COLORS / DMS_METHOD_SPEC)
 # ---------------------------------------------------------------------------
 LINE_COLORS = {
     "Evo2 Covariance": COLORS["gf_orange"],   # #db8a48
@@ -162,7 +162,7 @@ def plot_lineplot(ax, df, metric, title, tiers=None,
 
 def plot(ax):
     """Plot Figure 1F onto given axes."""
-    df = pl.read_ipc(ARTIFACTS / "fig1c.feather")
+    df = pl.read_ipc(ARTIFACTS / "conservation_benchmark.feather")
     plot_lineplot(ax, df, "auroc", title=None, xlabel=None)
 
 

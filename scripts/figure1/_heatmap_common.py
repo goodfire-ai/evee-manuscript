@@ -1,4 +1,4 @@
-"""Shared heatmap utilities for ClinVar consequence heatmaps (fig1b, supplements)."""
+"""Shared heatmap utilities for ClinVar consequence heatmaps (SNV/deconf, supplements)."""
 import numpy as np
 import polars as pl
 

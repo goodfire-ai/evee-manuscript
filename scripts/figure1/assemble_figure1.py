@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Assemble Figure 1 — single vector figure with all 7 panels.
+Assemble Figure 1 — single vector figure with all panels.
 
 Calls each panel's plot() function directly into a shared gridspec,
 ensuring perfect axis alignment. No PNG compositing.
@@ -11,7 +11,7 @@ Layout:
     Row 2: [E UMAP pathogenicity]  [F UMAP consequence]
     Row 3: [G DMS bars — 1x4 subgrid]
 
-Input:  artifacts/*, artifacts/*
+Input:  artifacts/*
 Output: figures/figure1/figure1_assembled.{png,pdf}
         + individual panels in figures/figure1/panels/
 """
@@ -34,13 +34,12 @@ apply_theme()
 
 def main():
     # Import panel plot functions
-    from fig1a import plot as plot_a
-    from fig1b import plot as plot_b
-    from fig1c import plot as plot_c
-    from fig1d import plot as plot_d
-    from fig1e import plot as plot_e
-    from fig1f import plot as plot_f
-    from fig1g import plot as plot_g
+    from fig_snv_heatmap import plot as plot_snv_heatmap
+    from fig_indel_heatmap import plot as plot_indel_heatmap
+    from fig_umap_pathogenicity import plot as plot_umap_path
+    from fig_umap_consequence import plot as plot_umap_csq
+    from fig_conservation_lineplot import plot as plot_conservation
+    from fig_dms_spearman import plot as plot_dms
 
     # Create composite figure — 4 rows, single column so every row spans
     # the same horizontal width.
@@ -52,37 +51,41 @@ def main():
     # Row 0: Placeholder (A) — full width
     gs_a = gs[0].subgridspec(1, 1)
     ax_a = fig.add_subplot(gs_a[0, 0])
-    plot_a(ax_a)
+    ax_a.set_facecolor("#f5f5f5")
+    ax_a.text(0.5, 0.5, "(experimental design placeholder)",
+              ha="center", va="center", fontsize=14, color="#999999",
+              transform=ax_a.transAxes)
+    ax_a.set_xticks([]); ax_a.set_yticks([])
     add_panel_label(ax_a, "a")
 
     # Row 1: B + C + D side-by-side
     gs_bcd = gs[1].subgridspec(1, 3, width_ratios=[1.6, 0.8, 1.2], wspace=0.35)
     ax_b = fig.add_subplot(gs_bcd[0, 0])
-    plot_b(ax_b, aspect="auto")
+    plot_snv_heatmap(ax_b, aspect="auto")
     add_panel_label(ax_b, "b")
 
     ax_c = fig.add_subplot(gs_bcd[0, 1])
-    plot_c(ax_c, aspect="auto")
+    plot_indel_heatmap(ax_c, aspect="auto")
     add_panel_label(ax_c, "c")
 
     ax_d = fig.add_subplot(gs_bcd[0, 2])
-    plot_f(ax_d)
+    plot_conservation(ax_d)
     add_panel_label(ax_d, "d")
 
     # Row 2: UMAPs (E, F) — use subgridspec to match row width
     gs_ef = gs[2].subgridspec(1, 2, wspace=0.25)
     ax_e = fig.add_subplot(gs_ef[0, 0])
-    plot_d(ax_e)
+    plot_umap_path(ax_e)
     add_panel_label(ax_e, "e")
 
     ax_f = fig.add_subplot(gs_ef[0, 1])
-    plot_e(ax_f)
+    plot_umap_csq(ax_f)
     add_panel_label(ax_f, "f")
 
     # Row 3: DMS bars (G) — full width, 1x4 subgrid
     gs_g = gs[3].subgridspec(1, 4, wspace=0.25)
     axes_g = [fig.add_subplot(gs_g[0, c]) for c in range(4)]
-    plot_g(axes_g)
+    plot_dms(axes_g)
     add_panel_label(axes_g[0], "g")
 
     # Align y-axes vertically within each row
@@ -94,15 +97,15 @@ def main():
 
     # Also generate individual panels
     print("\nRegenerating individual panels...")
-    from fig1a import main as main_a
-    from fig1b import main as main_b
-    from fig1c import main as main_c
-    from fig1d import main as main_d
-    from fig1e import main as main_e
-    from fig1f import main as main_f
-    from fig1g import main as main_g
+    from fig_snv_heatmap import main as main_snv_heatmap
+    from fig_indel_heatmap import main as main_indel_heatmap
+    from fig_umap_pathogenicity import main as main_umap_path
+    from fig_umap_consequence import main as main_umap_csq
+    from fig_conservation_lineplot import main as main_conservation
+    from fig_dms_spearman import main as main_dms
 
-    for panel_main in (main_a, main_b, main_c, main_d, main_e, main_f, main_g):
+    for panel_main in (main_snv_heatmap, main_indel_heatmap, main_umap_path,
+                       main_umap_csq, main_conservation, main_dms):
         panel_main()
 
 

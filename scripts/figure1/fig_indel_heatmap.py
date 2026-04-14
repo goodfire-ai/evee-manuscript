@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Figure 1C — Zero-shot generalization to indels: stratified AUROC heatmap.
+Indel heatmap — Zero-shot generalization to indels: stratified AUROC heatmap.
 
 AUROC for Evo2 covariance probe (zero-shot, trained on SNVs only),
 Evo2 mean probe (supervised), CADD v1.7 InDel, and NTv3 subref probe
 on 73,961 ClinVar indels stratified by consequence type and direction.
 (Size categories omitted; full version in supplement.)
 
-Input:  artifacts/supfig4.feather
-Output: figures/figure1/panels/fig1c.{png,pdf}
+Input:  artifacts/indel_stratified.feather
+Output: figures/figure1/panels/fig_indel_heatmap.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -28,7 +28,7 @@ from theme.mayo_theme import (
 )
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1c"
+OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig_indel_heatmap"
 
 apply_theme()
 
@@ -50,7 +50,7 @@ SEP_POSITIONS = (0.5, 4.5)
 
 def plot(ax, aspect="equal"):
     """Plot indel benchmark heatmap onto given axes (strata=y, methods=x)."""
-    df = pl.read_ipc(ARTIFACTS / "supfig4.feather")
+    df = pl.read_ipc(ARTIFACTS / "indel_stratified.feather")
     df = df.filter(pl.col("stratum").is_in(list(KEEP_STRATA)))
 
     strata = df["stratum"].to_list()
@@ -98,7 +98,7 @@ def plot(ax, aspect="equal"):
                        rotation=45, ha="right")
     ax.set_yticks(range(n_strata))
     ax.set_yticklabels([])  # Clear default labels
-    # Manual two-part labels matching fig1b style: bold name, regular stats
+    # Manual two-part labels matching SNV heatmap style: bold name, regular stats
     for i, (s, n, p) in enumerate(zip(strata, n_vals, pct_vals)):
         ax.text(-0.04, i - 0.01, s, transform=ax.get_yaxis_transform(),
                 ha="right", va="center",
@@ -112,7 +112,7 @@ def plot(ax, aspect="equal"):
 
 
 # ── Shared cell sizing ────────────────────────────────────────────
-# Both fig1b and fig1c use aspect="equal" (square cells).  To ensure
+# Both heatmaps use aspect="equal" (square cells).  To ensure
 # the same physical cell size and overall figure height we derive
 # figsize from a common CELL_SIZE constant.
 CELL_SIZE = 0.55          # inches per cell edge
@@ -120,7 +120,7 @@ H_PAD     = 2.0           # extra height for x-tick labels + margins
 W_PAD     = 2.0           # extra width  for y-tick labels + margins
 N_ROWS    = len(KEEP_STRATA)   # 7
 N_COLS    = len(METHOD_COLS)   # 4
-# Common figure height — matches fig1b (8 rows) so the two panels align
+# Common figure height — matches SNV heatmap (8 rows) so the two panels align
 FIG_H     = 8 * CELL_SIZE + H_PAD
 
 

@@ -7,7 +7,7 @@ then computes per-(model, config) composite SCV judge scores.
 
 Input:  eval_probe_autointerp/results/ablation_study.csv
         eval_probe_autointerp/results/ablation_sonnet46.csv
-Output: artifacts/fig2e.feather
+Output: artifacts/autointerp_eval.feather
 """
 from pathlib import Path
 
@@ -16,7 +16,7 @@ import pandas as pd
 import polars as pl
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "artifacts" / "fig2e.feather"
+OUT = ROOT / "artifacts" / "autointerp_eval.feather"
 
 DATA = ROOT / "data"
 RESULTS_DIR = DATA / "autointerp"            # symlink to autointerp results

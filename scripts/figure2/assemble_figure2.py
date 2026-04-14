@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Assemble Figure 2 — single vector figure with all 5 panels.
+Assemble Figure 2 — single vector figure with all panels.
 
 Layout:
-    Row 0: [A schematic placeholder]   [B annotation probe perf stub]
-    Row 1: [C probe UMAP stub]         [D auto-interp screenshot placeholder]
-    Row 2: [E benchmarking stub — full width]
+    Row 0: [A schematic placeholder]   [B annotation probe AUROC]
+    Row 1: [C disruption UMAP]         [D auto-interp screenshot placeholder]
+    Row 2: [E autointerp composite]    [F autointerp per-axis breakdown (3 stacked)]
 
-Input:  (mostly stubs/placeholders for now)
+Input:  artifacts/*
 Output: figures/figure2/figure2_assembled.{png,pdf}
         + individual panels in figures/figure2/panels/
 """
@@ -29,52 +29,64 @@ apply_theme()
 
 
 def main():
-    from fig2a import plot as plot_a
-    from fig2b import plot as plot_b
-    from fig2c import plot as plot_c
-    from fig2d import plot as plot_d
-    from fig2e import plot as plot_e
+    from fig_probe_auroc_boxplot import plot as plot_probes
+    from fig_disruption_umap import plot as plot_disruption
+    from fig_autointerp_lineplot import plot as plot_autointerp
+    from fig_autointerp_axes import plot as plot_autointerp_axes
 
-    fig = plt.figure(figsize=(16, 20))
+    fig = plt.figure(figsize=(16, 24))
     gs = fig.add_gridspec(3, 2,
-                          height_ratios=[0.45, 0.35, 0.30],
+                          height_ratios=[0.35, 0.28, 0.45],
                           hspace=0.22, wspace=0.25)
 
-    # Row 0: Schematic (A) + Annotation probe performance (B)
+    # Row 0: Schematic placeholder (A) + Annotation probe performance (B)
     ax_a = fig.add_subplot(gs[0, 0])
-    plot_a(ax_a)
+    ax_a.set_facecolor("#f5f5f5")
+    ax_a.text(0.5, 0.5, "(framework schematic placeholder)",
+              ha="center", va="center", fontsize=14, color="#999999",
+              transform=ax_a.transAxes)
+    ax_a.set_xticks([]); ax_a.set_yticks([])
     add_panel_label(ax_a, "a")
 
     ax_b = fig.add_subplot(gs[0, 1])
-    plot_b(ax_b)
+    plot_probes(ax_b)
     add_panel_label(ax_b, "b")
 
-    # Row 1: Probe UMAP (C) + Auto-interp screenshot (D)
+    # Row 1: Disruption UMAP (C) + Auto-interp screenshot placeholder (D)
     ax_c = fig.add_subplot(gs[1, 0])
-    plot_c(ax_c)
+    plot_disruption(ax_c)
     add_panel_label(ax_c, "c")
 
     ax_d = fig.add_subplot(gs[1, 1])
-    plot_d(ax_d)
+    ax_d.set_facecolor("#f5f5f5")
+    ax_d.text(0.5, 0.5, "(interpretation example placeholder)",
+              ha="center", va="center", fontsize=14, color="#999999",
+              transform=ax_d.transAxes)
+    ax_d.set_xticks([]); ax_d.set_yticks([])
     add_panel_label(ax_d, "d")
 
-    # Row 2: Benchmarking (E) — full width
-    ax_e = fig.add_subplot(gs[2, :])
-    plot_e(ax_e)
+    # Row 2: Autointerp composite (E) + Per-axis breakdown (F, 3 stacked)
+    ax_e = fig.add_subplot(gs[2, 0])
+    plot_autointerp(ax_e)
     add_panel_label(ax_e, "e")
+
+    gs_f = gs[2, 1].subgridspec(3, 1, hspace=0.35)
+    axes_f = [fig.add_subplot(gs_f[r, 0]) for r in range(3)]
+    plot_autointerp_axes(axes_f)
+    add_panel_label(axes_f[0], "f")
 
     save_figure(fig, OUT_STEM)
     print(f"Saved: {OUT_STEM}.png / .pdf")
 
     # Also generate individual panels
     print("\nRegenerating individual panels...")
-    from fig2a import main as main_a
-    from fig2b import main as main_b
-    from fig2c import main as main_c
-    from fig2d import main as main_d
-    from fig2e import main as main_e
+    from fig_probe_auroc_boxplot import main as main_probes
+    from fig_disruption_umap import main as main_disruption
+    from fig_autointerp_lineplot import main as main_autointerp
+    from fig_autointerp_axes import main as main_autointerp_axes
 
-    for panel_main in (main_a, main_b, main_c, main_d, main_e):
+    for panel_main in (main_probes, main_disruption, main_autointerp,
+                       main_autointerp_axes):
         panel_main()
 
 

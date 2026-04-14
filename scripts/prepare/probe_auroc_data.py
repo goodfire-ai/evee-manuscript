@@ -6,7 +6,7 @@ Reads eval.json from the clinvar-evo2-probe-v1 run and heads.json from
 variant-viewer to assign viewer groups, then maps to broad categories.
 
 Input:  clinvar-evo2-probe-v1/eval.json, variant-viewer/heads.json
-Output: artifacts/fig2b.feather
+Output: artifacts/probe_auroc_data.feather
 """
 import json
 from pathlib import Path
@@ -14,7 +14,7 @@ from pathlib import Path
 import polars as pl
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "artifacts" / "fig2b.feather"
+OUT = ROOT / "artifacts" / "probe_auroc_data.feather"
 
 DATA = ROOT / "data"
 PROBE_DIR = DATA / "probes" / "token"       # symlink to probe checkpoint dir

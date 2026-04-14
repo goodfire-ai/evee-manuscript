@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Figure 2E — Auto-interpretation benchmarking: effect of context on
-interpretation quality across 3 LLM models.
+Auto-interpretation lineplot — effect of context on interpretation quality
+across 3 LLM models.
 
 Shows 3-axis composite score (mechanism rubric v2 + biological accuracy +
 specificity) for 5 prompt configurations on 154 expert-reviewed ClinVar
@@ -9,8 +9,8 @@ variants with concordant probe predictions.
 
 Progression: Coord only → +Gene → +Other context → +HGVSp → +Evo2 predictions
 
-Input:  artifacts/fig2e.feather
-Output: figures/figure2/panels/fig2e.{png,pdf}
+Input:  artifacts/autointerp_eval.feather
+Output: figures/figure2/panels/fig_autointerp_lineplot.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -26,7 +26,7 @@ sys.path.insert(0, str(ROOT))
 from theme.mayo_theme import apply_theme, save_figure, FONT_SIZE_TICK, FONT_SIZE_LABEL, FONT_SIZE_TITLE
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "figure2" / "panels" / "fig2e"
+OUT_STEM = ROOT / "figures" / "figure2" / "panels" / "fig_autointerp_lineplot"
 
 apply_theme()
 
@@ -46,7 +46,7 @@ MODELS = ["haiku", "sonnet", "opus"]
 
 def plot(ax):
     """Line plot with 95% CI of composite score progression."""
-    df = pl.read_ipc(ARTIFACTS / "fig2e.feather")
+    df = pl.read_ipc(ARTIFACTS / "autointerp_eval.feather")
 
     for model in MODELS:
         sub = df.filter(pl.col("model") == model)

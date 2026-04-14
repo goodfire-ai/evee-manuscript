@@ -8,8 +8,8 @@ indels), CADD v1.7 InDel, NTv3 subref probe (supervised on indels).
 Strata match Phase 6 layout: Overall | Consequence | Indel size | Direction.
 
 Source: notebooks/2026-03-12-20-35_phase6v2_results_continued_continued.ipynb
-Input:  artifacts/supfig4/indel_stratified_auroc.feather
-Output: figures/supplement/supfig4.{png,pdf}
+Input:  artifacts/indel_stratified.feather
+Output: figures/supplement/supfig_indel_heatmap.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -29,7 +29,7 @@ from theme.mayo_theme import (
 )
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "supplement" / "supfig4"
+OUT_STEM = ROOT / "figures" / "supplement" / "supfig_indel_heatmap"
 
 apply_theme()
 
@@ -46,7 +46,7 @@ SEP_POSITIONS = (0.5, 4.5, 8.5)
 
 
 def main():
-    df = pl.read_ipc(ARTIFACTS / "supfig4.feather")
+    df = pl.read_ipc(ARTIFACTS / "indel_stratified.feather")
 
     strata = df["stratum"].to_list()
     n_vals = df["n"].to_list()
