@@ -6,8 +6,8 @@ Panel 1: Composite score grouped bar chart (3 models x 5 configs)
 Panel 2: Per-axis breakdown (mechanism, bio accuracy, specificity) — 3-panel vertical
 
 Input:  artifacts/context_ablation_eval.feather
-Output: figures/figure2/panels/fig_autointerp_composite_barchart.{png,pdf}
-        figures/figure2/panels/fig_autointerp_peraxis_barchart.{png,pdf}
+Output: figures/figure2/panels/fig2c_autointerp_composite_barchart.{png,pdf}
+        figures/figure2/panels/fig2e_autointerp_peraxis_barchart.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -153,15 +153,15 @@ def main():
     fig, ax = plt.subplots(figsize=(7, 4))
     plot(ax)
     fig.tight_layout()
-    save_figure(fig, PANELS / "fig_autointerp_composite_barchart")
-    print("Saved: fig_autointerp_composite_barchart")
+    save_figure(fig, PANELS / "fig2c_autointerp_composite_barchart")
+    print("Saved: fig2c_autointerp_composite_barchart")
 
     # --- Panel 2: Per-axis 3-panel bar chart ---
     fig, axes = plt.subplots(3, 1, figsize=(5.5, 10), sharex=True)
     plot_axes(axes)
     fig.tight_layout()
-    save_figure(fig, PANELS / "fig_autointerp_peraxis_barchart")
-    print("Saved: fig_autointerp_peraxis_barchart")
+    save_figure(fig, PANELS / "fig2e_autointerp_peraxis_barchart")
+    print("Saved: fig2e_autointerp_peraxis_barchart")
 
 
 if __name__ == "__main__":
