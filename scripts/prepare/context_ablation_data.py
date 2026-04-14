@@ -18,6 +18,7 @@ from scipy import stats
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "artifacts" / "context_ablation_eval.feather"
 
+# Internal data dependency; requires goodfire variant-viewer eval setup
 EVAL_RESULTS = Path(
     "/mnt/polished-lake/home/michaelpearce/projects/evee/variant-viewer/eval/results"
 )
