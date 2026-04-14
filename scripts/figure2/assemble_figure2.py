@@ -31,8 +31,8 @@ apply_theme()
 def main():
     from fig_probe_auroc_boxplot import plot as plot_probes
     from fig_disruption_umap import plot as plot_disruption
-    from fig_autointerp_lineplot import plot as plot_autointerp
-    from fig_autointerp_axes import plot as plot_autointerp_axes
+    from fig_autointerp_barchart import plot as plot_autointerp
+    from fig_autointerp_barchart import plot_axes as plot_autointerp_axes
 
     fig = plt.figure(figsize=(16, 24))
     gs = fig.add_gridspec(3, 2,
@@ -82,11 +82,9 @@ def main():
     print("\nRegenerating individual panels...")
     from fig_probe_auroc_boxplot import main as main_probes
     from fig_disruption_umap import main as main_disruption
-    from fig_autointerp_lineplot import main as main_autointerp
-    from fig_autointerp_axes import main as main_autointerp_axes
+    from fig_autointerp_barchart import main as main_autointerp
 
-    for panel_main in (main_probes, main_disruption, main_autointerp,
-                       main_autointerp_axes):
+    for panel_main in (main_probes, main_disruption, main_autointerp):
         panel_main()
 
 
