@@ -10,7 +10,7 @@ visually similar hues.
 Reads pre-computed combined UMAP from artifacts/umap_combined.*.
 Run scripts/prepare/umap_combined.py first to generate.
 
-Output: figures/figure1/panels/fig1f_umap_consequence.{png,pdf}
+Output: figures/figure1/fig1f_umap_consequence.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -26,7 +26,7 @@ from theme.mayo_theme import apply_theme, save_figure, FONT_SIZE_TITLE, FONT_SIZ
 sys.path.insert(0, str(ROOT / "scripts" / "figure1"))
 from _umap_common import load_combined_umap, cleanup_axes, format_legend, SCATTER_KW
 
-OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1f_umap_consequence"
+OUT_STEM = ROOT / "figures" / "figure1" / "fig1f_umap_consequence"
 
 # ---------------------------------------------------------------------------
 # Unified palette — consistent with EVEE website (UmapCanvas.svelte).

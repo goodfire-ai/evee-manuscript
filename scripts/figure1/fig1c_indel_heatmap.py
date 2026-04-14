@@ -8,7 +8,7 @@ on 73,961 ClinVar indels stratified by consequence type and direction.
 (Size categories omitted; full version in supplement.)
 
 Input:  artifacts/indel_stratified.feather
-Output: figures/figure1/panels/fig1c_indel_heatmap.{png,pdf}
+Output: figures/figure1/fig1c_indel_heatmap.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -28,7 +28,7 @@ from theme.mayo_theme import (
 )
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1c_indel_heatmap"
+OUT_STEM = ROOT / "figures" / "figure1" / "fig1c_indel_heatmap"
 
 apply_theme()
 

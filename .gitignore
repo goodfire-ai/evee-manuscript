@@ -1,7 +1,6 @@
 __pycache__/
 *.pyc
 .venv/
-figures/
 artifacts/*.safetensors
 artifacts/*.pt
 !artifacts/samples/

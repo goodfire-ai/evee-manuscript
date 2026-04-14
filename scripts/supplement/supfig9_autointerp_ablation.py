@@ -7,9 +7,9 @@ Panel 2: Score distribution stacked bars for all 3 axes, Opus only (1x3)
 Panel 3: Per-axis line plots (3x1 vertical)
 
 Input:  artifacts/context_ablation_eval.feather
-Output: figures/supplement/supfig_autointerp_pathogenic_barchart.{png,pdf}
-        figures/supplement/supfig_autointerp_score_distribution.{png,pdf}
-        figures/supplement/supfig_autointerp_peraxis_lineplot.{png,pdf}
+Output: figures/supplement/supfig9_autointerp_pathogenic_barchart.{png,pdf}
+        figures/supplement/supfig10_autointerp_score_distribution.{png,pdf}
+        figures/supplement/supfig9_autointerp_peraxis_lineplot.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -165,8 +165,8 @@ def main():
             ax.legend(loc="upper left", fontsize=FONT_SIZE_LEGEND)
 
     fig.tight_layout()
-    save_figure(fig, OUT_DIR / "supfig_autointerp_pathogenic_barchart")
-    print("Saved: supfig_autointerp_pathogenic_barchart")
+    save_figure(fig, OUT_DIR / "supfig9_autointerp_pathogenic_barchart")
+    print("Saved: supfig9_autointerp_pathogenic_barchart")
 
     # --- Panel 2: Score distribution stacked bar (Opus, all 3 axes) ---
     opus_df = df[df["model"] == "opus"].copy()
@@ -207,8 +207,8 @@ def main():
                       fontsize=FONT_SIZE_LEGEND, title_fontsize=FONT_SIZE_LEGEND)
 
     fig.tight_layout()
-    save_figure(fig, OUT_DIR / "supfig_autointerp_score_distribution")
-    print("Saved: supfig_autointerp_score_distribution")
+    save_figure(fig, OUT_DIR / "supfig10_autointerp_score_distribution")
+    print("Saved: supfig10_autointerp_score_distribution")
 
     # --- Panel 3: Per-axis line plots (3x1 vertical) ---
     fig, axes = plt.subplots(3, 1, figsize=(5.5, 10), sharex=True)
@@ -227,8 +227,8 @@ def main():
             ax.tick_params(labelbottom=False)
 
     fig.tight_layout()
-    save_figure(fig, OUT_DIR / "supfig_autointerp_peraxis_lineplot")
-    print("Saved: supfig_autointerp_peraxis_lineplot")
+    save_figure(fig, OUT_DIR / "supfig9_autointerp_peraxis_lineplot")
+    print("Saved: supfig9_autointerp_peraxis_lineplot")
 
 
 if __name__ == "__main__":

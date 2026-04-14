@@ -6,8 +6,8 @@ Panel 1: Composite score grouped bar chart (3 models x 5 configs)
 Panel 2: Per-axis breakdown (mechanism, bio accuracy, specificity) — 3-panel vertical
 
 Input:  artifacts/context_ablation_eval.feather
-Output: figures/figure2/panels/fig2c_autointerp_composite_barchart.{png,pdf}
-        figures/figure2/panels/fig2e_autointerp_peraxis_barchart.{png,pdf}
+Output: figures/figure2/fig2c_autointerp_composite_barchart.{png,pdf}
+        figures/figure2/fig2e_autointerp_peraxis_barchart.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -27,7 +27,7 @@ from theme.mayo_theme import (
 )
 
 ARTIFACTS = ROOT / "artifacts"
-PANELS = ROOT / "figures" / "figure2" / "panels"
+PANELS = ROOT / "figures" / "figure2"
 
 apply_theme()
 

@@ -6,7 +6,7 @@ Spearman |rho| between predicted scores and continuous DMS functional readouts
 for BRCA1, BRCA2, TP53, and LDLR. Error bars show 95% bootstrap CIs.
 
 Input:  artifacts/dms_benchmark.feather
-Output: figures/figure1/panels/fig1g_dms_spearman.{png,pdf}
+Output: figures/figure1/fig1g_dms_spearman.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -25,7 +25,7 @@ from theme.mayo_theme import (
 )
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1g_dms_spearman"
+OUT_STEM = ROOT / "figures" / "figure1" / "fig1g_dms_spearman"
 
 apply_theme()
 

@@ -6,7 +6,7 @@ pathogenicity label (benign, VUS, pathogenic) for SNVs and indels.
 Reads pre-computed combined UMAP from artifacts/umap_combined.*.
 Run scripts/prepare/umap_combined.py first to generate.
 
-Output: figures/figure1/panels/fig1e_umap_pathogenicity.{png,pdf}
+Output: figures/figure1/fig1e_umap_pathogenicity.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -25,7 +25,7 @@ from theme.mayo_theme import (
 sys.path.insert(0, str(ROOT / "scripts" / "figure1"))
 from _umap_common import load_combined_umap, cleanup_axes, format_legend, SCATTER_KW
 
-OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1e_umap_pathogenicity"
+OUT_STEM = ROOT / "figures" / "figure1" / "fig1e_umap_pathogenicity"
 
 apply_theme()
 

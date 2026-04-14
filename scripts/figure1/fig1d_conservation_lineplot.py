@@ -6,7 +6,7 @@ AUROC by phyloP100way conservation tier for Evo2 probes, AlphaMissense,
 CADD v1.7, Evo2 loss, and GPN-MSA. All variant types.
 
 Input:  artifacts/conservation_benchmark.feather
-Output: figures/figure1/panels/fig1d_conservation_lineplot.{png,pdf}
+Output: figures/figure1/fig1d_conservation_lineplot.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -25,7 +25,7 @@ from theme.mayo_theme import (
 )
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1d_conservation_lineplot"
+OUT_STEM = ROOT / "figures" / "figure1" / "fig1d_conservation_lineplot"
 
 apply_theme()
 

@@ -7,7 +7,7 @@ CADD v1.7, AlphaMissense, GPN-MSA, NTv3, and AlphaGenome
 on 833,970 variants from genes <= 100 kb with >= 1 star review status.
 
 Input:  artifacts/snv_benchmark.feather
-Output: figures/figure1/panels/fig1b_snv_heatmap.{png,pdf}
+Output: figures/figure1/fig1b_snv_heatmap.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -25,7 +25,7 @@ sys.path.insert(0, str(ROOT / "scripts" / "figure1"))
 from _heatmap_common import prepare, plot_heatmap
 
 ARTIFACTS = ROOT / "artifacts"
-OUT_STEM = ROOT / "figures" / "figure1" / "panels" / "fig1b_snv_heatmap"
+OUT_STEM = ROOT / "figures" / "figure1" / "fig1b_snv_heatmap"
 
 apply_theme()
 
