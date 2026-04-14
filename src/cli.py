@@ -18,32 +18,29 @@ ARTIFACTS = ROOT / "artifacts"
 
 # Figure scripts in generation order
 FIGURE_SCRIPTS = (
-    # Main figures (assembly calls individual panels internally)
-    "figure1/assemble_figure1.py",
-    "figure2/assemble_figure2.py",
-    # Supplements
-    "supplement/supfig_activation_delta.py",
-    "supplement/supfig_full_heatmap.py",
-    "supplement/supfig_dataset_characterization.py",
-    "supplement/supfig_indel_heatmap.py",
-    "supplement/supfig_dms_auroc.py",
-    "supplement/supfig_context_window.py",
-    "supplement/supfig_deconf_heatmap.py",
-    "supplement/supfig_disrupt_auroc.py",
-    "supplement/supfig_indel_full.py",
-    "supplement/supfig_topk_sweep.py",
-    "supplement/supfig_topk_vs_window.py",
+    # Figure 1 panels
+    "figure1/fig1b_snv_heatmap.py",
+    "figure1/fig1c_indel_heatmap.py",
+    "figure1/fig1d_conservation_lineplot.py",
+    "figure1/fig1e_umap_pathogenicity.py",
+    "figure1/fig1f_umap_consequence.py",
+    "figure1/fig1g_dms_spearman.py",
+    # Figure 2 panels
+    "figure2/fig2b_probe_auroc_boxplot.py",
+    "figure2/fig2ce_autointerp_barchart.py",
+    # Supplements (S1–S5, S9)
+    "supplement/supfig1_layer_sweep.py",
+    "supplement/supfig2_context_window.py",
+    "supplement/supfig3_topk_vs_window.py",
+    "supplement/supfig4_deconf_heatmap.py",
+    "supplement/supfig5_dataset_characterization.py",
+    "supplement/supfig9_autointerp_ablation.py",
 )
 
 # Prepare scripts (require goodfire-core, torch, raw data)
 PREPARE_SCRIPTS = (
-    "prepare/probe_auroc_data.py",
-    "prepare/disruption_umap_data.py",
-    "prepare/autointerp_eval_data.py",
-    "prepare/fig2_disrupt_auroc_data.py",
-    "prepare/umap_snv.py",
+    "prepare/context_ablation_data.py",
     "prepare/umap_combined.py",
-    "prepare/umap_indel.py",
 )
 
 
