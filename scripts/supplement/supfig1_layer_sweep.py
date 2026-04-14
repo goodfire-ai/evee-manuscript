@@ -19,7 +19,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-from theme.mayo_theme import apply_theme, save_figure, COLORS
+from theme.theme import apply_theme, save_figure, COLORS
 
 ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig1_layer_sweep"

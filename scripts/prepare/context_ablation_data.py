@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "artifacts" / "context_ablation_eval.feather"
 
 EVAL_RESULTS = Path(
-    "/mnt/polished-lake/home/michaelpearce/projects/mayo/variant-viewer/eval/results"
+    "/mnt/polished-lake/home/michaelpearce/projects/evee/variant-viewer/eval/results"
 )
 
 CONFIGS = [

@@ -20,7 +20,7 @@ import polars as pl
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-from theme.mayo_theme import apply_theme, save_figure, COLORS, CONSEQ_COLORS
+from theme.theme import apply_theme, save_figure, COLORS, CONSEQ_COLORS
 
 ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig2_context_window"

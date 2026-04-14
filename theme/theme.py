@@ -1,12 +1,12 @@
 """
-Shared plotting theme for the Mayo Mendelian manuscript.
+Shared plotting theme for the EVEE manuscript.
 
 Goodfire-branded color palette with Nature Methods–compliant typography.
 All figures should import from here to ensure visual consistency.
 
 Usage:
-    from theme.mayo_theme import apply_theme, save_figure, add_panel_label
-    from theme.mayo_theme import COLORS, METHOD_COLORS, CONSEQ_COLORS
+    from theme.theme import apply_theme, save_figure, add_panel_label
+    from theme.theme import COLORS, METHOD_COLORS, CONSEQ_COLORS
     apply_theme()
 """
 

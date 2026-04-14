@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-from theme.mayo_theme import apply_theme, save_figure, FONT_SIZE_TITLE, FONT_SIZE_LEGEND
+from theme.theme import apply_theme, save_figure, FONT_SIZE_TITLE, FONT_SIZE_LEGEND
 
 sys.path.insert(0, str(ROOT / "scripts" / "figure1"))
 from _umap_common import load_combined_umap, cleanup_axes, format_legend, SCATTER_KW

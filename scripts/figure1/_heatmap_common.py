@@ -109,7 +109,7 @@ def prepare(strat_df: pl.DataFrame) -> pl.DataFrame:
 def plot_heatmap(ax, strat_df: pl.DataFrame, metric: str,
                  font_size_tick=None, font_size_cell=None, aspect="equal"):
     """Draw heatmap on given axes: consequences (y) x methods (x)."""
-    from theme.mayo_theme import (
+    from theme.theme import (
         HEATMAP_CMAP,
         FONT_SIZE_TICK as _FSTK, FONT_SIZE_CELL as _FSC,
     )

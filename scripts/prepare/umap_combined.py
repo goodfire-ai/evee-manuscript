@@ -26,10 +26,10 @@ from umap import UMAP
 
 ROOT = Path(__file__).resolve().parents[2]
 ARTIFACTS = ROOT / "artifacts"
-MAYO = ROOT / "data" / "clinvar" / "evo2-7b"
-LABELED = MAYO / "labeled"
-INDELS = MAYO / "indels"
-VUS = MAYO / "vus"
+DATA = ROOT / "data" / "clinvar" / "evo2-7b"
+LABELED = DATA / "labeled"
+INDELS = DATA / "indels"
+VUS = DATA / "vus"
 OUT_DIR = ROOT / "artifacts"
 
 CONSEQ_MAP = {
