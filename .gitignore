@@ -1,7 +1,8 @@
 __pycache__/
 *.pyc
 .venv/
-figures/
+*.egg-info/
+.ipynb_checkpoints/
 artifacts/*.safetensors
 artifacts/*.pt
 !artifacts/samples/
