@@ -2,6 +2,20 @@
 
 Reproducible figures for [EVEE: Interpretable variant effect prediction from genomic foundation model embeddings](https://www.biorxiv.org/content/10.64898/2026.04.10.717844).
 
+## Data availability
+
+The full per-variant table backing the EVEE web app — one row per ClinVar variant (4.25 M total) with the Evo 2 pathogenicity score and ~4,900 probe outputs — is archived on Zenodo:
+
+- **DOI**: [10.5281/zenodo.19701997](https://doi.org/10.5281/zenodo.19701997)
+- **Record**: https://zenodo.org/records/19701997
+
+Released as five chromosome-balanced Parquet shards (`clean_shard_0.parquet` … `clean_shard_4.parquet`, 6.8–7.3 GB each) plus a `manifest.json`. Read all shards as one logical table:
+
+```python
+import polars as pl
+df = pl.scan_parquet("clean_shard_*.parquet")
+```
+
 ## Quick Start
 
 ```bash
