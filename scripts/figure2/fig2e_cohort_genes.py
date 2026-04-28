@@ -13,10 +13,13 @@ Filter (matches the Mayo abstract numbers exactly):
   - EVEE pathogenicity ≥ 0.75 → 18 variants
 
 Pathway groupings:
-  - Immune regulation:        IFIH1, NOD2, IL10RA
-  - Methotrexate metabolism:  ATIC, MTHFR, TYMS, DHFR  (DHFR is the MTX target;
-                              TYMS is immediately downstream in folate biology)
-  - Other:                    everything else (STAT1 etc.)
+  - Immune regulation:           IFIH1, NOD2, IL10RA
+  - Folate / methotrexate path:  ATIC, MTHFR, DHFR, TYMS
+        DHFR is the direct MTX target; ATIC is inhibited by MTX-polyglutamates
+        in the RA anti-inflammatory mechanism; MTHFR is a well-established
+        MTX pharmacogene; TYMS is folate-dependent thymidylate synthesis
+        studied in MTX pharmacogenomics.
+  - Other:                       everything else (STAT1 etc.)
 
 Input:  /mnt/data/artifacts/ryo/goodfire_handoff/handoff_final.parquet
 Output: figures/figure2/fig2e_cohort_genes.{png,pdf}
@@ -51,6 +54,11 @@ COLOR_MTX    = "#2A9D8F"      # muted teal
 COLOR_OTHER  = COLORS["gray"]
 
 GROUP_COLOR = {"innate": COLOR_INNATE, "folate": COLOR_MTX, "other": COLOR_OTHER}
+GROUP_LABEL_LONG = {
+    "innate": "Immune regulation",
+    "folate": "Folate / methotrexate pathway",
+    "other":  "Other",
+}
 
 
 def group_for(gene: str) -> str:
@@ -71,7 +79,7 @@ def load_uncertain() -> pl.DataFrame:
 def draw(ax, uncertain: pl.DataFrame):
     cols: list[dict] = []
     for grp_key, grp_label in (("innate", "Immune\nregulation"),
-                               ("folate", "Methotrexate\nmetabolism")):
+                               ("folate", "Folate /\nmethotrexate")):
         sub = uncertain.filter(pl.col("group") == grp_key)
         gene_stats = (sub.filter(pl.col("pathogenicity") >= THRESHOLD)
                       .group_by("gene")
