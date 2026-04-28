@@ -16,6 +16,10 @@ import polars as pl
 df = pl.scan_parquet("clean_shard_*.parquet")
 ```
 
+## MCP server
+
+EVEE is also available as an MCP (Model Context Protocol) server, allowing Claude and other LLM agents to query variant predictions, disruption profiles, and interpretations programmatically: [goodfire-ai/evee-mcp](https://github.com/goodfire-ai/evee-mcp).
+
 ## Quick Start
 
 ```bash
@@ -74,8 +78,8 @@ evee-manuscript/
 | Panel | Script | Description |
 |-------|--------|-------------|
 | b | `fig2b_probe_auroc_boxplot.py` | Annotation probe AUROC by category |
-| c | `fig2ce_autointerp_barchart.py` | Context ablation composite score bar chart |
-| e | `fig2ce_autointerp_barchart.py` | Per-axis breakdown (mechanism, accuracy, specificity) |
+| c | `fig2c_autointerp_barchart.py` | Context ablation composite score bar chart |
+| e | `fig2e_cohort_genes.py` | Mayo RA cohort: gene-level pathogenicity score distribution by pathway |
 
 ### Supplementary Figures
 
@@ -88,6 +92,7 @@ evee-manuscript/
 | S5 | `supfig5_dataset_characterization.py` | Dataset composition and pathogenic rates |
 | S9 | `supfig9_autointerp_ablation.py` | Interpretation quality by pathogenicity class + per-axis line plots |
 | S10 | `supfig9_autointerp_ablation.py` | Score distributions across context configurations |
+| S11 | `fig2c_autointerp_barchart.py` | Per-axis breakdown bar chart (mechanism, accuracy, specificity) — moved from old Fig 2e |
 
 ## Artifacts
 
@@ -102,7 +107,8 @@ Pre-computed data files in `artifacts/`, read via `polars.read_ipc()` (feather) 
 | `dms_benchmark.feather` | Fig 1g | DMS Spearman correlations for 4 genes |
 | `heads.feather` | Fig 2b | Annotation probe metadata (names, categories) |
 | `token_eval.json` | Fig 2b | Per-head binary AUROC values (357 probes) |
-| `context_ablation_eval.feather` | Fig 2c/e, S9, S10 | LLM interpretation scores across context configs |
+| `context_ablation_eval.feather` | Fig 2c, S9–S11 | LLM interpretation scores across context configs |
+| `handoff_final.parquet` (external) | Fig 2e | Mayo RA cohort 299 rare variants with EVEE pathogenicity scores |
 | `layer_sweep_evo2_7b.csv` | S1 | AUROC by Evo 2 transformer layer |
 | `context_window_sweep.feather` | S2 | AUROC vs context window size |
 | `topk_vs_window.feather` | S3 | Top-K vs contiguous window comparison |

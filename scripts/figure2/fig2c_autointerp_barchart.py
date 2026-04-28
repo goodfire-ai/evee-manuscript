@@ -2,12 +2,15 @@
 """
 Auto-interpretation bar charts — context ablation evaluation.
 
-Panel 1: Composite score grouped bar chart (3 models x 5 configs)
-Panel 2: Per-axis breakdown (mechanism, bio accuracy, specificity) — 3-panel vertical
+Panel 1 (Figure 2c): composite score grouped bar chart (3 models x 5 configs)
+Panel 2 (supplement): per-axis breakdown (mechanism, bio accuracy, specificity)
+
+Note: panel 2 used to be Figure 2e but moved to supplement when 2e was
+re-purposed for the Mayo RA cohort gene plot (see fig2e_cohort_genes.py).
 
 Input:  artifacts/context_ablation_eval.feather
 Output: figures/figure2/fig2c_autointerp_composite_barchart.{png,pdf}
-        figures/figure2/fig2e_autointerp_peraxis_barchart.{png,pdf}
+        figures/supplement/supfig_autointerp_peraxis_barchart.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -28,6 +31,7 @@ from theme.theme import (
 
 ARTIFACTS = ROOT / "artifacts"
 PANELS = ROOT / "figures" / "figure2"
+SUPPLEMENT = ROOT / "figures" / "supplement"
 
 apply_theme()
 
@@ -129,7 +133,10 @@ def plot(ax):
 
 
 def plot_axes(axes_3):
-    """Plot per-axis bar charts onto a flat array of 3 axes (for assembler)."""
+    """Plot per-axis bar charts onto a flat array of 3 axes (for assembler).
+
+    Works for both vertical (3,1) and horizontal (1,3) layouts.
+    """
     df = _load_data()
     for idx, axis_name in enumerate(AXES):
         ax = axes_3[idx]
@@ -138,12 +145,11 @@ def plot_axes(axes_3):
         if idx == 0:
             ax.legend(loc="upper left", fontsize=FONT_SIZE_LEGEND)
 
-        if idx == len(AXES) - 1:
-            ax.set_xticks(range(len(CONFIGS)))
-            ax.set_xticklabels([CONFIG_LABELS[c] for c in CONFIGS],
-                               fontsize=FONT_SIZE_TICK)
-        else:
-            ax.tick_params(labelbottom=False)
+        # Always show x tick labels in horizontal layout; in vertical layout,
+        # only the bottom-most axes shows labels (sharex hides the others).
+        ax.set_xticks(range(len(CONFIGS)))
+        ax.set_xticklabels([CONFIG_LABELS[c] for c in CONFIGS],
+                           fontsize=FONT_SIZE_TICK)
 
 
 def main():
@@ -156,12 +162,13 @@ def main():
     save_figure(fig, PANELS / "fig2c_autointerp_composite_barchart")
     print("Saved: fig2c_autointerp_composite_barchart")
 
-    # --- Panel 2: Per-axis 3-panel bar chart ---
-    fig, axes = plt.subplots(3, 1, figsize=(5.5, 10), sharex=True)
+    # --- Panel 2 (now supplement): Per-axis bar chart, horizontal 1x3 layout
+    # (was 3x1 vertical 5.5x10 — too tall for the supplement page).
+    fig, axes = plt.subplots(1, 3, figsize=(11, 3.4), sharey=True)
     plot_axes(axes)
     fig.tight_layout()
-    save_figure(fig, PANELS / "fig2e_autointerp_peraxis_barchart")
-    print("Saved: fig2e_autointerp_peraxis_barchart")
+    save_figure(fig, SUPPLEMENT / "supfig_autointerp_peraxis_barchart")
+    print("Saved: supfig_autointerp_peraxis_barchart")
 
 
 if __name__ == "__main__":
