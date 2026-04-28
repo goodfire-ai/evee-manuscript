@@ -16,6 +16,10 @@ import polars as pl
 df = pl.scan_parquet("clean_shard_*.parquet")
 ```
 
+## MCP server
+
+EVEE is also available as an MCP (Model Context Protocol) server, allowing Claude and other LLM agents to query variant predictions, disruption profiles, and interpretations programmatically: [goodfire-ai/evee-mcp](https://github.com/goodfire-ai/evee-mcp).
+
 ## Quick Start
 
 ```bash
