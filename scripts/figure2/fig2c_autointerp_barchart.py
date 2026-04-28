@@ -133,7 +133,10 @@ def plot(ax):
 
 
 def plot_axes(axes_3):
-    """Plot per-axis bar charts onto a flat array of 3 axes (for assembler)."""
+    """Plot per-axis bar charts onto a flat array of 3 axes (for assembler).
+
+    Works for both vertical (3,1) and horizontal (1,3) layouts.
+    """
     df = _load_data()
     for idx, axis_name in enumerate(AXES):
         ax = axes_3[idx]
@@ -142,12 +145,11 @@ def plot_axes(axes_3):
         if idx == 0:
             ax.legend(loc="upper left", fontsize=FONT_SIZE_LEGEND)
 
-        if idx == len(AXES) - 1:
-            ax.set_xticks(range(len(CONFIGS)))
-            ax.set_xticklabels([CONFIG_LABELS[c] for c in CONFIGS],
-                               fontsize=FONT_SIZE_TICK)
-        else:
-            ax.tick_params(labelbottom=False)
+        # Always show x tick labels in horizontal layout; in vertical layout,
+        # only the bottom-most axes shows labels (sharex hides the others).
+        ax.set_xticks(range(len(CONFIGS)))
+        ax.set_xticklabels([CONFIG_LABELS[c] for c in CONFIGS],
+                           fontsize=FONT_SIZE_TICK)
 
 
 def main():
@@ -160,8 +162,9 @@ def main():
     save_figure(fig, PANELS / "fig2c_autointerp_composite_barchart")
     print("Saved: fig2c_autointerp_composite_barchart")
 
-    # --- Panel 2 (now supplement): Per-axis 3-panel bar chart ---
-    fig, axes = plt.subplots(3, 1, figsize=(5.5, 10), sharex=True)
+    # --- Panel 2 (now supplement): Per-axis bar chart, horizontal 1x3 layout
+    # (was 3x1 vertical 5.5x10 — too tall for the supplement page).
+    fig, axes = plt.subplots(1, 3, figsize=(11, 3.4), sharey=True)
     plot_axes(axes)
     fig.tight_layout()
     save_figure(fig, SUPPLEMENT / "supfig_autointerp_peraxis_barchart")
