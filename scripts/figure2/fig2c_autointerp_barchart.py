@@ -2,12 +2,15 @@
 """
 Auto-interpretation bar charts — context ablation evaluation.
 
-Panel 1: Composite score grouped bar chart (3 models x 5 configs)
-Panel 2: Per-axis breakdown (mechanism, bio accuracy, specificity) — 3-panel vertical
+Panel 1 (Figure 2c): composite score grouped bar chart (3 models x 5 configs)
+Panel 2 (supplement): per-axis breakdown (mechanism, bio accuracy, specificity)
+
+Note: panel 2 used to be Figure 2e but moved to supplement when 2e was
+re-purposed for the Mayo RA cohort gene plot (see fig2e_cohort_genes.py).
 
 Input:  artifacts/context_ablation_eval.feather
 Output: figures/figure2/fig2c_autointerp_composite_barchart.{png,pdf}
-        figures/figure2/fig2e_autointerp_peraxis_barchart.{png,pdf}
+        figures/supplement/supfig_autointerp_peraxis_barchart.{png,pdf}
 """
 import sys
 from pathlib import Path
@@ -28,6 +31,7 @@ from theme.theme import (
 
 ARTIFACTS = ROOT / "artifacts"
 PANELS = ROOT / "figures" / "figure2"
+SUPPLEMENT = ROOT / "figures" / "supplement"
 
 apply_theme()
 
@@ -156,12 +160,12 @@ def main():
     save_figure(fig, PANELS / "fig2c_autointerp_composite_barchart")
     print("Saved: fig2c_autointerp_composite_barchart")
 
-    # --- Panel 2: Per-axis 3-panel bar chart ---
+    # --- Panel 2 (now supplement): Per-axis 3-panel bar chart ---
     fig, axes = plt.subplots(3, 1, figsize=(5.5, 10), sharex=True)
     plot_axes(axes)
     fig.tight_layout()
-    save_figure(fig, PANELS / "fig2e_autointerp_peraxis_barchart")
-    print("Saved: fig2e_autointerp_peraxis_barchart")
+    save_figure(fig, SUPPLEMENT / "supfig_autointerp_peraxis_barchart")
+    print("Saved: supfig_autointerp_peraxis_barchart")
 
 
 if __name__ == "__main__":
