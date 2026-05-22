@@ -1,0 +1,166 @@
+{
+  "variant": {
+    "variant_id": "chr17:43051117:C:T",
+    "rs_id": "rs80358099",
+    "chrom": "chr17",
+    "pos": 43051117,
+    "ref": "C",
+    "alt": "T",
+    "hgvsc": "ENST00000357654.9:c.5278-1G>A",
+    "pathogenicity": 0.9989,
+    "gene": "BRCA1",
+    "strand": "-"
+  },
+  "aggregated_profile": [
+    {
+      "head": "is_splice_acceptor",
+      "ref": 0.0,
+      "var": 0.5371999740600586,
+      "delta": 0.5371999740600586,
+      "maxpos_bp": -8.0,
+      "abs_pos": 43051109
+    },
+    {
+      "head": "is_splice_donor",
+      "ref": 1.0,
+      "var": 0.67330002784729,
+      "delta": -0.32669997215270996,
+      "maxpos_bp": -57.0,
+      "abs_pos": 43051060
+    },
+    {
+      "head": "is_polypyrimidine_tract",
+      "ref": 0.9837999939918518,
+      "var": 0.5105999708175659,
+      "delta": -0.4732000231742859,
+      "maxpos_bp": 6.0,
+      "abs_pos": 43051123
+    },
+    {
+      "head": "is_branchpoint_region",
+      "ref": 0.1453000009059906,
+      "var": 0.8008000254631042,
+      "delta": 0.6555000245571136,
+      "maxpos_bp": 17.0,
+      "abs_pos": 43051134
+    },
+    {
+      "head": "is_intron_to_exon",
+      "ref": 1.0,
+      "var": 0.8317999839782715,
+      "delta": -0.16820001602172852,
+      "maxpos_bp": -57.0,
+      "abs_pos": 43051060
+    },
+    {
+      "head": "is_exon_to_intron",
+      "ref": 0.9998000264167786,
+      "var": 0.5579000115394592,
+      "delta": -0.44190001487731934,
+      "maxpos_bp": 1.0,
+      "abs_pos": 43051118
+    },
+    {
+      "head": "is_constitutive_exon",
+      "ref": 0.10509999841451645,
+      "var": 0.052400000393390656,
+      "delta": -0.05269999802112579,
+      "maxpos_bp": 5962.0,
+      "abs_pos": 43057079
+    },
+    {
+      "head": "region_intron",
+      "ref": 0.0,
+      "var": 0.8310999870300293,
+      "delta": 0.8310999870300293,
+      "maxpos_bp": -7.0,
+      "abs_pos": 43051110
+    },
+    {
+      "head": "is_ptc_region",
+      "ref": 0.13590000569820404,
+      "var": 0.005499999970197678,
+      "delta": -0.13040000572800636,
+      "maxpos_bp": -12.0,
+      "abs_pos": 43051105
+    },
+    {
+      "head": "in_domain",
+      "ref": 0.4884999990463257,
+      "var": 0.11940000206232071,
+      "delta": -0.369099996984005,
+      "maxpos_bp": -32.0,
+      "abs_pos": 43051085
+    }
+  ],
+  "positional_shards": [
+    {
+      "shard": 0,
+      "dist": 0.0,
+      "abs_pos": 43051117,
+      "head": "region_intron",
+      "ref": 0.9341999888420105,
+      "var": 0.5759000182151794,
+      "delta": -0.35829997062683105
+    },
+    {
+      "shard": 2,
+      "dist": -7.0,
+      "abs_pos": 43051110,
+      "head": "region_intron",
+      "ref": 0.0,
+      "var": 0.8310999870300293,
+      "delta": 0.8310999870300293
+    }
+  ],
+  "exons": {
+    "exon 21": [
+      43057051,
+      43057134
+    ],
+    "exon 22": [
+      43051062,
+      43051116
+    ],
+    "exon 23": [
+      43049121,
+      43049194
+    ]
+  },
+  "introns": {
+    "intron 21": [
+      43051117,
+      43057050
+    ],
+    "intron 22": [
+      43049195,
+      43051061
+    ]
+  },
+  "junctions_of_interest": [
+    {
+      "label": "canonical e21\u2192e22",
+      "start": 43051118,
+      "end": 43057051,
+      "jhos4_reads": 0
+    },
+    {
+      "label": "cryptic +8 acceptor",
+      "start": 43051110,
+      "end": 43057051,
+      "jhos4_reads": 25
+    },
+    {
+      "label": "full exon-22 skip",
+      "start": 43049195,
+      "end": 43057051,
+      "jhos4_reads": 24
+    },
+    {
+      "label": "canonical e22\u2192e23",
+      "start": 43049195,
+      "end": 43051062,
+      "jhos4_reads": 34
+    }
+  ]
+}

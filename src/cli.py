@@ -28,13 +28,14 @@ FIGURE_SCRIPTS = (
     # Figure 2 panels
     "figure2/fig2b_probe_auroc_boxplot.py",
     "figure2/fig2ce_autointerp_barchart.py",
-    # Supplements (S1–S5, S9)
+    # Supplements (S1–S5, S9, FinnGen)
     "supplement/supfig1_layer_sweep.py",
     "supplement/supfig2_context_window.py",
     "supplement/supfig3_topk_vs_window.py",
     "supplement/supfig4_deconf_heatmap.py",
     "supplement/supfig5_dataset_characterization.py",
     "supplement/supfig9_autointerp_ablation.py",
+    "supplement/supfig_finngen_acmg.py",
 )
 
 # Prepare scripts (require goodfire-core, torch, raw data)
