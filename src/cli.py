@@ -25,6 +25,7 @@ FIGURE_SCRIPTS = (
     "figure1/fig1e_umap_pathogenicity.py",
     "figure1/fig1f_umap_consequence.py",
     "figure1/fig1g_dms_spearman.py",
+    "figure1/fig1i_finngen_qq.py",
     # Figure 2 panels
     "figure2/fig2b_probe_auroc_boxplot.py",
     "figure2/fig2ce_autointerp_barchart.py",
