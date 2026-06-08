@@ -9,13 +9,15 @@
 | Stage | Filter | Unique variants | Source |
 |-------|--------|---------------:|--------|
 | 1 | FinnGen R12 PheWAS variants scored with EVEE | **178,864** | `all_endpoints.parquet` |
-| 2 | EVEE pathogenicity > 0.8 | **2,496** | `all_endpoints.parquet` |
-| 3 | + Finnish AF < 0.1% (rare variant) | **1,405** | `all_endpoints.parquet` |
-| 4 | + OR ≥ 2.0 AND p < 1×10⁻⁵ (association threshold) | **132** | `finngen_gwas_lenient_highpath.tsv`† |
+| 2 | + Finnish AF < 0.1% (rare variant) | **40,184** | `all_endpoints.parquet` |
+| 3 | + OR ≥ 2.0 AND p < 1×10⁻⁵ (association threshold) | **1,232** | `all_endpoints.parquet`† |
+| 4 | + EVEE pathogenicity > 0.8 | **72** | `all_endpoints.parquet`‡ |
 | 5 | Actionable after ACMG/AMP classification | **21** | `finngen_r12_actionable.tsv` |
 | 6 | ClinVar resubmission candidates (LP-lean or above) | **6** | `finngen_r12_new_candidates.tsv` |
 
-† The operational candidate set (132 variants) comes from a parallel Evo2 scoring run (Evo2 > 0.5, Arc Institute model) applied to the same FinnGen hits. Direct query of `all_endpoints` with EVEE > 0.8 + same OR/p thresholds returns 72 — the ~60 variant difference reflects Evo2 vs EVEE model coverage. Both scores are used across the pipeline; Evo2 was used for initial candidate generation, EVEE for final pathogenicity classification.
+† Cross-check: `finngen_gwas_lenient_evo2.tsv` (generated from a parallel Evo2-scored run with the same AF/OR/p thresholds) contains **1,081 variants** — the ~150 difference reflects Evo2 vs EVEE model coverage at this stage.
+
+‡ The operational candidate set used for ACMG classification is **132 variants** (`finngen_gwas_lenient_highpath.tsv`), generated using Evo2 > 0.5 (Arc Institute model) rather than EVEE > 0.8. The ~60 variant gap reflects model differences (Evo2 threshold 0.5 vs EVEE threshold 0.8). For a fully EVEE-consistent funnel, use 72 at Stage 4.
 
 ---
 
@@ -33,30 +35,31 @@ This study applies a rare-variant PheWAS (Phenome-Wide Association Study) framew
 - EVEE score range: 0–1 (continuous; 1 = most pathogenic)
 - Phenotype coverage: all FinnGen R12 binary disease endpoints
 
-### Stage 2 — EVEE pathogenicity > 0.8
+### Stage 2 — Finnish allele frequency < 0.1%
 
-Variants were filtered to those with **EVEE pathogenicity score > 0.8**, retaining **2,496 variants** (1.4% of Stage 1). This threshold was selected to enrich for high-confidence pathogenic predictions while remaining permissive enough to capture rare founder variants with incomplete computational penetrance.
-
-- **2,496 unique variants** pass this threshold
-- Correspond to **6.2 million variant × phenotype pairs** across FinnGen endpoints
-
-### Stage 3 — Finnish allele frequency < 0.1%
-
-Variants were required to have Finnish population allele frequency < 0.1% (`af_alt < 0.001`) in the FinnGen cohort. This rare-variant filter excludes common polymorphisms with EVEE false-positive predictions and focuses the analysis on variants that could plausibly follow Mendelian inheritance patterns. It retains **1,405 variants** (56.3% of Stage 2).
+Variants were required to have Finnish population allele frequency < 0.1% (`af_alt < 0.001`) in the FinnGen cohort. This rare-variant filter excludes common polymorphisms and focuses the analysis on variants that could plausibly follow Mendelian inheritance patterns. It retains **40,184 variants** (22.5% of Stage 1).
 
 - **Threshold:** AF < 0.001 (0.1%)
 - **Rationale:** Rare variant enrichment; aligns with PM2_Supporting criterion in ACMG/AMP framework
 - AF range in passing variants: 0.001%–0.1% (Finnish population frequency from FinnGen)
 
-### Stage 4 — Association strength: OR ≥ 2.0 and p < 1×10⁻⁵
+### Stage 3 — Association strength: OR ≥ 2.0 and p < 1×10⁻⁵
 
-Variants were required to show phenotypic association with at least one FinnGen binary endpoint meeting a lenient significance threshold: **OR ≥ 2.0** and **p < 1×10⁻⁵** (best association across all endpoints per variant). This retains **132 variants** — the operational candidate set (`finngen_gwas_lenient_highpath.tsv`).
+Variants were required to show phenotypic association with at least one FinnGen binary endpoint meeting a lenient significance threshold: **OR ≥ 2.0** and **p < 1×10⁻⁵** (best association across all endpoints per variant). This retains **1,232 variants** (3.1% of Stage 2).
 
 - **OR threshold:** ≥ 2.0 (enriched in cases vs controls at ≥ 2-fold; PS4_Moderate or stronger in ACMG framework)
 - **p-value threshold:** < 1×10⁻⁵ (lenient; adjusted for rare-variant sparsity)
 - **OR range** in passing variants: 2.2–150,317 (median 16.3)
 - **p range:** 2.2×10⁻⁹¹–9.97×10⁻⁶ (median 3.5×10⁻⁶)
-- Note: a strict subset (OR ≥ 2.0, p < 5×10⁻⁸) retains **69 variants** (`finngen_gwas_strict_evo2.tsv`)
+- Note: a strict subset (OR ≥ 2.0, p < 5×10⁻⁸) retains **462 variants** at this stage
+
+### Stage 4 — EVEE pathogenicity > 0.8
+
+Of the variants passing the AF and association filters, those with **EVEE pathogenicity score > 0.8** are retained, yielding **72 variants** (5.8% of Stage 3). EVEE is Goodfire's Evo2-based covariance probe pathogenicity predictor; the 0.8 threshold selects high-confidence pathogenic predictions from among the statistically associated rare variants.
+
+- **72 unique variants** in the EVEE-consistent analysis
+- Operational candidate set: **132 variants** using the parallel Evo2 > 0.5 score (Arc Institute model; `finngen_gwas_lenient_highpath.tsv`)
+- EVEE score range in passing variants: 0.80–1.00
 
 ### Stage 5 — Actionable after ACMG/AMP classification: 21 variants
 
