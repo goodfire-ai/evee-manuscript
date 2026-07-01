@@ -101,7 +101,10 @@ def make_coverage(jr: dict) -> dict:
     return cov
 
 
-def main():
+def main(out_stem=None, fig_width=14):
+    if out_stem is not None:
+        global OUT_STEM
+        OUT_STEM = out_stem
     with open(ARTIFACT_DATA) as f:
         data = json.load(f)
 
@@ -153,15 +156,10 @@ def main():
     H_RNA    = 1.4
     fig_h    = N_TRACKS * H_TRACK + H_GENE + H_SPACER + len(SAMPLES) * H_RNA + 1.2
 
-    fig = plt.figure(figsize=(14, fig_h))
+    fig = plt.figure(figsize=(fig_width, fig_h))
     hr = [H_TRACK] * N_TRACKS + [H_GENE, H_SPACER] + [H_RNA] * len(SAMPLES)
     gs = fig.add_gridspec(N_TRACKS + 2 + len(SAMPLES), 1, height_ratios=hr, hspace=0.06)
 
-    fig.suptitle(
-        f"BRCA1   rs80358099   c.5278-1G>A   |   JHOS-4 (BRCA1-mutant ovarian cancer cell line)"
-        f"   |   EVEE pathogenicity {PATH:.3f}",
-        fontsize=12, fontweight="bold", y=0.985,
-    )
 
     LABEL_X = -22
 
@@ -187,11 +185,11 @@ def main():
             ax.bar(positions, deltas, width=widths, color=colors, edgecolor="none",
                    zorder=3, alpha=0.95, align="center")
 
-        ax.text(LABEL_X, 0, label, fontsize=9.5, ha="right", va="center", color="#222")
+        ax.text(LABEL_X, 0, label, fontsize=16, ha="right", va="center", color="#222")
         if pts:
             max_d = max(pts, key=lambda x: abs(x[1]))[1]
             ax.text(DISPLAY_HI + 14, 0, f"Δ {max_d:+.2f}",
-                    fontsize=8.5, ha="left", va="center",
+                    fontsize=14, ha="left", va="center",
                     color="#d04646" if max_d > 0 else "#2966a3", fontweight="bold")
 
         ax.plot([0, DISPLAY_HI], [0, 0], color="#888", lw=0.5, zorder=1)
@@ -217,31 +215,27 @@ def main():
             ax_mid.add_patch(Rectangle((dlo, EXON_Y - EXON_H / 2), dhi - dlo, EXON_H,
                                        facecolor="#3a7ca5", edgecolor="black", lw=0.7, zorder=3))
             ax_mid.text((dlo + dhi) / 2, EXON_Y + EXON_H / 2 + 0.16,
-                        name.replace("exon", "Exon "), fontsize=9, ha="center", va="bottom",
+                        name.replace("exon", "Exon "), fontsize=14, ha="center", va="bottom",
                         color="#1b4d72", fontweight="bold")
-            ax_mid.text(dlo, EXON_Y - EXON_H / 2 - 0.12, f"{rlo:,}", fontsize=6.5,
-                        ha="center", va="top", color="#888")
-            ax_mid.text(dhi, EXON_Y - EXON_H / 2 - 0.12, f"{rhi:,}", fontsize=6.5,
-                        ha="center", va="top", color="#888")
 
     trunc_lo = to_disp(NOTCH_LO); trunc_hi = to_disp(NOTCH_HI)
     ax_mid.add_patch(Rectangle((trunc_lo, EXON_Y - EXON_H / 2), trunc_hi - trunc_lo, EXON_H,
                                 facecolor="none", edgecolor="#d04646", hatch="///", lw=1.0, zorder=4))
     ax_mid.axvline(VARIANT_DISP, color="#a02c2c", lw=0.7, ls="--", alpha=0.55, zorder=10)
-    ax_mid.annotate(f"rs80358099  {HGVSC}",
+    ax_mid.annotate("rs80358099",
                     xy=(VARIANT_DISP, EXON_Y - EXON_H / 2),
                     xytext=(VARIANT_DISP, EXON_Y - 0.82),
-                    fontsize=8, ha="center", va="top", color="#a02c2c", fontweight="bold",
+                    fontsize=13, ha="center", va="top", color="#a02c2c", fontweight="bold",
                     arrowprops=dict(arrowstyle="-", color="#a02c2c", lw=0.6, alpha=0.7))
-    ax_mid.annotate("8 bp removed by cryptic +8 acceptor",
+    ax_mid.annotate("8 bp truncation",
                     xy=((trunc_lo + trunc_hi) / 2, EXON_Y + EXON_H / 2),
-                    xytext=((trunc_lo + trunc_hi) / 2 + 60, EXON_Y + 0.95),
-                    fontsize=8, ha="center", va="center", color="#d04646", fontweight="bold",
+                    xytext=((trunc_lo + trunc_hi) / 2 + 55, EXON_Y + 0.95),
+                    fontsize=12, ha="center", va="center", color="#d04646", fontweight="bold",
                     arrowprops=dict(arrowstyle="-", color="#d04646", lw=0.6, alpha=0.8,
                                    connectionstyle="arc3,rad=0.15"))
-    ax_mid.text(DISPLAY_HI + 15, 0, "5′", fontsize=8.5, ha="left", va="center",
+    ax_mid.text(DISPLAY_HI + 15, 0, "5′", fontsize=13, ha="left", va="center",
                 color="#555", fontweight="bold")
-    ax_mid.text(LABEL_X, 0, "3′", fontsize=8.5, ha="right", va="center",
+    ax_mid.text(LABEL_X, 0, "3′", fontsize=13, ha="right", va="center",
                 color="#555", fontweight="bold")
     ax_mid.set_yticks([]); ax_mid.set_xticks([])
     for s in ax_mid.spines.values(): s.set_visible(False)
@@ -257,9 +251,9 @@ def main():
         for s in ax_rna.spines.values(): s.set_visible(False)
         ax_rna.axvline(VARIANT_DISP, color="#a02c2c", lw=0.7, ls="--", alpha=0.35, zorder=10)
 
-        ax_rna.text(LABEL_X, 1.1, sample["label"], fontsize=11, ha="right", va="center",
+        ax_rna.text(LABEL_X, 1.1, sample["label"], fontsize=17, ha="right", va="center",
                     color=sample["color"], fontweight="bold")
-        ax_rna.text(LABEL_X, 0.78, sample["sub"], fontsize=7.5, ha="right", va="center",
+        ax_rna.text(LABEL_X, 0.78, sample["sub"], fontsize=12, ha="right", va="center",
                     color=sample["color"], style="italic")
 
         COV_BASE = 0.05; COV_MAX_Y = 0.95
@@ -276,8 +270,8 @@ def main():
         ax_rna.plot([LABEL_X + 5, DISPLAY_HI + 15], [COV_BASE, COV_BASE],
                     color="#ccc", lw=0.4, zorder=1)
         ax_rna.text(DISPLAY_HI + 5, COV_MAX_Y, f"max {int(max_cov)}",
-                    fontsize=7.5, ha="left", va="center", color=sample["color"], fontweight="bold")
-        ax_rna.text(DISPLAY_HI + 5, COV_BASE, "0", fontsize=7, ha="left", va="center", color="#999")
+                    fontsize=12, ha="left", va="center", color=sample["color"], fontweight="bold")
+        ax_rna.text(DISPLAY_HI + 5, COV_BASE, "0", fontsize=11, ha="left", va="center", color="#999")
 
         SASHI_BASE = 1.05; SASHI_TOP = 2.05; SASHI_RANGE = SASHI_TOP - SASHI_BASE
         for junc_key, reads in sample["junctions"].items():
@@ -294,30 +288,20 @@ def main():
             xs = np.linspace(min(x0, x1), max(x0, x1), 200)
             ys = SASHI_BASE + (apex - SASHI_BASE) * (1 - ((xs - mid) / span) ** 2)
             ax_rna.plot(xs, ys, color=color, lw=lw, alpha=alpha, ls=ls, zorder=3)
-            ax_rna.text(mid, apex + 0.03, f"{reads}", fontsize=7.5,
+            ax_rna.text(mid, apex + 0.03, f"{reads}", fontsize=12,
                         ha="center", va="bottom", color=color,
                         fontweight="bold" if reads > 0 else "normal")
 
-    fig.text(0.5, 0.085,
-             "BRCA1 splice diagram (chr17:43,049,121–43,057,134 hg38, introns compressed)",
-             fontsize=9, ha="center", color="#555")
 
-    top_legend = [
-        plt.Line2D([0], [0], marker="s", color="#d04646", markersize=9, lw=0, label="Δ > 0 (gain)"),
-        plt.Line2D([0], [0], marker="s", color="#2966a3", markersize=9, lw=0, label="Δ < 0 (loss)"),
-    ]
     bot_legend = [
         plt.Line2D([0], [0], color="#d04646", lw=3.5, label="Cryptic +8 acceptor"),
         plt.Line2D([0], [0], color="#e89a2c", lw=3.5, label="Full exon-22 skip"),
         plt.Line2D([0], [0], color="#666",    lw=2.5, label="Canonical junction"),
         plt.Line2D([0], [0], color="#bbb",    lw=0.6, ls=":", label="0 reads (suppressed)"),
     ]
-    fig.legend(handles=top_legend, loc="lower left",
-               bbox_to_anchor=(0.11, 0.005), fontsize=8, framealpha=0.95,
-               title="EVEE Δ (var − ref)", title_fontsize=8.5, ncol=2)
-    fig.legend(handles=bot_legend, loc="lower right",
-               bbox_to_anchor=(0.97, 0.005), fontsize=8, framealpha=0.95,
-               title="RNA-seq junctions", title_fontsize=8.5, ncol=2)
+    fig.legend(handles=bot_legend, loc="lower center",
+               bbox_to_anchor=(0.5, 0.005), fontsize=12, framealpha=0.95,
+               title="RNA-seq junctions", title_fontsize=12.5, ncol=4)
 
     plt.subplots_adjust(left=0.11, right=0.92, top=0.93, bottom=0.10)
     save_figure(fig, OUT_STEM)
