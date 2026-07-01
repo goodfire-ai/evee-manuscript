@@ -1,0 +1,3566 @@
+{
+  "atacseq_fetal_brain_peak": {
+    "kind": "binary",
+    "auc": 0.9667,
+    "auprc": 0.4956,
+    "accuracy": 0.9902,
+    "mcc": 0.4911,
+    "prevalence": 0.0107,
+    "n": 19237376,
+    "auc_std": 0.0167,
+    "n_shards": 64
+  },
+  "atacseq_gm12878_peak": {
+    "kind": "binary",
+    "auc": 0.84,
+    "auprc": 0.5392,
+    "accuracy": 0.9564,
+    "mcc": 0.5429,
+    "prevalence": 0.0627,
+    "n": 19237376,
+    "auc_std": 0.0212,
+    "n_shards": 64
+  },
+  "atacseq_k562_peak": {
+    "kind": "binary",
+    "auc": 0.852,
+    "auprc": 0.5222,
+    "accuracy": 0.9491,
+    "mcc": 0.5017,
+    "prevalence": 0.069,
+    "n": 19237376,
+    "auc_std": 0.0171,
+    "n_shards": 64
+  },
+  "atacseq_liver_peak": {
+    "kind": "binary",
+    "auc": 0.8955,
+    "auprc": 0.6615,
+    "accuracy": 0.9782,
+    "mcc": 0.6393,
+    "prevalence": 0.0364,
+    "n": 19237376,
+    "auc_std": 0.0191,
+    "n_shards": 64
+  },
+  "atacseq_lung_peak": {
+    "kind": "binary",
+    "auc": 0.974,
+    "auprc": 0.7776,
+    "accuracy": 0.988,
+    "mcc": 0.7196,
+    "prevalence": 0.0241,
+    "n": 19236786,
+    "auc_std": 0.0077,
+    "n_shards": 64
+  },
+  "atacseq_muscle_peak": {
+    "kind": "binary",
+    "auc": 0.8636,
+    "auprc": 0.5697,
+    "accuracy": 0.9603,
+    "mcc": 0.5394,
+    "prevalence": 0.0555,
+    "n": 19236786,
+    "auc_std": 0.0163,
+    "n_shards": 64
+  },
+  "atacseq_tcell_peak": {
+    "kind": "binary",
+    "auc": 0.9195,
+    "auprc": 0.6009,
+    "accuracy": 0.9714,
+    "mcc": 0.5689,
+    "prevalence": 0.0411,
+    "n": 19237376,
+    "auc_std": 0.0154,
+    "n_shards": 64
+  },
+  "ccre_tf_binding": {
+    "kind": "binary",
+    "auc": 0.622,
+    "auprc": 0.0179,
+    "accuracy": 0.9874,
+    "mcc": 0.0,
+    "prevalence": 0.0126,
+    "n": 12488682,
+    "auc_std": 0.0382,
+    "n_shards": 64
+  },
+  "chipseq_h3k27ac_fetal_brain_peak": {
+    "kind": "binary",
+    "auc": 0.8016,
+    "auprc": 0.4056,
+    "accuracy": 0.8964,
+    "mcc": 0.3353,
+    "prevalence": 0.1156,
+    "n": 19236786,
+    "auc_std": 0.0182,
+    "n_shards": 64
+  },
+  "chipseq_h3k27ac_gm12878_peak": {
+    "kind": "binary",
+    "auc": 0.8552,
+    "auprc": 0.5081,
+    "accuracy": 0.963,
+    "mcc": 0.4989,
+    "prevalence": 0.0495,
+    "n": 19237376,
+    "auc_std": 0.0218,
+    "n_shards": 64
+  },
+  "chipseq_h3k27ac_k562_peak": {
+    "kind": "binary",
+    "auc": 0.8975,
+    "auprc": 0.5481,
+    "accuracy": 0.9549,
+    "mcc": 0.49,
+    "prevalence": 0.0584,
+    "n": 19236786,
+    "auc_std": 0.0201,
+    "n_shards": 64
+  },
+  "chipseq_h3k27ac_liver_peak": {
+    "kind": "binary",
+    "auc": 0.8444,
+    "auprc": 0.4466,
+    "accuracy": 0.9501,
+    "mcc": 0.4421,
+    "prevalence": 0.0591,
+    "n": 19237376,
+    "auc_std": 0.0218,
+    "n_shards": 64
+  },
+  "chipseq_h3k27ac_lung_peak": {
+    "kind": "binary",
+    "auc": 0.8895,
+    "auprc": 0.5122,
+    "accuracy": 0.9467,
+    "mcc": 0.4632,
+    "prevalence": 0.0673,
+    "n": 19236786,
+    "auc_std": 0.0128,
+    "n_shards": 64
+  },
+  "chipseq_h3k27ac_monocyte_peak": {
+    "kind": "binary",
+    "auc": 0.7674,
+    "auprc": 0.407,
+    "accuracy": 0.9097,
+    "mcc": 0.3416,
+    "prevalence": 0.1025,
+    "n": 19236786,
+    "auc_std": 0.017,
+    "n_shards": 64
+  },
+  "chipseq_h3k27ac_muscle_peak": {
+    "kind": "binary",
+    "auc": 0.833,
+    "auprc": 0.4635,
+    "accuracy": 0.9378,
+    "mcc": 0.4078,
+    "prevalence": 0.0737,
+    "n": 19236786,
+    "auc_std": 0.0193,
+    "n_shards": 64
+  },
+  "chipseq_h3k27ac_tcell_peak": {
+    "kind": "binary",
+    "auc": 0.9332,
+    "auprc": 0.6317,
+    "accuracy": 0.9777,
+    "mcc": 0.622,
+    "prevalence": 0.0358,
+    "n": 19237376,
+    "auc_std": 0.0155,
+    "n_shards": 64
+  },
+  "chipseq_h3k27me3_fetal_brain_peak": {
+    "kind": "binary",
+    "auc": 0.8468,
+    "auprc": 0.5866,
+    "accuracy": 0.9404,
+    "mcc": 0.4699,
+    "prevalence": 0.0772,
+    "n": 19236786,
+    "auc_std": 0.021,
+    "n_shards": 64
+  },
+  "chipseq_h3k27me3_gm12878_peak": {
+    "kind": "binary",
+    "auc": 0.8706,
+    "auprc": 0.1761,
+    "accuracy": 0.9905,
+    "mcc": 0.1045,
+    "prevalence": 0.0096,
+    "n": 19236786,
+    "auc_std": 0.0343,
+    "n_shards": 64
+  },
+  "chipseq_h3k27me3_k562_peak": {
+    "kind": "binary",
+    "auc": 0.809,
+    "auprc": 0.0599,
+    "accuracy": 0.9799,
+    "mcc": -0.0003,
+    "prevalence": 0.0201,
+    "n": 19236786,
+    "auc_std": 0.0266,
+    "n_shards": 64
+  },
+  "chipseq_h3k27me3_liver_peak": {
+    "kind": "binary",
+    "auc": 0.9405,
+    "auprc": 0.0862,
+    "accuracy": 0.995,
+    "mcc": 0.0325,
+    "prevalence": 0.0049,
+    "n": 19236786,
+    "auc_std": 0.0363,
+    "n_shards": 64
+  },
+  "chipseq_h3k27me3_lung_peak": {
+    "kind": "binary",
+    "auc": 0.8873,
+    "auprc": 0.0649,
+    "accuracy": 0.9905,
+    "mcc": 0.01,
+    "prevalence": 0.0094,
+    "n": 19236786,
+    "auc_std": 0.0279,
+    "n_shards": 64
+  },
+  "chipseq_h3k27me3_monocyte_peak": {
+    "kind": "binary",
+    "auc": 0.8419,
+    "auprc": 0.5029,
+    "accuracy": 0.9144,
+    "mcc": 0.3941,
+    "prevalence": 0.1019,
+    "n": 19236786,
+    "auc_std": 0.0217,
+    "n_shards": 64
+  },
+  "chipseq_h3k27me3_muscle_peak": {
+    "kind": "binary",
+    "auc": 0.8985,
+    "auprc": 0.422,
+    "accuracy": 0.9457,
+    "mcc": 0.2915,
+    "prevalence": 0.0586,
+    "n": 19237376,
+    "auc_std": 0.012,
+    "n_shards": 64
+  },
+  "chipseq_h3k27me3_tcell_peak": {
+    "kind": "binary",
+    "auc": 0.8842,
+    "auprc": 0.3077,
+    "accuracy": 0.9698,
+    "mcc": 0.2882,
+    "prevalence": 0.0318,
+    "n": 19236786,
+    "auc_std": 0.0259,
+    "n_shards": 64
+  },
+  "chipseq_h3k36me3_fetal_brain_peak": {
+    "kind": "binary",
+    "auc": 0.882,
+    "auprc": 0.7146,
+    "accuracy": 0.8399,
+    "mcc": 0.5354,
+    "prevalence": 0.237,
+    "n": 19237376,
+    "auc_std": 0.0091,
+    "n_shards": 64
+  },
+  "chipseq_h3k36me3_gm12878_peak": {
+    "kind": "binary",
+    "auc": 0.8856,
+    "auprc": 0.4207,
+    "accuracy": 0.9323,
+    "mcc": 0.3203,
+    "prevalence": 0.0705,
+    "n": 19236786,
+    "auc_std": 0.0117,
+    "n_shards": 64
+  },
+  "chipseq_h3k36me3_k562_peak": {
+    "kind": "binary",
+    "auc": 0.88,
+    "auprc": 0.682,
+    "accuracy": 0.8449,
+    "mcc": 0.5021,
+    "prevalence": 0.2146,
+    "n": 19236786,
+    "auc_std": 0.0092,
+    "n_shards": 64
+  },
+  "chipseq_h3k36me3_liver_peak": {
+    "kind": "binary",
+    "auc": 0.8231,
+    "auprc": 0.2253,
+    "accuracy": 0.9433,
+    "mcc": 0.1026,
+    "prevalence": 0.056,
+    "n": 19237376,
+    "auc_std": 0.0144,
+    "n_shards": 64
+  },
+  "chipseq_h3k36me3_lung_peak": {
+    "kind": "binary",
+    "auc": 0.8632,
+    "auprc": 0.4002,
+    "accuracy": 0.9164,
+    "mcc": 0.2712,
+    "prevalence": 0.0865,
+    "n": 19237376,
+    "auc_std": 0.0114,
+    "n_shards": 64
+  },
+  "chipseq_h3k36me3_monocyte_peak": {
+    "kind": "binary",
+    "auc": 0.8689,
+    "auprc": 0.7635,
+    "accuracy": 0.7975,
+    "mcc": 0.5286,
+    "prevalence": 0.3324,
+    "n": 19236786,
+    "auc_std": 0.0104,
+    "n_shards": 64
+  },
+  "chipseq_h3k36me3_muscle_peak": {
+    "kind": "binary",
+    "auc": 0.8527,
+    "auprc": 0.6503,
+    "accuracy": 0.8509,
+    "mcc": 0.4625,
+    "prevalence": 0.1992,
+    "n": 19236786,
+    "auc_std": 0.0121,
+    "n_shards": 64
+  },
+  "chipseq_h3k36me3_tcell_peak": {
+    "kind": "binary",
+    "auc": 0.8606,
+    "auprc": 0.7075,
+    "accuracy": 0.8269,
+    "mcc": 0.5043,
+    "prevalence": 0.2522,
+    "n": 19237376,
+    "auc_std": 0.011,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me1_fetal_brain_peak": {
+    "kind": "binary",
+    "auc": 0.85,
+    "auprc": 0.3831,
+    "accuracy": 0.945,
+    "mcc": 0.2878,
+    "prevalence": 0.0594,
+    "n": 19236786,
+    "auc_std": 0.0163,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me1_gm12878_peak": {
+    "kind": "binary",
+    "auc": 0.7131,
+    "auprc": 0.1106,
+    "accuracy": 0.9584,
+    "mcc": 0.0241,
+    "prevalence": 0.0415,
+    "n": 19236786,
+    "auc_std": 0.0277,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me1_k562_peak": {
+    "kind": "binary",
+    "auc": 0.766,
+    "auprc": 0.178,
+    "accuracy": 0.9485,
+    "mcc": 0.0644,
+    "prevalence": 0.0514,
+    "n": 19236786,
+    "auc_std": 0.0246,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me1_liver_peak": {
+    "kind": "binary",
+    "auc": 0.8264,
+    "auprc": 0.1776,
+    "accuracy": 0.9763,
+    "mcc": 0.078,
+    "prevalence": 0.0233,
+    "n": 19237376,
+    "auc_std": 0.0233,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me1_lung_peak": {
+    "kind": "binary",
+    "auc": 0.8596,
+    "auprc": 0.274,
+    "accuracy": 0.9363,
+    "mcc": 0.1698,
+    "prevalence": 0.0615,
+    "n": 19236786,
+    "auc_std": 0.0115,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me1_monocyte_peak": {
+    "kind": "binary",
+    "auc": 0.7819,
+    "auprc": 0.4343,
+    "accuracy": 0.8853,
+    "mcc": 0.2998,
+    "prevalence": 0.1256,
+    "n": 19236786,
+    "auc_std": 0.0151,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me1_muscle_peak": {
+    "kind": "binary",
+    "auc": 0.8059,
+    "auprc": 0.3202,
+    "accuracy": 0.9347,
+    "mcc": 0.2273,
+    "prevalence": 0.0665,
+    "n": 19237376,
+    "auc_std": 0.0175,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me1_tcell_peak": {
+    "kind": "binary",
+    "auc": 0.7941,
+    "auprc": 0.4021,
+    "accuracy": 0.9072,
+    "mcc": 0.292,
+    "prevalence": 0.0999,
+    "n": 19237376,
+    "auc_std": 0.0187,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me3_fetal_brain_peak": {
+    "kind": "binary",
+    "auc": 0.9614,
+    "auprc": 0.7876,
+    "accuracy": 0.9566,
+    "mcc": 0.6824,
+    "prevalence": 0.0774,
+    "n": 19236786,
+    "auc_std": 0.0077,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me3_gm12878_peak": {
+    "kind": "binary",
+    "auc": 0.9179,
+    "auprc": 0.6203,
+    "accuracy": 0.9651,
+    "mcc": 0.5601,
+    "prevalence": 0.0502,
+    "n": 19236786,
+    "auc_std": 0.0161,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me3_k562_peak": {
+    "kind": "binary",
+    "auc": 0.9621,
+    "auprc": 0.7169,
+    "accuracy": 0.9673,
+    "mcc": 0.6315,
+    "prevalence": 0.0538,
+    "n": 19236786,
+    "auc_std": 0.0091,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me3_liver_peak": {
+    "kind": "binary",
+    "auc": 0.9567,
+    "auprc": 0.7983,
+    "accuracy": 0.9688,
+    "mcc": 0.7231,
+    "prevalence": 0.064,
+    "n": 19237376,
+    "auc_std": 0.0086,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me3_lung_peak": {
+    "kind": "binary",
+    "auc": 0.972,
+    "auprc": 0.7753,
+    "accuracy": 0.9746,
+    "mcc": 0.6655,
+    "prevalence": 0.0446,
+    "n": 19236786,
+    "auc_std": 0.0061,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me3_monocyte_peak": {
+    "kind": "binary",
+    "auc": 0.8934,
+    "auprc": 0.6375,
+    "accuracy": 0.9436,
+    "mcc": 0.552,
+    "prevalence": 0.079,
+    "n": 19237376,
+    "auc_std": 0.0142,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me3_muscle_peak": {
+    "kind": "binary",
+    "auc": 0.9367,
+    "auprc": 0.6813,
+    "accuracy": 0.9549,
+    "mcc": 0.593,
+    "prevalence": 0.0672,
+    "n": 19237376,
+    "auc_std": 0.0095,
+    "n_shards": 64
+  },
+  "chipseq_h3k4me3_tcell_peak": {
+    "kind": "binary",
+    "auc": 0.9429,
+    "auprc": 0.7008,
+    "accuracy": 0.9572,
+    "mcc": 0.599,
+    "prevalence": 0.0641,
+    "n": 19237376,
+    "auc_std": 0.0098,
+    "n_shards": 64
+  },
+  "chipseq_h3k9me3_fetal_brain_peak": {
+    "kind": "binary",
+    "auc": 0.8134,
+    "auprc": 0.0964,
+    "accuracy": 0.9882,
+    "mcc": 0.1169,
+    "prevalence": 0.0118,
+    "n": 19237376,
+    "auc_std": 0.0388,
+    "n_shards": 64
+  },
+  "chipseq_h3k9me3_gm12878_peak": {
+    "kind": "binary",
+    "auc": 0.8799,
+    "auprc": 0.0784,
+    "accuracy": 0.9969,
+    "mcc": -0.0001,
+    "prevalence": 0.0031,
+    "n": 19236786,
+    "auc_std": 0.0941,
+    "n_shards": 64
+  },
+  "chipseq_h3k9me3_k562_peak": {
+    "kind": "binary",
+    "auc": 0.8648,
+    "auprc": 0.0075,
+    "accuracy": 0.9995,
+    "mcc": -0.0001,
+    "prevalence": 0.0005,
+    "n": 19237376,
+    "auc_std": 0.1301,
+    "n_shards": 64
+  },
+  "chipseq_h3k9me3_liver_peak": {
+    "kind": "binary",
+    "auc": 0.9113,
+    "auprc": 0.074,
+    "accuracy": 0.9974,
+    "mcc": 0.014,
+    "prevalence": 0.0024,
+    "n": 19237376,
+    "auc_std": 0.0542,
+    "n_shards": 64
+  },
+  "chipseq_h3k9me3_lung_peak": {
+    "kind": "binary",
+    "auc": 0.9352,
+    "auprc": 0.0102,
+    "accuracy": 0.9994,
+    "mcc": -0.0003,
+    "prevalence": 0.0003,
+    "n": 19237376,
+    "auc_std": 0.0676,
+    "n_shards": 64
+  },
+  "chipseq_h3k9me3_monocyte_peak": {
+    "kind": "binary",
+    "auc": 0.8483,
+    "auprc": 0.2568,
+    "accuracy": 0.9726,
+    "mcc": 0.2324,
+    "prevalence": 0.0272,
+    "n": 19237376,
+    "auc_std": 0.0336,
+    "n_shards": 64
+  },
+  "chipseq_h3k9me3_muscle_peak": {
+    "kind": "binary",
+    "auc": 0.9332,
+    "auprc": 0.0674,
+    "accuracy": 0.9972,
+    "mcc": 0.0506,
+    "prevalence": 0.0022,
+    "n": 19237376,
+    "auc_std": 0.0419,
+    "n_shards": 64
+  },
+  "chipseq_h3k9me3_tcell_peak": {
+    "kind": "binary",
+    "auc": 0.8691,
+    "auprc": 0.1764,
+    "accuracy": 0.9945,
+    "mcc": 0.2689,
+    "prevalence": 0.0054,
+    "n": 19237376,
+    "auc_std": 0.0462,
+    "n_shards": 64
+  },
+  "elm_DOC": {
+    "kind": "binary",
+    "auc": 0.7522,
+    "auprc": 0.0012,
+    "accuracy": 0.9999,
+    "mcc": 0.0,
+    "prevalence": 0.0001,
+    "n": 10713319,
+    "auc_std": 0.1396,
+    "n_shards": 61
+  },
+  "elm_LIG": {
+    "kind": "binary",
+    "auc": 0.8023,
+    "auprc": 0.0037,
+    "accuracy": 0.9998,
+    "mcc": 0.0,
+    "prevalence": 0.0002,
+    "n": 11244662,
+    "auc_std": 0.1024,
+    "n_shards": 64
+  },
+  "elm_MOD": {
+    "kind": "binary",
+    "auc": 0.6088,
+    "auprc": 0.001,
+    "accuracy": 0.9987,
+    "mcc": 0.0,
+    "prevalence": 0.0013,
+    "n": 11244662,
+    "auc_std": 0.1417,
+    "n_shards": 64
+  },
+  "elm_TRG": {
+    "kind": "binary",
+    "auc": 0.828,
+    "auprc": 0.0004,
+    "accuracy": 1.0,
+    "mcc": 0.0,
+    "prevalence": 0.0,
+    "n": 9117794,
+    "auc_std": 0.1686,
+    "n_shards": 52
+  },
+  "in_active_site": {
+    "kind": "binary",
+    "auc": 0.9268,
+    "auprc": 0.0834,
+    "accuracy": 0.9997,
+    "mcc": 0.1071,
+    "prevalence": 0.0003,
+    "n": 11244662,
+    "auc_std": 0.1116,
+    "n_shards": 64
+  },
+  "in_binding_site": {
+    "kind": "binary",
+    "auc": 0.8541,
+    "auprc": 0.0808,
+    "accuracy": 0.9913,
+    "mcc": 0.076,
+    "prevalence": 0.0086,
+    "n": 11244662,
+    "auc_std": 0.0241,
+    "n_shards": 64
+  },
+  "in_chain": {
+    "kind": "binary",
+    "auc": 0.9406,
+    "auprc": 0.9863,
+    "accuracy": 0.962,
+    "mcc": 0.8298,
+    "prevalence": 0.8647,
+    "n": 11244662,
+    "auc_std": 0.0143,
+    "n_shards": 64
+  },
+  "in_coiled_coil": {
+    "kind": "binary",
+    "auc": 0.9406,
+    "auprc": 0.5068,
+    "accuracy": 0.983,
+    "mcc": 0.423,
+    "prevalence": 0.0203,
+    "n": 11244662,
+    "auc_std": 0.0193,
+    "n_shards": 64
+  },
+  "in_compositional_bias": {
+    "kind": "binary",
+    "auc": 0.9185,
+    "auprc": 0.3347,
+    "accuracy": 0.9644,
+    "mcc": 0.2367,
+    "prevalence": 0.0353,
+    "n": 11244662,
+    "auc_std": 0.013,
+    "n_shards": 64
+  },
+  "in_cross_link": {
+    "kind": "binary",
+    "auc": 0.924,
+    "auprc": 0.032,
+    "accuracy": 0.9997,
+    "mcc": -0.0,
+    "prevalence": 0.0003,
+    "n": 11244662,
+    "auc_std": 0.0768,
+    "n_shards": 64
+  },
+  "in_disulfide_bond": {
+    "kind": "binary",
+    "auc": 0.9119,
+    "auprc": 0.4262,
+    "accuracy": 0.9436,
+    "mcc": 0.3532,
+    "prevalence": 0.062,
+    "n": 11244662,
+    "auc_std": 0.0118,
+    "n_shards": 64
+  },
+  "in_dna_binding": {
+    "kind": "binary",
+    "auc": 0.8884,
+    "auprc": 0.506,
+    "accuracy": 0.9948,
+    "mcc": 0.5162,
+    "prevalence": 0.0069,
+    "n": 11244662,
+    "auc_std": 0.0871,
+    "n_shards": 64
+  },
+  "in_domain": {
+    "kind": "binary",
+    "auc": 0.8374,
+    "auprc": 0.662,
+    "accuracy": 0.8535,
+    "mcc": 0.4779,
+    "prevalence": 0.2011,
+    "n": 11244662,
+    "auc_std": 0.015,
+    "n_shards": 64
+  },
+  "in_elm_motif": {
+    "kind": "binary",
+    "auc": 0.7045,
+    "auprc": 0.0044,
+    "accuracy": 0.9984,
+    "mcc": 0.0,
+    "prevalence": 0.0016,
+    "n": 11244662,
+    "auc_std": 0.0825,
+    "n_shards": 64
+  },
+  "in_initiator_methionine": {
+    "kind": "binary",
+    "auc": 0.9991,
+    "auprc": 0.5041,
+    "accuracy": 0.9999,
+    "mcc": 0.3873,
+    "prevalence": 0.0001,
+    "n": 11244662,
+    "auc_std": 0.0019,
+    "n_shards": 64
+  },
+  "in_interpro_domain": {
+    "kind": "binary",
+    "auc": 0.897,
+    "auprc": 0.9729,
+    "accuracy": 0.8928,
+    "mcc": 0.6475,
+    "prevalence": 0.7955,
+    "n": 11244662,
+    "auc_std": 0.0134,
+    "n_shards": 64
+  },
+  "in_intramembrane": {
+    "kind": "binary",
+    "auc": 0.8955,
+    "auprc": 0.0102,
+    "accuracy": 0.9987,
+    "mcc": 0.0465,
+    "prevalence": 0.0013,
+    "n": 11244662,
+    "auc_std": 0.079,
+    "n_shards": 64
+  },
+  "in_motif": {
+    "kind": "binary",
+    "auc": 0.7172,
+    "auprc": 0.014,
+    "accuracy": 0.9961,
+    "mcc": 0.0217,
+    "prevalence": 0.0039,
+    "n": 11244662,
+    "auc_std": 0.0609,
+    "n_shards": 64
+  },
+  "in_propeptide": {
+    "kind": "binary",
+    "auc": 0.8918,
+    "auprc": 0.0615,
+    "accuracy": 0.9902,
+    "mcc": 0.0285,
+    "prevalence": 0.0096,
+    "n": 11244662,
+    "auc_std": 0.049,
+    "n_shards": 64
+  },
+  "in_ptm": {
+    "kind": "binary",
+    "auc": 0.8671,
+    "auprc": 0.1633,
+    "accuracy": 0.9946,
+    "mcc": 0.1948,
+    "prevalence": 0.0056,
+    "n": 11244662,
+    "auc_std": 0.0373,
+    "n_shards": 64
+  },
+  "in_ptm_subtype": {
+    "kind": "binary",
+    "auc": 0.867,
+    "auprc": 0.1642,
+    "accuracy": 0.9945,
+    "mcc": 0.1901,
+    "prevalence": 0.0056,
+    "n": 11244662,
+    "auc_std": 0.0382,
+    "n_shards": 64
+  },
+  "in_region": {
+    "kind": "binary",
+    "auc": 0.818,
+    "auprc": 0.5836,
+    "accuracy": 0.8666,
+    "mcc": 0.4399,
+    "prevalence": 0.1689,
+    "n": 11244662,
+    "auc_std": 0.0195,
+    "n_shards": 64
+  },
+  "in_repeat": {
+    "kind": "binary",
+    "auc": 0.8728,
+    "auprc": 0.4051,
+    "accuracy": 0.9572,
+    "mcc": 0.3329,
+    "prevalence": 0.0479,
+    "n": 11244662,
+    "auc_std": 0.0204,
+    "n_shards": 64
+  },
+  "in_secondary_structure": {
+    "kind": "binary",
+    "auc": 0.7954,
+    "auprc": 0.4598,
+    "accuracy": 0.8016,
+    "mcc": 0.2351,
+    "prevalence": 0.2083,
+    "n": 11244662,
+    "auc_std": 0.0113,
+    "n_shards": 64
+  },
+  "in_site": {
+    "kind": "binary",
+    "auc": 0.6058,
+    "auprc": 0.0035,
+    "accuracy": 0.9986,
+    "mcc": -0.0002,
+    "prevalence": 0.0013,
+    "n": 11244662,
+    "auc_std": 0.0957,
+    "n_shards": 64
+  },
+  "in_topological_domain": {
+    "kind": "binary",
+    "auc": 0.8312,
+    "auprc": 0.6619,
+    "accuracy": 0.8444,
+    "mcc": 0.4688,
+    "prevalence": 0.2125,
+    "n": 11244662,
+    "auc_std": 0.0213,
+    "n_shards": 64
+  },
+  "in_transit_peptide": {
+    "kind": "binary",
+    "auc": 0.9802,
+    "auprc": 0.4055,
+    "accuracy": 0.9973,
+    "mcc": 0.3919,
+    "prevalence": 0.003,
+    "n": 11062063,
+    "auc_std": 0.016,
+    "n_shards": 63
+  },
+  "in_transmembrane": {
+    "kind": "binary",
+    "auc": 0.9552,
+    "auprc": 0.6522,
+    "accuracy": 0.9687,
+    "mcc": 0.5849,
+    "prevalence": 0.0469,
+    "n": 11244662,
+    "auc_std": 0.0106,
+    "n_shards": 64
+  },
+  "in_zinc_finger": {
+    "kind": "binary",
+    "auc": 0.9487,
+    "auprc": 0.6802,
+    "accuracy": 0.9949,
+    "mcc": 0.7113,
+    "prevalence": 0.0098,
+    "n": 11244662,
+    "auc_std": 0.0276,
+    "n_shards": 64
+  },
+  "interpro_Alpha_Beta_hydrolase_fold": {
+    "kind": "binary",
+    "auc": 0.8184,
+    "auprc": 0.0022,
+    "accuracy": 0.998,
+    "mcc": -0.0007,
+    "prevalence": 0.0017,
+    "n": 11073555,
+    "auc_std": 0.1562,
+    "n_shards": 63
+  },
+  "interpro_Ankyrin_repeat": {
+    "kind": "binary",
+    "auc": 0.9559,
+    "auprc": 0.0767,
+    "accuracy": 0.9986,
+    "mcc": 0.1407,
+    "prevalence": 0.0012,
+    "n": 11244662,
+    "auc_std": 0.0496,
+    "n_shards": 64
+  },
+  "interpro_Ankyrin_repeat_containing_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.938,
+    "auprc": 0.136,
+    "accuracy": 0.9981,
+    "mcc": 0.2297,
+    "prevalence": 0.0018,
+    "n": 11244662,
+    "auc_std": 0.0396,
+    "n_shards": 64
+  },
+  "interpro_Armadillo_like_helical": {
+    "kind": "binary",
+    "auc": 0.9053,
+    "auprc": 0.0366,
+    "accuracy": 0.9971,
+    "mcc": 0.0654,
+    "prevalence": 0.0029,
+    "n": 11244662,
+    "auc_std": 0.0463,
+    "n_shards": 64
+  },
+  "interpro_Armadillo_type_fold": {
+    "kind": "binary",
+    "auc": 0.9315,
+    "auprc": 0.2797,
+    "accuracy": 0.9906,
+    "mcc": 0.1579,
+    "prevalence": 0.0096,
+    "n": 11244662,
+    "auc_std": 0.0254,
+    "n_shards": 64
+  },
+  "interpro_BTB_POZ_domain": {
+    "kind": "binary",
+    "auc": 0.9095,
+    "auprc": 0.1177,
+    "accuracy": 0.9994,
+    "mcc": 0.0953,
+    "prevalence": 0.0006,
+    "n": 9825295,
+    "auc_std": 0.0961,
+    "n_shards": 56
+  },
+  "interpro_C2_domain": {
+    "kind": "binary",
+    "auc": 0.9226,
+    "auprc": 0.3593,
+    "accuracy": 0.9958,
+    "mcc": 0.1194,
+    "prevalence": 0.0043,
+    "n": 10893525,
+    "auc_std": 0.0743,
+    "n_shards": 62
+  },
+  "interpro_C2_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.9071,
+    "auprc": 0.1873,
+    "accuracy": 0.9957,
+    "mcc": 0.0969,
+    "prevalence": 0.0043,
+    "n": 11074478,
+    "auc_std": 0.0513,
+    "n_shards": 63
+  },
+  "interpro_Cadherin_conserved_site": {
+    "kind": "binary",
+    "auc": 0.9955,
+    "auprc": 0.2488,
+    "accuracy": 0.9992,
+    "mcc": -0.0001,
+    "prevalence": 0.0008,
+    "n": 10711412,
+    "auc_std": 0.0081,
+    "n_shards": 61
+  },
+  "interpro_Cadherin_like": {
+    "kind": "binary",
+    "auc": 0.9946,
+    "auprc": 0.9148,
+    "accuracy": 0.9909,
+    "mcc": 0.7231,
+    "prevalence": 0.0193,
+    "n": 11069957,
+    "auc_std": 0.0038,
+    "n_shards": 63
+  },
+  "interpro_Cadherin_like_superfamily": {
+    "kind": "binary",
+    "auc": 0.9883,
+    "auprc": 0.9319,
+    "accuracy": 0.9916,
+    "mcc": 0.7454,
+    "prevalence": 0.0192,
+    "n": 11244662,
+    "auc_std": 0.0235,
+    "n_shards": 64
+  },
+  "interpro_Calponin_homology_domain": {
+    "kind": "binary",
+    "auc": 0.9024,
+    "auprc": 0.1661,
+    "accuracy": 0.9968,
+    "mcc": 0.0292,
+    "prevalence": 0.0032,
+    "n": 8669764,
+    "auc_std": 0.1014,
+    "n_shards": 49
+  },
+  "interpro_Collagen_triple_helix_repeat": {
+    "kind": "binary",
+    "auc": 0.9962,
+    "auprc": 0.4879,
+    "accuracy": 0.9921,
+    "mcc": 0.3489,
+    "prevalence": 0.0081,
+    "n": 11244662,
+    "auc_std": 0.003,
+    "n_shards": 64
+  },
+  "interpro_Concanavalin_A_like_lectin_glucanase_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.8895,
+    "auprc": 0.0559,
+    "accuracy": 0.9978,
+    "mcc": 0.0901,
+    "prevalence": 0.0018,
+    "n": 11063709,
+    "auc_std": 0.0852,
+    "n_shards": 63
+  },
+  "interpro_Cytochrome_P450": {
+    "kind": "binary",
+    "auc": 0.9672,
+    "auprc": 0.4646,
+    "accuracy": 0.9942,
+    "mcc": 0.4545,
+    "prevalence": 0.0072,
+    "n": 11060327,
+    "auc_std": 0.0303,
+    "n_shards": 63
+  },
+  "interpro_Cytochrome_P450_E_class_group_I": {
+    "kind": "binary",
+    "auc": 0.9534,
+    "auprc": 0.0651,
+    "accuracy": 0.9965,
+    "mcc": -0.0002,
+    "prevalence": 0.0035,
+    "n": 10885068,
+    "auc_std": 0.0337,
+    "n_shards": 62
+  },
+  "interpro_DnaJ_domain": {
+    "kind": "binary",
+    "auc": 0.8754,
+    "auprc": 0.0041,
+    "accuracy": 0.9994,
+    "mcc": 0.0,
+    "prevalence": 0.0006,
+    "n": 9478367,
+    "auc_std": 0.1059,
+    "n_shards": 54
+  },
+  "interpro_EF_Hand_1_calcium_binding_site": {
+    "kind": "binary",
+    "auc": 0.899,
+    "auprc": 0.0092,
+    "accuracy": 0.9997,
+    "mcc": -0.0001,
+    "prevalence": 0.0002,
+    "n": 10233552,
+    "auc_std": 0.1182,
+    "n_shards": 58
+  },
+  "interpro_EF_hand_domain": {
+    "kind": "binary",
+    "auc": 0.8977,
+    "auprc": 0.0328,
+    "accuracy": 0.9992,
+    "mcc": 0.1031,
+    "prevalence": 0.0008,
+    "n": 11091764,
+    "auc_std": 0.0959,
+    "n_shards": 63
+  },
+  "interpro_EF_hand_domain_pair": {
+    "kind": "binary",
+    "auc": 0.8959,
+    "auprc": 0.036,
+    "accuracy": 0.9991,
+    "mcc": 0.1302,
+    "prevalence": 0.0009,
+    "n": 11244662,
+    "auc_std": 0.0799,
+    "n_shards": 64
+  },
+  "interpro_EGF_like_calcium_binding_conserved_site": {
+    "kind": "binary",
+    "auc": 0.985,
+    "auprc": 0.1525,
+    "accuracy": 0.9981,
+    "mcc": 0.0971,
+    "prevalence": 0.0019,
+    "n": 10540276,
+    "auc_std": 0.0219,
+    "n_shards": 60
+  },
+  "interpro_EGF_like_calcium_binding_domain": {
+    "kind": "binary",
+    "auc": 0.9884,
+    "auprc": 0.3023,
+    "accuracy": 0.9945,
+    "mcc": 0.3495,
+    "prevalence": 0.0049,
+    "n": 11244662,
+    "auc_std": 0.0175,
+    "n_shards": 64
+  },
+  "interpro_EGF_like_domain": {
+    "kind": "binary",
+    "auc": 0.9885,
+    "auprc": 0.4999,
+    "accuracy": 0.9932,
+    "mcc": 0.5138,
+    "prevalence": 0.0076,
+    "n": 11244662,
+    "auc_std": 0.014,
+    "n_shards": 64
+  },
+  "interpro_EGF_type_aspartate_asparagine_hydroxylation_site": {
+    "kind": "binary",
+    "auc": 0.9995,
+    "auprc": 0.4438,
+    "accuracy": 0.9996,
+    "mcc": 0.4434,
+    "prevalence": 0.0004,
+    "n": 10549485,
+    "auc_std": 0.001,
+    "n_shards": 60
+  },
+  "interpro_Ets_domain": {
+    "kind": "binary",
+    "auc": 0.9268,
+    "auprc": 0.0014,
+    "accuracy": 0.9997,
+    "mcc": 0.0,
+    "prevalence": 0.0003,
+    "n": 7003750,
+    "auc_std": 0.0621,
+    "n_shards": 40
+  },
+  "interpro_Fibronectin_type_III": {
+    "kind": "binary",
+    "auc": 0.9749,
+    "auprc": 0.6368,
+    "accuracy": 0.994,
+    "mcc": 0.5898,
+    "prevalence": 0.0086,
+    "n": 11244662,
+    "auc_std": 0.0175,
+    "n_shards": 64
+  },
+  "interpro_Fibronectin_type_III_superfamily": {
+    "kind": "binary",
+    "auc": 0.9726,
+    "auprc": 0.7208,
+    "accuracy": 0.9943,
+    "mcc": 0.6764,
+    "prevalence": 0.01,
+    "n": 11244662,
+    "auc_std": 0.0208,
+    "n_shards": 64
+  },
+  "interpro_Fork_head_domain": {
+    "kind": "binary",
+    "auc": 0.8768,
+    "auprc": 0.0603,
+    "accuracy": 0.9989,
+    "mcc": 0.0702,
+    "prevalence": 0.0009,
+    "n": 6327019,
+    "auc_std": 0.1765,
+    "n_shards": 36
+  },
+  "interpro_GPCR_rhodopsin_like_7TM": {
+    "kind": "binary",
+    "auc": 0.9974,
+    "auprc": 0.9757,
+    "accuracy": 0.9992,
+    "mcc": 0.9226,
+    "prevalence": 0.0053,
+    "n": 11244662,
+    "auc_std": 0.0024,
+    "n_shards": 64
+  },
+  "interpro_G_protein_coupled_receptor_rhodopsin_like": {
+    "kind": "binary",
+    "auc": 0.9949,
+    "auprc": 0.6112,
+    "accuracy": 0.997,
+    "mcc": 0.6041,
+    "prevalence": 0.0034,
+    "n": 11244662,
+    "auc_std": 0.0038,
+    "n_shards": 64
+  },
+  "interpro_Growth_factor_receptor_cysteine_rich_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.9445,
+    "auprc": 0.2921,
+    "accuracy": 0.9919,
+    "mcc": 0.2583,
+    "prevalence": 0.0084,
+    "n": 11244662,
+    "auc_std": 0.0615,
+    "n_shards": 64
+  },
+  "interpro_Helicase_C_terminal_domain_like": {
+    "kind": "binary",
+    "auc": 0.8864,
+    "auprc": 0.0024,
+    "accuracy": 0.9986,
+    "mcc": -0.0005,
+    "prevalence": 0.0012,
+    "n": 10725625,
+    "auc_std": 0.0715,
+    "n_shards": 61
+  },
+  "interpro_Helicase_superfamily_1_2_ATP_binding_domain": {
+    "kind": "binary",
+    "auc": 0.9121,
+    "auprc": 0.0556,
+    "accuracy": 0.9998,
+    "mcc": 0.1282,
+    "prevalence": 0.0002,
+    "n": 11080241,
+    "auc_std": 0.086,
+    "n_shards": 63
+  },
+  "interpro_Hemopexin_like_repeats": {
+    "kind": "binary",
+    "auc": 0.9855,
+    "auprc": 0.098,
+    "accuracy": 0.9996,
+    "mcc": 0.124,
+    "prevalence": 0.0004,
+    "n": 5564468,
+    "auc_std": 0.0175,
+    "n_shards": 32
+  },
+  "interpro_Homedomain_like_superfamily": {
+    "kind": "binary",
+    "auc": 0.883,
+    "auprc": 0.6669,
+    "accuracy": 0.997,
+    "mcc": 0.6357,
+    "prevalence": 0.0049,
+    "n": 11244662,
+    "auc_std": 0.1459,
+    "n_shards": 64
+  },
+  "interpro_Homeodomain": {
+    "kind": "binary",
+    "auc": 0.9299,
+    "auprc": 0.4858,
+    "accuracy": 0.9978,
+    "mcc": 0.4777,
+    "prevalence": 0.0027,
+    "n": 11244662,
+    "auc_std": 0.1011,
+    "n_shards": 64
+  },
+  "interpro_Homeodomain_metazoa": {
+    "kind": "binary",
+    "auc": 0.9893,
+    "auprc": 0.1191,
+    "accuracy": 0.9994,
+    "mcc": 0.1321,
+    "prevalence": 0.0005,
+    "n": 9156374,
+    "auc_std": 0.0173,
+    "n_shards": 52
+  },
+  "interpro_IQ_motif_EF_hand_binding_site": {
+    "kind": "binary",
+    "auc": 0.8844,
+    "auprc": 0.0215,
+    "accuracy": 0.9981,
+    "mcc": 0.0,
+    "prevalence": 0.0019,
+    "n": 9687338,
+    "auc_std": 0.0898,
+    "n_shards": 55
+  },
+  "interpro_Immunoglobulin_E_set": {
+    "kind": "binary",
+    "auc": 0.8301,
+    "auprc": 0.408,
+    "accuracy": 0.9966,
+    "mcc": 0.2524,
+    "prevalence": 0.0037,
+    "n": 11060327,
+    "auc_std": 0.1592,
+    "n_shards": 63
+  },
+  "interpro_Immunoglobulin_I_set": {
+    "kind": "binary",
+    "auc": 0.9674,
+    "auprc": 0.5412,
+    "accuracy": 0.9967,
+    "mcc": 0.2886,
+    "prevalence": 0.0036,
+    "n": 11244662,
+    "auc_std": 0.0237,
+    "n_shards": 64
+  },
+  "interpro_Immunoglobulin_V_set_domain": {
+    "kind": "binary",
+    "auc": 0.9837,
+    "auprc": 0.432,
+    "accuracy": 0.9975,
+    "mcc": 0.346,
+    "prevalence": 0.0029,
+    "n": 10206601,
+    "auc_std": 0.0249,
+    "n_shards": 58
+  },
+  "interpro_Immunoglobulin_domain_subtype": {
+    "kind": "binary",
+    "auc": 0.9827,
+    "auprc": 0.7345,
+    "accuracy": 0.9926,
+    "mcc": 0.5807,
+    "prevalence": 0.0112,
+    "n": 11244662,
+    "auc_std": 0.0146,
+    "n_shards": 64
+  },
+  "interpro_Immunoglobulin_like_domain": {
+    "kind": "binary",
+    "auc": 0.9799,
+    "auprc": 0.6283,
+    "accuracy": 0.9923,
+    "mcc": 0.4913,
+    "prevalence": 0.01,
+    "n": 11244662,
+    "auc_std": 0.0168,
+    "n_shards": 64
+  },
+  "interpro_Immunoglobulin_like_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.9823,
+    "auprc": 0.6799,
+    "accuracy": 0.991,
+    "mcc": 0.5566,
+    "prevalence": 0.0128,
+    "n": 11244662,
+    "auc_std": 0.011,
+    "n_shards": 64
+  },
+  "interpro_Immunoglobulin_like_fold": {
+    "kind": "binary",
+    "auc": 0.975,
+    "auprc": 0.7677,
+    "accuracy": 0.9844,
+    "mcc": 0.6791,
+    "prevalence": 0.0281,
+    "n": 11244662,
+    "auc_std": 0.0118,
+    "n_shards": 64
+  },
+  "interpro_Immunoglobulin_subtype_2": {
+    "kind": "binary",
+    "auc": 0.9846,
+    "auprc": 0.5649,
+    "accuracy": 0.9938,
+    "mcc": 0.4176,
+    "prevalence": 0.0072,
+    "n": 11244662,
+    "auc_std": 0.015,
+    "n_shards": 64
+  },
+  "interpro_Intermediate_filament_rod_domain": {
+    "kind": "binary",
+    "auc": 0.9954,
+    "auprc": 0.8893,
+    "accuracy": 0.9994,
+    "mcc": 0.8174,
+    "prevalence": 0.0016,
+    "n": 10566423,
+    "auc_std": 0.0116,
+    "n_shards": 60
+  },
+  "interpro_Kelch_repeat_type_1": {
+    "kind": "binary",
+    "auc": 0.9668,
+    "auprc": 0.1503,
+    "accuracy": 0.9971,
+    "mcc": 0.1037,
+    "prevalence": 0.0026,
+    "n": 6490396,
+    "auc_std": 0.0267,
+    "n_shards": 37
+  },
+  "interpro_Kinesin_motor_domain": {
+    "kind": "binary",
+    "auc": 0.8726,
+    "auprc": 0.0047,
+    "accuracy": 0.9995,
+    "mcc": -0.0002,
+    "prevalence": 0.0001,
+    "n": 7898073,
+    "auc_std": 0.1145,
+    "n_shards": 45
+  },
+  "interpro_Krueppel_associated_box": {
+    "kind": "binary",
+    "auc": 0.9939,
+    "auprc": 0.8381,
+    "accuracy": 0.9997,
+    "mcc": 0.6621,
+    "prevalence": 0.0005,
+    "n": 10569393,
+    "auc_std": 0.0167,
+    "n_shards": 60
+  },
+  "interpro_Krueppel_associated_box_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.997,
+    "auprc": 0.6108,
+    "accuracy": 0.9996,
+    "mcc": 0.4537,
+    "prevalence": 0.0003,
+    "n": 10900298,
+    "auc_std": 0.0075,
+    "n_shards": 62
+  },
+  "interpro_LDLR_class_B_repeat": {
+    "kind": "binary",
+    "auc": 0.9709,
+    "auprc": 0.1334,
+    "accuracy": 0.9997,
+    "mcc": 0.1666,
+    "prevalence": 0.0003,
+    "n": 10373026,
+    "auc_std": 0.0467,
+    "n_shards": 59
+  },
+  "interpro_LDL_receptor_like_superfamily": {
+    "kind": "binary",
+    "auc": 0.9583,
+    "auprc": 0.1621,
+    "accuracy": 0.9975,
+    "mcc": 0.1739,
+    "prevalence": 0.0025,
+    "n": 10180323,
+    "auc_std": 0.0388,
+    "n_shards": 58
+  },
+  "interpro_Laminin_G_domain": {
+    "kind": "binary",
+    "auc": 0.986,
+    "auprc": 0.0719,
+    "accuracy": 0.9982,
+    "mcc": 0.023,
+    "prevalence": 0.0015,
+    "n": 9171599,
+    "auc_std": 0.016,
+    "n_shards": 52
+  },
+  "interpro_Laminin_type_EGF_domain": {
+    "kind": "binary",
+    "auc": 0.9044,
+    "auprc": 0.0883,
+    "accuracy": 0.9981,
+    "mcc": 0.1091,
+    "prevalence": 0.0017,
+    "n": 7877631,
+    "auc_std": 0.1,
+    "n_shards": 45
+  },
+  "interpro_Leucine_rich_repeat": {
+    "kind": "binary",
+    "auc": 0.9874,
+    "auprc": 0.2518,
+    "accuracy": 0.9988,
+    "mcc": 0.3583,
+    "prevalence": 0.001,
+    "n": 11068289,
+    "auc_std": 0.0244,
+    "n_shards": 63
+  },
+  "interpro_Leucine_rich_repeat_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.9455,
+    "auprc": 0.6476,
+    "accuracy": 0.9983,
+    "mcc": 0.5953,
+    "prevalence": 0.0019,
+    "n": 11244662,
+    "auc_std": 0.0457,
+    "n_shards": 64
+  },
+  "interpro_Leucine_rich_repeat_typical_subtype": {
+    "kind": "binary",
+    "auc": 0.9938,
+    "auprc": 0.5732,
+    "accuracy": 0.999,
+    "mcc": 0.6079,
+    "prevalence": 0.0014,
+    "n": 10903338,
+    "auc_std": 0.0119,
+    "n_shards": 62
+  },
+  "interpro_Low_density_lipoprotein_LDL_receptor_class_A_repeat": {
+    "kind": "binary",
+    "auc": 0.9631,
+    "auprc": 0.1639,
+    "accuracy": 0.9975,
+    "mcc": 0.1169,
+    "prevalence": 0.0025,
+    "n": 10360532,
+    "auc_std": 0.035,
+    "n_shards": 59
+  },
+  "interpro_MFS_transporter_superfamily": {
+    "kind": "binary",
+    "auc": 0.9637,
+    "auprc": 0.3502,
+    "accuracy": 0.9938,
+    "mcc": 0.3749,
+    "prevalence": 0.0064,
+    "n": 11244662,
+    "auc_std": 0.0207,
+    "n_shards": 64
+  },
+  "interpro_Mitochondrial_carrier_protein_transmembrane_region": {
+    "kind": "binary",
+    "auc": 0.948,
+    "auprc": 0.1761,
+    "accuracy": 0.9945,
+    "mcc": 0.1255,
+    "prevalence": 0.0056,
+    "n": 10367571,
+    "auc_std": 0.0531,
+    "n_shards": 59
+  },
+  "interpro_Myosin_head_motor_domain_like": {
+    "kind": "binary",
+    "auc": 0.9497,
+    "auprc": 0.2557,
+    "accuracy": 0.9971,
+    "mcc": 0.2398,
+    "prevalence": 0.003,
+    "n": 9998057,
+    "auc_std": 0.0747,
+    "n_shards": 57
+  },
+  "interpro_NOTCH1_EGF_like_calcium_binding_domain": {
+    "kind": "binary",
+    "auc": 0.9878,
+    "auprc": 0.0794,
+    "accuracy": 0.9982,
+    "mcc": 0.0624,
+    "prevalence": 0.0015,
+    "n": 10182846,
+    "auc_std": 0.0218,
+    "n_shards": 58
+  },
+  "interpro_Neurotransmitter_gated_ion_channel": {
+    "kind": "binary",
+    "auc": 0.9646,
+    "auprc": 0.1653,
+    "accuracy": 0.9964,
+    "mcc": 0.219,
+    "prevalence": 0.0026,
+    "n": 9535745,
+    "auc_std": 0.0306,
+    "n_shards": 54
+  },
+  "interpro_Nucleic_acid_binding_OB_fold": {
+    "kind": "binary",
+    "auc": 0.8355,
+    "auprc": 0.0003,
+    "accuracy": 1.0,
+    "mcc": 0.0,
+    "prevalence": 0.0,
+    "n": 10366620,
+    "auc_std": 0.1519,
+    "n_shards": 59
+  },
+  "interpro_Nucleotide_binding_alpha_beta_plait_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.9068,
+    "auprc": 0.3399,
+    "accuracy": 0.9987,
+    "mcc": 0.3071,
+    "prevalence": 0.0014,
+    "n": 10729903,
+    "auc_std": 0.1044,
+    "n_shards": 61
+  },
+  "interpro_Olduvai_domain": {
+    "kind": "binary",
+    "auc": 0.9433,
+    "auprc": 0.8536,
+    "accuracy": 0.9999,
+    "mcc": 0.5107,
+    "prevalence": 0.0001,
+    "n": 4418221,
+    "auc_std": 0.1318,
+    "n_shards": 25
+  },
+  "interpro_Olfactory_receptor": {
+    "kind": "binary",
+    "auc": 1.0,
+    "auprc": 0.9913,
+    "accuracy": 0.9991,
+    "mcc": 0.8899,
+    "prevalence": 0.0045,
+    "n": 11065728,
+    "auc_std": 0.0001,
+    "n_shards": 63
+  },
+  "interpro_PDZ_domain": {
+    "kind": "binary",
+    "auc": 0.8698,
+    "auprc": 0.0035,
+    "accuracy": 0.9999,
+    "mcc": 0.0,
+    "prevalence": 0.0001,
+    "n": 10354404,
+    "auc_std": 0.0998,
+    "n_shards": 59
+  },
+  "interpro_PDZ_superfamily": {
+    "kind": "binary",
+    "auc": 0.8469,
+    "auprc": 0.0035,
+    "accuracy": 0.9998,
+    "mcc": -0.0,
+    "prevalence": 0.0002,
+    "n": 10354404,
+    "auc_std": 0.1037,
+    "n_shards": 59
+  },
+  "interpro_PH_like_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.879,
+    "auprc": 0.0243,
+    "accuracy": 0.9969,
+    "mcc": -0.0005,
+    "prevalence": 0.003,
+    "n": 11244662,
+    "auc_std": 0.0607,
+    "n_shards": 64
+  },
+  "interpro_P_loop_containing_nucleoside_triphosphate_hydrolase": {
+    "kind": "binary",
+    "auc": 0.8853,
+    "auprc": 0.3208,
+    "accuracy": 0.9586,
+    "mcc": 0.314,
+    "prevalence": 0.0411,
+    "n": 11244662,
+    "auc_std": 0.0284,
+    "n_shards": 64
+  },
+  "interpro_Peptidase_S1A_chymotrypsin_family": {
+    "kind": "binary",
+    "auc": 0.9914,
+    "auprc": 0.2676,
+    "accuracy": 0.9982,
+    "mcc": 0.3143,
+    "prevalence": 0.0018,
+    "n": 10884364,
+    "auc_std": 0.011,
+    "n_shards": 62
+  },
+  "interpro_Pleckstrin_homology_domain": {
+    "kind": "binary",
+    "auc": 0.9173,
+    "auprc": 0.0304,
+    "accuracy": 0.9996,
+    "mcc": -0.0,
+    "prevalence": 0.0004,
+    "n": 11070313,
+    "auc_std": 0.0857,
+    "n_shards": 63
+  },
+  "interpro_Protein_kinase_ATP_binding_site": {
+    "kind": "binary",
+    "auc": 0.9523,
+    "auprc": 0.1512,
+    "accuracy": 0.9986,
+    "mcc": 0.1659,
+    "prevalence": 0.0014,
+    "n": 11065205,
+    "auc_std": 0.0496,
+    "n_shards": 63
+  },
+  "interpro_Protein_kinase_domain": {
+    "kind": "binary",
+    "auc": 0.9601,
+    "auprc": 0.6653,
+    "accuracy": 0.9927,
+    "mcc": 0.6014,
+    "prevalence": 0.0114,
+    "n": 11244662,
+    "auc_std": 0.0235,
+    "n_shards": 64
+  },
+  "interpro_Protein_kinase_like_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.9374,
+    "auprc": 0.6095,
+    "accuracy": 0.9912,
+    "mcc": 0.5732,
+    "prevalence": 0.0131,
+    "n": 11244662,
+    "auc_std": 0.0297,
+    "n_shards": 64
+  },
+  "interpro_RNA_binding_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.909,
+    "auprc": 0.378,
+    "accuracy": 0.999,
+    "mcc": 0.3427,
+    "prevalence": 0.0012,
+    "n": 10729903,
+    "auc_std": 0.1074,
+    "n_shards": 61
+  },
+  "interpro_RNA_recognition_motif_domain": {
+    "kind": "binary",
+    "auc": 0.9247,
+    "auprc": 0.3926,
+    "accuracy": 0.9991,
+    "mcc": 0.3728,
+    "prevalence": 0.0011,
+    "n": 10729903,
+    "auc_std": 0.108,
+    "n_shards": 61
+  },
+  "interpro_Regulator_of_chromosome_condensation_RCC1": {
+    "kind": "binary",
+    "auc": 0.8748,
+    "auprc": 0.0647,
+    "accuracy": 0.9983,
+    "mcc": 0.0658,
+    "prevalence": 0.0017,
+    "n": 4778463,
+    "auc_std": 0.1283,
+    "n_shards": 27
+  },
+  "interpro_SCAN_domain": {
+    "kind": "binary",
+    "auc": 0.9843,
+    "auprc": 0.6355,
+    "accuracy": 0.9997,
+    "mcc": 0.2022,
+    "prevalence": 0.0003,
+    "n": 4917577,
+    "auc_std": 0.024,
+    "n_shards": 28
+  },
+  "interpro_SH2_domain": {
+    "kind": "binary",
+    "auc": 0.8813,
+    "auprc": 0.0639,
+    "accuracy": 1.0,
+    "mcc": -0.0,
+    "prevalence": 0.0,
+    "n": 9148535,
+    "auc_std": 0.1107,
+    "n_shards": 52
+  },
+  "interpro_SH2_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.8459,
+    "auprc": 0.2507,
+    "accuracy": 1.0,
+    "mcc": 0.3535,
+    "prevalence": 0.0,
+    "n": 9324908,
+    "auc_std": 0.1024,
+    "n_shards": 53
+  },
+  "interpro_SH3_domain": {
+    "kind": "binary",
+    "auc": 0.8949,
+    "auprc": 0.0303,
+    "accuracy": 0.999,
+    "mcc": 0.0,
+    "prevalence": 0.001,
+    "n": 11244662,
+    "auc_std": 0.0935,
+    "n_shards": 64
+  },
+  "interpro_SH3_like_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.8908,
+    "auprc": 0.0329,
+    "accuracy": 0.9973,
+    "mcc": 0.0,
+    "prevalence": 0.0027,
+    "n": 11072192,
+    "auc_std": 0.0664,
+    "n_shards": 63
+  },
+  "interpro_SKP1_BTB_POZ_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.8973,
+    "auprc": 0.1493,
+    "accuracy": 0.9988,
+    "mcc": 0.0971,
+    "prevalence": 0.0012,
+    "n": 9825295,
+    "auc_std": 0.0883,
+    "n_shards": 56
+  },
+  "interpro_SRCR_domain": {
+    "kind": "binary",
+    "auc": 0.9695,
+    "auprc": 0.0022,
+    "accuracy": 0.9998,
+    "mcc": 0.0,
+    "prevalence": 0.0002,
+    "n": 8395685,
+    "auc_std": 0.0298,
+    "n_shards": 48
+  },
+  "interpro_S_adenosyl_L_methionine_dependent_methyltransferase_superfamily": {
+    "kind": "binary",
+    "auc": 0.876,
+    "auprc": 0.051,
+    "accuracy": 0.999,
+    "mcc": -0.0001,
+    "prevalence": 0.001,
+    "n": 11244662,
+    "auc_std": 0.0626,
+    "n_shards": 64
+  },
+  "interpro_Serine_proteases_trypsin_domain": {
+    "kind": "binary",
+    "auc": 0.9945,
+    "auprc": 0.6675,
+    "accuracy": 0.9963,
+    "mcc": 0.6594,
+    "prevalence": 0.0064,
+    "n": 11061109,
+    "auc_std": 0.0055,
+    "n_shards": 63
+  },
+  "interpro_Serine_threonine_protein_kinase_active_site": {
+    "kind": "binary",
+    "auc": 0.9684,
+    "auprc": 0.1968,
+    "accuracy": 0.9991,
+    "mcc": 0.2244,
+    "prevalence": 0.0009,
+    "n": 10210935,
+    "auc_std": 0.0498,
+    "n_shards": 58
+  },
+  "interpro_Serine_threonine_tyrosine_protein_kinase_catalytic_domain": {
+    "kind": "binary",
+    "auc": 0.9615,
+    "auprc": 0.3958,
+    "accuracy": 0.9947,
+    "mcc": 0.2896,
+    "prevalence": 0.0057,
+    "n": 11244662,
+    "auc_std": 0.0319,
+    "n_shards": 64
+  },
+  "interpro_Short_chain_dehydrogenase_reductase_SDR": {
+    "kind": "binary",
+    "auc": 0.9207,
+    "auprc": 0.4201,
+    "accuracy": 0.9981,
+    "mcc": 0.3966,
+    "prevalence": 0.0023,
+    "n": 8478883,
+    "auc_std": 0.0539,
+    "n_shards": 48
+  },
+  "interpro_Small_GTPase": {
+    "kind": "binary",
+    "auc": 0.9113,
+    "auprc": 0.4075,
+    "accuracy": 0.9977,
+    "mcc": 0.3643,
+    "prevalence": 0.0027,
+    "n": 9671043,
+    "auc_std": 0.0725,
+    "n_shards": 55
+  },
+  "interpro_Spectrin_alpha_actinin": {
+    "kind": "binary",
+    "auc": 0.9751,
+    "auprc": 0.6905,
+    "accuracy": 0.9974,
+    "mcc": 0.5658,
+    "prevalence": 0.0038,
+    "n": 9482209,
+    "auc_std": 0.0287,
+    "n_shards": 54
+  },
+  "interpro_Spectrin_repeat": {
+    "kind": "binary",
+    "auc": 0.9869,
+    "auprc": 0.4042,
+    "accuracy": 0.9964,
+    "mcc": 0.1602,
+    "prevalence": 0.0035,
+    "n": 8625987,
+    "auc_std": 0.0134,
+    "n_shards": 49
+  },
+  "interpro_Sterile_alpha_motif_domain": {
+    "kind": "binary",
+    "auc": 0.836,
+    "auprc": 0.0001,
+    "accuracy": 1.0,
+    "mcc": 0.0,
+    "prevalence": 0.0,
+    "n": 4912213,
+    "auc_std": 0.1389,
+    "n_shards": 28
+  },
+  "interpro_Sterile_alpha_motif_pointed_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.82,
+    "auprc": 0.0002,
+    "accuracy": 0.9999,
+    "mcc": 0.0,
+    "prevalence": 0.0001,
+    "n": 7209813,
+    "auc_std": 0.1237,
+    "n_shards": 41
+  },
+  "interpro_Sushi_SCR_CCP_domain": {
+    "kind": "binary",
+    "auc": 0.9841,
+    "auprc": 0.843,
+    "accuracy": 0.9998,
+    "mcc": 0.8698,
+    "prevalence": 0.0008,
+    "n": 8272454,
+    "auc_std": 0.0135,
+    "n_shards": 47
+  },
+  "interpro_Sushi_SCR_CCP_superfamily": {
+    "kind": "binary",
+    "auc": 0.9726,
+    "auprc": 0.9056,
+    "accuracy": 0.9999,
+    "mcc": 0.9102,
+    "prevalence": 0.0008,
+    "n": 8094502,
+    "auc_std": 0.0234,
+    "n_shards": 46
+  },
+  "interpro_Tetratricopeptide_like_helical_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.8835,
+    "auprc": 0.0819,
+    "accuracy": 0.9919,
+    "mcc": 0.1067,
+    "prevalence": 0.0081,
+    "n": 11244662,
+    "auc_std": 0.0649,
+    "n_shards": 64
+  },
+  "interpro_Tetratricopeptide_repeat": {
+    "kind": "binary",
+    "auc": 0.9382,
+    "auprc": 0.1121,
+    "accuracy": 0.9988,
+    "mcc": 0.0783,
+    "prevalence": 0.0012,
+    "n": 10377014,
+    "auc_std": 0.0616,
+    "n_shards": 59
+  },
+  "interpro_Thrombospondin_type_1_TSP1_repeat": {
+    "kind": "binary",
+    "auc": 0.9789,
+    "auprc": 0.0015,
+    "accuracy": 0.9998,
+    "mcc": -0.0001,
+    "prevalence": 0.0001,
+    "n": 10034545,
+    "auc_std": 0.0156,
+    "n_shards": 57
+  },
+  "interpro_Thrombospondin_type_1_repeat_superfamily": {
+    "kind": "binary",
+    "auc": 0.9206,
+    "auprc": 0.0002,
+    "accuracy": 0.9999,
+    "mcc": -0.0,
+    "prevalence": 0.0001,
+    "n": 10034545,
+    "auc_std": 0.0871,
+    "n_shards": 57
+  },
+  "interpro_Tubulin": {
+    "kind": "binary",
+    "auc": 0.9909,
+    "auprc": 0.9987,
+    "accuracy": 0.9999,
+    "mcc": 0.9855,
+    "prevalence": 0.0044,
+    "n": 10575698,
+    "auc_std": 0.0204,
+    "n_shards": 60
+  },
+  "interpro_VWFC_domain": {
+    "kind": "binary",
+    "auc": 0.9598,
+    "auprc": 0.1965,
+    "accuracy": 0.9986,
+    "mcc": 0.1778,
+    "prevalence": 0.0015,
+    "n": 8223399,
+    "auc_std": 0.036,
+    "n_shards": 47
+  },
+  "interpro_WD40_YVTN_repeat_like_containing_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.9236,
+    "auprc": 0.3683,
+    "accuracy": 0.9969,
+    "mcc": 0.4731,
+    "prevalence": 0.0039,
+    "n": 11244662,
+    "auc_std": 0.0332,
+    "n_shards": 64
+  },
+  "interpro_WD40_repeat": {
+    "kind": "binary",
+    "auc": 0.9602,
+    "auprc": 0.2423,
+    "accuracy": 0.998,
+    "mcc": 0.1963,
+    "prevalence": 0.002,
+    "n": 11071405,
+    "auc_std": 0.0193,
+    "n_shards": 63
+  },
+  "interpro_WD40_repeat_containing_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.9372,
+    "auprc": 0.3043,
+    "accuracy": 0.9972,
+    "mcc": 0.3807,
+    "prevalence": 0.0031,
+    "n": 11244662,
+    "auc_std": 0.0477,
+    "n_shards": 64
+  },
+  "interpro_WW_domain": {
+    "kind": "binary",
+    "auc": 0.7902,
+    "auprc": 0.0003,
+    "accuracy": 0.9997,
+    "mcc": 0.0,
+    "prevalence": 0.0003,
+    "n": 5290743,
+    "auc_std": 0.1352,
+    "n_shards": 30
+  },
+  "interpro_Winged_helix_DNA_binding_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.742,
+    "auprc": 0.0439,
+    "accuracy": 0.9968,
+    "mcc": 0.0332,
+    "prevalence": 0.0032,
+    "n": 11244662,
+    "auc_std": 0.158,
+    "n_shards": 64
+  },
+  "interpro_Winged_helix_like_DNA_binding_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.7569,
+    "auprc": 0.0292,
+    "accuracy": 0.9964,
+    "mcc": 0.0164,
+    "prevalence": 0.0033,
+    "n": 11244662,
+    "auc_std": 0.1396,
+    "n_shards": 64
+  },
+  "interpro_Zinc_finger_C2H2_superfamily": {
+    "kind": "binary",
+    "auc": 0.9836,
+    "auprc": 0.8708,
+    "accuracy": 0.9968,
+    "mcc": 0.7943,
+    "prevalence": 0.0081,
+    "n": 11244662,
+    "auc_std": 0.0122,
+    "n_shards": 64
+  },
+  "interpro_Zinc_finger_C2H2_type": {
+    "kind": "binary",
+    "auc": 0.9856,
+    "auprc": 0.8945,
+    "accuracy": 0.9967,
+    "mcc": 0.8049,
+    "prevalence": 0.0092,
+    "n": 11244662,
+    "auc_std": 0.0124,
+    "n_shards": 64
+  },
+  "interpro_Zinc_finger_RING_FYVE_PHD_type": {
+    "kind": "binary",
+    "auc": 0.8989,
+    "auprc": 0.2248,
+    "accuracy": 0.9987,
+    "mcc": 0.1906,
+    "prevalence": 0.0014,
+    "n": 11244662,
+    "auc_std": 0.0595,
+    "n_shards": 64
+  },
+  "interpro_Zinc_finger_RING_type": {
+    "kind": "binary",
+    "auc": 0.9282,
+    "auprc": 0.0198,
+    "accuracy": 0.9989,
+    "mcc": -0.0002,
+    "prevalence": 0.0011,
+    "n": 10901685,
+    "auc_std": 0.0845,
+    "n_shards": 62
+  },
+  "interpro_von_Willebrand_factor_A_like_domain_superfamily": {
+    "kind": "binary",
+    "auc": 0.8161,
+    "auprc": 0.3135,
+    "accuracy": 0.9961,
+    "mcc": 0.2785,
+    "prevalence": 0.0042,
+    "n": 10374960,
+    "auc_std": 0.152,
+    "n_shards": 59
+  },
+  "interpro_von_Willebrand_factor_type_A": {
+    "kind": "binary",
+    "auc": 0.8731,
+    "auprc": 0.2939,
+    "accuracy": 0.9964,
+    "mcc": 0.2906,
+    "prevalence": 0.0039,
+    "n": 9849892,
+    "auc_std": 0.1412,
+    "n_shards": 56
+  },
+  "is_allosteric": {
+    "kind": "binary",
+    "auc": 0.6477,
+    "auprc": 0.1238,
+    "accuracy": 0.9062,
+    "mcc": -0.023,
+    "prevalence": 0.0857,
+    "n": 474954,
+    "auc_std": 0.057,
+    "n_shards": 64
+  },
+  "is_alt_cds": {
+    "kind": "binary",
+    "auc": 0.834,
+    "auprc": 0.042,
+    "accuracy": 0.992,
+    "mcc": 0.0248,
+    "prevalence": 0.008,
+    "n": 12488682,
+    "auc_std": 0.0352,
+    "n_shards": 64
+  },
+  "is_alu": {
+    "kind": "binary",
+    "auc": 0.9991,
+    "auprc": 0.9262,
+    "accuracy": 0.9992,
+    "mcc": 0.8521,
+    "prevalence": 0.0031,
+    "n": 12488682,
+    "auc_std": 0.0015,
+    "n_shards": 64
+  },
+  "is_any_repeat": {
+    "kind": "binary",
+    "auc": 0.9199,
+    "auprc": 0.6266,
+    "accuracy": 0.9755,
+    "mcc": 0.5561,
+    "prevalence": 0.0351,
+    "n": 12488682,
+    "auc_std": 0.0135,
+    "n_shards": 64
+  },
+  "is_branchpoint_region": {
+    "kind": "binary",
+    "auc": 0.9971,
+    "auprc": 0.9705,
+    "accuracy": 0.9942,
+    "mcc": 0.9162,
+    "prevalence": 0.0366,
+    "n": 12488682,
+    "auc_std": 0.0011,
+    "n_shards": 64
+  },
+  "is_buried": {
+    "kind": "binary",
+    "auc": 0.9167,
+    "auprc": 0.1036,
+    "accuracy": 0.9917,
+    "mcc": 0.0512,
+    "prevalence": 0.0083,
+    "n": 11243635,
+    "auc_std": 0.0069,
+    "n_shards": 64
+  },
+  "is_constitutive_exon": {
+    "kind": "binary",
+    "auc": 0.8328,
+    "auprc": 0.222,
+    "accuracy": 0.9536,
+    "mcc": 0.161,
+    "prevalence": 0.0474,
+    "n": 12335298,
+    "auc_std": 0.0196,
+    "n_shards": 64
+  },
+  "is_cpg_island": {
+    "kind": "binary",
+    "auc": 0.9854,
+    "auprc": 0.9031,
+    "accuracy": 0.9676,
+    "mcc": 0.8287,
+    "prevalence": 0.1069,
+    "n": 12488682,
+    "auc_std": 0.0031,
+    "n_shards": 64
+  },
+  "is_disordered": {
+    "kind": "binary",
+    "auc": 0.801,
+    "auprc": 0.9405,
+    "accuracy": 0.8562,
+    "mcc": 0.5331,
+    "prevalence": 0.7796,
+    "n": 1891071,
+    "auc_std": 0.0255,
+    "n_shards": 64
+  },
+  "is_dna_transposon": {
+    "kind": "binary",
+    "auc": 0.9267,
+    "auprc": 0.4234,
+    "accuracy": 0.9972,
+    "mcc": 0.3906,
+    "prevalence": 0.0033,
+    "n": 12488682,
+    "auc_std": 0.0571,
+    "n_shards": 64
+  },
+  "is_exon_to_intron": {
+    "kind": "binary",
+    "auc": 0.9994,
+    "auprc": 0.9936,
+    "accuracy": 0.9997,
+    "mcc": 0.9723,
+    "prevalence": 0.0047,
+    "n": 12488682,
+    "auc_std": 0.0005,
+    "n_shards": 64
+  },
+  "is_intron_to_exon": {
+    "kind": "binary",
+    "auc": 0.9991,
+    "auprc": 0.9817,
+    "accuracy": 0.9997,
+    "mcc": 0.9636,
+    "prevalence": 0.0049,
+    "n": 12488682,
+    "auc_std": 0.0008,
+    "n_shards": 64
+  },
+  "is_line": {
+    "kind": "binary",
+    "auc": 0.9166,
+    "auprc": 0.3382,
+    "accuracy": 0.9926,
+    "mcc": 0.2889,
+    "prevalence": 0.0079,
+    "n": 12488682,
+    "auc_std": 0.0398,
+    "n_shards": 64
+  },
+  "is_linear_interacting": {
+    "kind": "binary",
+    "auc": 0.7563,
+    "auprc": 0.8587,
+    "accuracy": 0.7104,
+    "mcc": 0.3664,
+    "prevalence": 0.6532,
+    "n": 1891071,
+    "auc_std": 0.0158,
+    "n_shards": 64
+  },
+  "is_low_plddt": {
+    "kind": "binary",
+    "auc": 0.9749,
+    "auprc": 0.8559,
+    "accuracy": 0.9562,
+    "mcc": 0.7849,
+    "prevalence": 0.1158,
+    "n": 11243635,
+    "auc_std": 0.0036,
+    "n_shards": 64
+  },
+  "is_ltr": {
+    "kind": "binary",
+    "auc": 0.9735,
+    "auprc": 0.449,
+    "accuracy": 0.9982,
+    "mcc": 0.4611,
+    "prevalence": 0.0019,
+    "n": 12488682,
+    "auc_std": 0.0395,
+    "n_shards": 64
+  },
+  "is_polypyrimidine_tract": {
+    "kind": "binary",
+    "auc": 0.9984,
+    "auprc": 0.9898,
+    "accuracy": 0.9975,
+    "mcc": 0.9605,
+    "prevalence": 0.0329,
+    "n": 12488682,
+    "auc_std": 0.0008,
+    "n_shards": 64
+  },
+  "is_ppi_interface": {
+    "kind": "binary",
+    "auc": 0.6406,
+    "auprc": 0.9676,
+    "accuracy": 0.9309,
+    "mcc": -0.0069,
+    "prevalence": 0.9342,
+    "n": 474954,
+    "auc_std": 0.055,
+    "n_shards": 64
+  },
+  "is_ptc_region": {
+    "kind": "binary",
+    "auc": 0.9915,
+    "auprc": 0.9738,
+    "accuracy": 0.9683,
+    "mcc": 0.9072,
+    "prevalence": 0.2167,
+    "n": 12335298,
+    "auc_std": 0.0017,
+    "n_shards": 64
+  },
+  "is_segdup": {
+    "kind": "binary",
+    "auc": 0.7878,
+    "auprc": 0.5344,
+    "accuracy": 0.9543,
+    "mcc": 0.5388,
+    "prevalence": 0.0653,
+    "n": 12488682,
+    "auc_std": 0.047,
+    "n_shards": 64
+  },
+  "is_simple_repeat_rmsk": {
+    "kind": "binary",
+    "auc": 0.9394,
+    "auprc": 0.5426,
+    "accuracy": 0.9888,
+    "mcc": 0.5076,
+    "prevalence": 0.0146,
+    "n": 12488682,
+    "auc_std": 0.0108,
+    "n_shards": 64
+  },
+  "is_sine": {
+    "kind": "binary",
+    "auc": 0.9699,
+    "auprc": 0.7816,
+    "accuracy": 0.9961,
+    "mcc": 0.6736,
+    "prevalence": 0.0071,
+    "n": 12488682,
+    "auc_std": 0.0187,
+    "n_shards": 64
+  },
+  "is_splice_acceptor": {
+    "kind": "binary",
+    "auc": 0.999,
+    "auprc": 0.9859,
+    "accuracy": 0.9996,
+    "mcc": 0.9632,
+    "prevalence": 0.0049,
+    "n": 12488682,
+    "auc_std": 0.0009,
+    "n_shards": 64
+  },
+  "is_splice_donor": {
+    "kind": "binary",
+    "auc": 0.9992,
+    "auprc": 0.9861,
+    "accuracy": 0.9997,
+    "mcc": 0.9673,
+    "prevalence": 0.0046,
+    "n": 12488682,
+    "auc_std": 0.0006,
+    "n_shards": 64
+  },
+  "is_start_codon": {
+    "kind": "binary",
+    "auc": 0.9971,
+    "auprc": 0.7569,
+    "accuracy": 0.9997,
+    "mcc": 0.6627,
+    "prevalence": 0.0006,
+    "n": 12335298,
+    "auc_std": 0.0032,
+    "n_shards": 64
+  },
+  "is_stop_codon": {
+    "kind": "binary",
+    "auc": 0.6737,
+    "auprc": 0.0,
+    "accuracy": 1.0,
+    "mcc": 0.0,
+    "prevalence": 0.0,
+    "n": 2860190,
+    "auc_std": 0.3128,
+    "n_shards": 15
+  },
+  "is_trf": {
+    "kind": "binary",
+    "auc": 0.9549,
+    "auprc": 0.7098,
+    "accuracy": 0.9939,
+    "mcc": 0.6621,
+    "prevalence": 0.0107,
+    "n": 12488682,
+    "auc_std": 0.017,
+    "n_shards": 64
+  },
+  "is_uorf": {
+    "kind": "binary",
+    "auc": 0.976,
+    "auprc": 0.0468,
+    "accuracy": 0.9983,
+    "mcc": -0.0002,
+    "prevalence": 0.0016,
+    "n": 12335298,
+    "auc_std": 0.0124,
+    "n_shards": 64
+  },
+  "ptm_acetylation": {
+    "kind": "binary",
+    "auc": 0.9625,
+    "auprc": 0.772,
+    "accuracy": 0.9512,
+    "mcc": 0.6924,
+    "prevalence": 0.0976,
+    "n": 48803,
+    "auc_std": 0.0187,
+    "n_shards": 64
+  },
+  "ptm_glycosylation": {
+    "kind": "binary",
+    "auc": 0.9876,
+    "auprc": 0.9956,
+    "accuracy": 0.9736,
+    "mcc": 0.9461,
+    "prevalence": 0.4274,
+    "n": 48803,
+    "auc_std": 0.0072,
+    "n_shards": 64
+  },
+  "ptm_methylation": {
+    "kind": "binary",
+    "auc": 0.9252,
+    "auprc": 0.83,
+    "accuracy": 0.9828,
+    "mcc": 0.7161,
+    "prevalence": 0.033,
+    "n": 48803,
+    "auc_std": 0.0741,
+    "n_shards": 64
+  },
+  "ptm_phosphorylation": {
+    "kind": "binary",
+    "auc": 0.9862,
+    "auprc": 0.985,
+    "accuracy": 0.9433,
+    "mcc": 0.8813,
+    "prevalence": 0.3958,
+    "n": 48803,
+    "auc_std": 0.0062,
+    "n_shards": 64
+  },
+  "ptm_sumoylation": {
+    "kind": "binary",
+    "auc": 0.9664,
+    "auprc": 0.7017,
+    "accuracy": 0.9591,
+    "mcc": 0.5145,
+    "prevalence": 0.0541,
+    "n": 48803,
+    "auc_std": 0.0163,
+    "n_shards": 64
+  },
+  "ptm_ubiquitination": {
+    "kind": "binary",
+    "auc": 0.9189,
+    "auprc": 0.3841,
+    "accuracy": 0.9894,
+    "mcc": 0.3489,
+    "prevalence": 0.0106,
+    "n": 43776,
+    "auc_std": 0.0537,
+    "n_shards": 57
+  },
+  "amino_acid": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_A": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_C": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_D": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_E": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_F": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_G": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_H": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_I": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_K": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_L": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_M": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_N": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_P": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_Q": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_R": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_S": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_T": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_V": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_W": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_Y": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "amino_acid_none": {
+    "kind": "categorical",
+    "accuracy": 0.9534,
+    "n_classes": 21,
+    "n": 12335298,
+    "accuracy_std": 0.0039,
+    "n_shards": 64
+  },
+  "ccre_chromatin": {
+    "kind": "categorical",
+    "accuracy": 0.9454,
+    "n_classes": 5,
+    "n": 12488682,
+    "accuracy_std": 0.0062,
+    "n_shards": 64
+  },
+  "ccre_chromatin_accessible": {
+    "kind": "categorical",
+    "accuracy": 0.9454,
+    "n_classes": 5,
+    "n": 12488682,
+    "accuracy_std": 0.0062,
+    "n_shards": 64
+  },
+  "ccre_chromatin_ctcf": {
+    "kind": "categorical",
+    "accuracy": 0.9454,
+    "n_classes": 5,
+    "n": 12488682,
+    "accuracy_std": 0.0062,
+    "n_shards": 64
+  },
+  "ccre_chromatin_h3k4me3": {
+    "kind": "categorical",
+    "accuracy": 0.9454,
+    "n_classes": 5,
+    "n": 12488682,
+    "accuracy_std": 0.0062,
+    "n_shards": 64
+  },
+  "ccre_chromatin_none": {
+    "kind": "categorical",
+    "accuracy": 0.9454,
+    "n_classes": 5,
+    "n": 12488682,
+    "accuracy_std": 0.0062,
+    "n_shards": 64
+  },
+  "ccre_chromatin_tf": {
+    "kind": "categorical",
+    "accuracy": 0.9454,
+    "n_classes": 5,
+    "n": 12488682,
+    "accuracy_std": 0.0062,
+    "n_shards": 64
+  },
+  "ccre_distal_enhancer": {
+    "kind": "categorical",
+    "accuracy": 0.6475,
+    "n_classes": 4,
+    "n": 12488682,
+    "accuracy_std": 0.0123,
+    "n_shards": 64
+  },
+  "ccre_promoter": {
+    "kind": "categorical",
+    "accuracy": 0.6475,
+    "n_classes": 4,
+    "n": 12488682,
+    "accuracy_std": 0.0123,
+    "n_shards": 64
+  },
+  "ccre_proximal_enhancer": {
+    "kind": "categorical",
+    "accuracy": 0.6475,
+    "n_classes": 4,
+    "n": 12488682,
+    "accuracy_std": 0.0123,
+    "n_shards": 64
+  },
+  "ccre_type": {
+    "kind": "categorical",
+    "accuracy": 0.6475,
+    "n_classes": 4,
+    "n": 12488682,
+    "accuracy_std": 0.0123,
+    "n_shards": 64
+  },
+  "ccre_type_none": {
+    "kind": "categorical",
+    "accuracy": 0.6475,
+    "n_classes": 4,
+    "n": 12488682,
+    "accuracy_std": 0.0123,
+    "n_shards": 64
+  },
+  "chromhmm_esc": {
+    "kind": "categorical",
+    "accuracy": 0.6955,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0118,
+    "n_shards": 64
+  },
+  "chromhmm_esc_active_tss": {
+    "kind": "categorical",
+    "accuracy": 0.6955,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0118,
+    "n_shards": 64
+  },
+  "chromhmm_esc_bivalent": {
+    "kind": "categorical",
+    "accuracy": 0.6955,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0118,
+    "n_shards": 64
+  },
+  "chromhmm_esc_enhancer": {
+    "kind": "categorical",
+    "accuracy": 0.6955,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0118,
+    "n_shards": 64
+  },
+  "chromhmm_esc_none": {
+    "kind": "categorical",
+    "accuracy": 0.6955,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0118,
+    "n_shards": 64
+  },
+  "chromhmm_esc_repressed": {
+    "kind": "categorical",
+    "accuracy": 0.6955,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0118,
+    "n_shards": 64
+  },
+  "chromhmm_esc_transcribed": {
+    "kind": "categorical",
+    "accuracy": 0.6955,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0118,
+    "n_shards": 64
+  },
+  "chromhmm_fetal_brain": {
+    "kind": "categorical",
+    "accuracy": 0.6609,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0124,
+    "n_shards": 64
+  },
+  "chromhmm_fetal_brain_active_tss": {
+    "kind": "categorical",
+    "accuracy": 0.6609,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0124,
+    "n_shards": 64
+  },
+  "chromhmm_fetal_brain_bivalent": {
+    "kind": "categorical",
+    "accuracy": 0.6609,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0124,
+    "n_shards": 64
+  },
+  "chromhmm_fetal_brain_enhancer": {
+    "kind": "categorical",
+    "accuracy": 0.6609,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0124,
+    "n_shards": 64
+  },
+  "chromhmm_fetal_brain_none": {
+    "kind": "categorical",
+    "accuracy": 0.6609,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0124,
+    "n_shards": 64
+  },
+  "chromhmm_fetal_brain_repressed": {
+    "kind": "categorical",
+    "accuracy": 0.6609,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0124,
+    "n_shards": 64
+  },
+  "chromhmm_fetal_brain_transcribed": {
+    "kind": "categorical",
+    "accuracy": 0.6609,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0124,
+    "n_shards": 64
+  },
+  "chromhmm_gm12878": {
+    "kind": "categorical",
+    "accuracy": 0.6227,
+    "n_classes": 6,
+    "n": 19236786,
+    "accuracy_std": 0.0125,
+    "n_shards": 64
+  },
+  "chromhmm_gm12878_active_tss": {
+    "kind": "categorical",
+    "accuracy": 0.6227,
+    "n_classes": 6,
+    "n": 19236786,
+    "accuracy_std": 0.0125,
+    "n_shards": 64
+  },
+  "chromhmm_gm12878_bivalent": {
+    "kind": "categorical",
+    "accuracy": 0.6227,
+    "n_classes": 6,
+    "n": 19236786,
+    "accuracy_std": 0.0125,
+    "n_shards": 64
+  },
+  "chromhmm_gm12878_enhancer": {
+    "kind": "categorical",
+    "accuracy": 0.6227,
+    "n_classes": 6,
+    "n": 19236786,
+    "accuracy_std": 0.0125,
+    "n_shards": 64
+  },
+  "chromhmm_gm12878_none": {
+    "kind": "categorical",
+    "accuracy": 0.6227,
+    "n_classes": 6,
+    "n": 19236786,
+    "accuracy_std": 0.0125,
+    "n_shards": 64
+  },
+  "chromhmm_gm12878_repressed": {
+    "kind": "categorical",
+    "accuracy": 0.6227,
+    "n_classes": 6,
+    "n": 19236786,
+    "accuracy_std": 0.0125,
+    "n_shards": 64
+  },
+  "chromhmm_gm12878_transcribed": {
+    "kind": "categorical",
+    "accuracy": 0.6227,
+    "n_classes": 6,
+    "n": 19236786,
+    "accuracy_std": 0.0125,
+    "n_shards": 64
+  },
+  "chromhmm_hippocampus": {
+    "kind": "categorical",
+    "accuracy": 0.6499,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0134,
+    "n_shards": 64
+  },
+  "chromhmm_hippocampus_active_tss": {
+    "kind": "categorical",
+    "accuracy": 0.6499,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0134,
+    "n_shards": 64
+  },
+  "chromhmm_hippocampus_bivalent": {
+    "kind": "categorical",
+    "accuracy": 0.6499,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0134,
+    "n_shards": 64
+  },
+  "chromhmm_hippocampus_enhancer": {
+    "kind": "categorical",
+    "accuracy": 0.6499,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0134,
+    "n_shards": 64
+  },
+  "chromhmm_hippocampus_none": {
+    "kind": "categorical",
+    "accuracy": 0.6499,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0134,
+    "n_shards": 64
+  },
+  "chromhmm_hippocampus_repressed": {
+    "kind": "categorical",
+    "accuracy": 0.6499,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0134,
+    "n_shards": 64
+  },
+  "chromhmm_hippocampus_transcribed": {
+    "kind": "categorical",
+    "accuracy": 0.6499,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0134,
+    "n_shards": 64
+  },
+  "chromhmm_k562": {
+    "kind": "categorical",
+    "accuracy": 0.6281,
+    "n_classes": 6,
+    "n": 19236786,
+    "accuracy_std": 0.0107,
+    "n_shards": 64
+  },
+  "chromhmm_k562_active_tss": {
+    "kind": "categorical",
+    "accuracy": 0.6281,
+    "n_classes": 6,
+    "n": 19236786,
+    "accuracy_std": 0.0107,
+    "n_shards": 64
+  },
+  "chromhmm_k562_bivalent": {
+    "kind": "categorical",
+    "accuracy": 0.6281,
+    "n_classes": 6,
+    "n": 19236786,
+    "accuracy_std": 0.0107,
+    "n_shards": 64
+  },
+  "chromhmm_k562_enhancer": {
+    "kind": "categorical",
+    "accuracy": 0.6281,
+    "n_classes": 6,
+    "n": 19236786,
+    "accuracy_std": 0.0107,
+    "n_shards": 64
+  },
+  "chromhmm_k562_none": {
+    "kind": "categorical",
+    "accuracy": 0.6281,
+    "n_classes": 6,
+    "n": 19236786,
+    "accuracy_std": 0.0107,
+    "n_shards": 64
+  },
+  "chromhmm_k562_repressed": {
+    "kind": "categorical",
+    "accuracy": 0.6281,
+    "n_classes": 6,
+    "n": 19236786,
+    "accuracy_std": 0.0107,
+    "n_shards": 64
+  },
+  "chromhmm_k562_transcribed": {
+    "kind": "categorical",
+    "accuracy": 0.6281,
+    "n_classes": 6,
+    "n": 19236786,
+    "accuracy_std": 0.0107,
+    "n_shards": 64
+  },
+  "chromhmm_liver": {
+    "kind": "categorical",
+    "accuracy": 0.6086,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0135,
+    "n_shards": 64
+  },
+  "chromhmm_liver_active_tss": {
+    "kind": "categorical",
+    "accuracy": 0.6086,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0135,
+    "n_shards": 64
+  },
+  "chromhmm_liver_bivalent": {
+    "kind": "categorical",
+    "accuracy": 0.6086,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0135,
+    "n_shards": 64
+  },
+  "chromhmm_liver_enhancer": {
+    "kind": "categorical",
+    "accuracy": 0.6086,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0135,
+    "n_shards": 64
+  },
+  "chromhmm_liver_none": {
+    "kind": "categorical",
+    "accuracy": 0.6086,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0135,
+    "n_shards": 64
+  },
+  "chromhmm_liver_repressed": {
+    "kind": "categorical",
+    "accuracy": 0.6086,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0135,
+    "n_shards": 64
+  },
+  "chromhmm_liver_transcribed": {
+    "kind": "categorical",
+    "accuracy": 0.6086,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0135,
+    "n_shards": 64
+  },
+  "chromhmm_lung": {
+    "kind": "categorical",
+    "accuracy": 0.6735,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0101,
+    "n_shards": 64
+  },
+  "chromhmm_lung_active_tss": {
+    "kind": "categorical",
+    "accuracy": 0.6735,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0101,
+    "n_shards": 64
+  },
+  "chromhmm_lung_bivalent": {
+    "kind": "categorical",
+    "accuracy": 0.6735,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0101,
+    "n_shards": 64
+  },
+  "chromhmm_lung_enhancer": {
+    "kind": "categorical",
+    "accuracy": 0.6735,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0101,
+    "n_shards": 64
+  },
+  "chromhmm_lung_none": {
+    "kind": "categorical",
+    "accuracy": 0.6735,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0101,
+    "n_shards": 64
+  },
+  "chromhmm_lung_repressed": {
+    "kind": "categorical",
+    "accuracy": 0.6735,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0101,
+    "n_shards": 64
+  },
+  "chromhmm_lung_transcribed": {
+    "kind": "categorical",
+    "accuracy": 0.6735,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0101,
+    "n_shards": 64
+  },
+  "chromhmm_monocyte": {
+    "kind": "categorical",
+    "accuracy": 0.6434,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.014,
+    "n_shards": 64
+  },
+  "chromhmm_monocyte_active_tss": {
+    "kind": "categorical",
+    "accuracy": 0.6434,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.014,
+    "n_shards": 64
+  },
+  "chromhmm_monocyte_bivalent": {
+    "kind": "categorical",
+    "accuracy": 0.6434,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.014,
+    "n_shards": 64
+  },
+  "chromhmm_monocyte_enhancer": {
+    "kind": "categorical",
+    "accuracy": 0.6434,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.014,
+    "n_shards": 64
+  },
+  "chromhmm_monocyte_none": {
+    "kind": "categorical",
+    "accuracy": 0.6434,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.014,
+    "n_shards": 64
+  },
+  "chromhmm_monocyte_repressed": {
+    "kind": "categorical",
+    "accuracy": 0.6434,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.014,
+    "n_shards": 64
+  },
+  "chromhmm_monocyte_transcribed": {
+    "kind": "categorical",
+    "accuracy": 0.6434,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.014,
+    "n_shards": 64
+  },
+  "chromhmm_muscle": {
+    "kind": "categorical",
+    "accuracy": 0.668,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0126,
+    "n_shards": 64
+  },
+  "chromhmm_muscle_active_tss": {
+    "kind": "categorical",
+    "accuracy": 0.668,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0126,
+    "n_shards": 64
+  },
+  "chromhmm_muscle_bivalent": {
+    "kind": "categorical",
+    "accuracy": 0.668,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0126,
+    "n_shards": 64
+  },
+  "chromhmm_muscle_enhancer": {
+    "kind": "categorical",
+    "accuracy": 0.668,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0126,
+    "n_shards": 64
+  },
+  "chromhmm_muscle_none": {
+    "kind": "categorical",
+    "accuracy": 0.668,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0126,
+    "n_shards": 64
+  },
+  "chromhmm_muscle_repressed": {
+    "kind": "categorical",
+    "accuracy": 0.668,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0126,
+    "n_shards": 64
+  },
+  "chromhmm_muscle_transcribed": {
+    "kind": "categorical",
+    "accuracy": 0.668,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0126,
+    "n_shards": 64
+  },
+  "chromhmm_tcell": {
+    "kind": "categorical",
+    "accuracy": 0.6372,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0107,
+    "n_shards": 64
+  },
+  "chromhmm_tcell_active_tss": {
+    "kind": "categorical",
+    "accuracy": 0.6372,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0107,
+    "n_shards": 64
+  },
+  "chromhmm_tcell_bivalent": {
+    "kind": "categorical",
+    "accuracy": 0.6372,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0107,
+    "n_shards": 64
+  },
+  "chromhmm_tcell_enhancer": {
+    "kind": "categorical",
+    "accuracy": 0.6372,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0107,
+    "n_shards": 64
+  },
+  "chromhmm_tcell_none": {
+    "kind": "categorical",
+    "accuracy": 0.6372,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0107,
+    "n_shards": 64
+  },
+  "chromhmm_tcell_repressed": {
+    "kind": "categorical",
+    "accuracy": 0.6372,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0107,
+    "n_shards": 64
+  },
+  "chromhmm_tcell_transcribed": {
+    "kind": "categorical",
+    "accuracy": 0.6372,
+    "n_classes": 6,
+    "n": 19237376,
+    "accuracy_std": 0.0107,
+    "n_shards": 64
+  },
+  "fstack": {
+    "kind": "categorical",
+    "accuracy": 0.5592,
+    "n_classes": 6,
+    "n": 12488682,
+    "accuracy_std": 0.0121,
+    "n_shards": 64
+  },
+  "fstack_is_enhancer": {
+    "kind": "categorical",
+    "accuracy": 0.5592,
+    "n_classes": 6,
+    "n": 12488682,
+    "accuracy_std": 0.0121,
+    "n_shards": 64
+  },
+  "fstack_is_promoter": {
+    "kind": "categorical",
+    "accuracy": 0.5592,
+    "n_classes": 6,
+    "n": 12488682,
+    "accuracy_std": 0.0121,
+    "n_shards": 64
+  },
+  "fstack_is_quiescent": {
+    "kind": "categorical",
+    "accuracy": 0.5592,
+    "n_classes": 6,
+    "n": 12488682,
+    "accuracy_std": 0.0121,
+    "n_shards": 64
+  },
+  "fstack_is_repressed": {
+    "kind": "categorical",
+    "accuracy": 0.5592,
+    "n_classes": 6,
+    "n": 12488682,
+    "accuracy_std": 0.0121,
+    "n_shards": 64
+  },
+  "fstack_is_transcribed": {
+    "kind": "categorical",
+    "accuracy": 0.5592,
+    "n_classes": 6,
+    "n": 12488682,
+    "accuracy_std": 0.0121,
+    "n_shards": 64
+  },
+  "fstack_none": {
+    "kind": "categorical",
+    "accuracy": 0.5592,
+    "n_classes": 6,
+    "n": 12488682,
+    "accuracy_std": 0.0121,
+    "n_shards": 64
+  },
+  "region": {
+    "kind": "categorical",
+    "accuracy": 0.9681,
+    "n_classes": 5,
+    "n": 12488682,
+    "accuracy_std": 0.003,
+    "n_shards": 64
+  },
+  "region_3UTR": {
+    "kind": "categorical",
+    "accuracy": 0.9681,
+    "n_classes": 5,
+    "n": 12488682,
+    "accuracy_std": 0.003,
+    "n_shards": 64
+  },
+  "region_5UTR": {
+    "kind": "categorical",
+    "accuracy": 0.9681,
+    "n_classes": 5,
+    "n": 12488682,
+    "accuracy_std": 0.003,
+    "n_shards": 64
+  },
+  "region_CDS": {
+    "kind": "categorical",
+    "accuracy": 0.9681,
+    "n_classes": 5,
+    "n": 12488682,
+    "accuracy_std": 0.003,
+    "n_shards": 64
+  },
+  "region_intron": {
+    "kind": "categorical",
+    "accuracy": 0.9681,
+    "n_classes": 5,
+    "n": 12488682,
+    "accuracy_std": 0.003,
+    "n_shards": 64
+  },
+  "region_none": {
+    "kind": "categorical",
+    "accuracy": 0.9681,
+    "n_classes": 5,
+    "n": 12488682,
+    "accuracy_std": 0.003,
+    "n_shards": 64
+  },
+  "secondary_structure": {
+    "kind": "categorical",
+    "accuracy": 0.8215,
+    "n_classes": 4,
+    "n": 11243635,
+    "accuracy_std": 0.0059,
+    "n_shards": 64
+  },
+  "secondary_structure_C": {
+    "kind": "categorical",
+    "accuracy": 0.8215,
+    "n_classes": 4,
+    "n": 11243635,
+    "accuracy_std": 0.0059,
+    "n_shards": 64
+  },
+  "secondary_structure_E": {
+    "kind": "categorical",
+    "accuracy": 0.8215,
+    "n_classes": 4,
+    "n": 11243635,
+    "accuracy_std": 0.0059,
+    "n_shards": 64
+  },
+  "secondary_structure_H": {
+    "kind": "categorical",
+    "accuracy": 0.8215,
+    "n_classes": 4,
+    "n": 11243635,
+    "accuracy_std": 0.0059,
+    "n_shards": 64
+  },
+  "secondary_structure_none": {
+    "kind": "categorical",
+    "accuracy": 0.8215,
+    "n_classes": 4,
+    "n": 11243635,
+    "accuracy_std": 0.0059,
+    "n_shards": 64
+  }
+}

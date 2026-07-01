@@ -1,0 +1,67 @@
+{
+  "scheme": "domain_consequence",
+  "genes": {
+    "LDLR": {
+      "n": 1581,
+      "n_classes": 5,
+      "metrics": {
+        "Random": 0.2,
+        "Position only": 0.3401576566214247,
+        "CADD": 0.20159544159544157,
+        "AlphaMissense": 0.251290851928533,
+        "EVEE": 0.7001763196545804,
+        "EVEE + position": 0.7133239546283023
+      }
+    },
+    "LMNA": {
+      "n": 241,
+      "n_classes": 3,
+      "metrics": {
+        "Random": 0.3333333333333333,
+        "Position only": 0.5333333333333334,
+        "CADD": 0.3384615384615385,
+        "AlphaMissense": 0.4686594451300333,
+        "EVEE": 0.8755656108597286,
+        "EVEE + position": 0.8986425339366516
+      }
+    },
+    "MYH7": {
+      "n": 269,
+      "n_classes": 4,
+      "metrics": {
+        "Random": 0.25,
+        "Position only": 0.814412393162393,
+        "CADD": 0.25,
+        "AlphaMissense": 0.25,
+        "EVEE": 0.613525641025641,
+        "EVEE + position": 0.7951282051282051
+      }
+    },
+    "TP53": {
+      "n": 488,
+      "n_classes": 4,
+      "metrics": {
+        "Random": 0.25,
+        "Position only": 0.346875,
+        "CADD": 0.25,
+        "AlphaMissense": 0.3300354251012146,
+        "EVEE": 0.7556342780026991,
+        "EVEE + position": 0.7605684885290149
+      }
+    }
+  },
+  "cross_gene_mean": {
+    "Random": 0.2583333333333333,
+    "Position only": 0.5086945957792878,
+    "CADD": 0.260014245014245,
+    "AlphaMissense": 0.3249964305399452,
+    "EVEE": 0.7362254623856623,
+    "EVEE + position": 0.7919157955555436
+  },
+  "mean_delta_evee_vs": {
+    "Position only": 0.22753086660637456,
+    "CADD": 0.4762112173714173,
+    "AlphaMissense": 0.41122903184571713,
+    "EVEE + position": -0.055690333169881256
+  }
+}
