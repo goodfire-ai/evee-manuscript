@@ -1,0 +1,9 @@
+Counting phenotypes ...
+  K = 2,489 phenotypes
+Fetching per-test p-values ...
+  path=1,503,194  comp=5,000,000  strict=5,000,000
+  pathogenic: λ_matched=0.706  λ_full=nan  n=1,503,194
+  benign_comp: λ_matched=0.691  λ_full=0.981  n=5,000,000
+  benign_strict: λ_matched=0.696  λ_full=1.018  n=5,000,000
+
+Written → /mnt/home/ryo/evee-manuscript/artifacts/finngen_r12_qq_clinvar_pertest.feather  (9,870 rows)

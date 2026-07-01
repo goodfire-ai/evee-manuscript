@@ -155,12 +155,12 @@ def plot_axes(axes_3):
 def main():
     df = _load_data()
 
-    # --- Panel 1: Composite bar chart ---
+    # --- Panel 1: Composite bar chart (moved to supplement in new layout) ---
     fig, ax = plt.subplots(figsize=(7, 4))
     plot(ax)
     fig.tight_layout()
-    save_figure(fig, PANELS / "fig2c_autointerp_composite_barchart")
-    print("Saved: fig2c_autointerp_composite_barchart")
+    save_figure(fig, SUPPLEMENT / "supfig_autointerp_composite_barchart")
+    print("Saved: supfig_autointerp_composite_barchart")
 
     # --- Panel 2 (now supplement): Per-axis bar chart, horizontal 1x3 layout
     # (was 3x1 vertical 5.5x10 — too tall for the supplement page).

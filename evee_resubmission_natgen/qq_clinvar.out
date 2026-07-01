@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/mnt/home/ryo/evee-manuscript/evee_resubmission_natgen/fig_finngen_r12_qq_clinvar_af_matched.py", line 14, in <module>
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'

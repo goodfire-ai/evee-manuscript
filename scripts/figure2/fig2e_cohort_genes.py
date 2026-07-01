@@ -41,7 +41,7 @@ from theme.theme import (
 )
 
 DATA = Path("/mnt/data/artifacts/ryo/goodfire_handoff/handoff_final.parquet")
-OUT_STEM = ROOT / "figures" / "figure2" / "fig2e_cohort_genes"
+OUT_STEM = ROOT / "figures" / "supplement" / "supfig_cohort_genes"
 
 THRESHOLD = 0.75
 UNCERTAIN_BIN = "uncertain_conflicting_or_unannotated"
