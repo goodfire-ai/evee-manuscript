@@ -4,13 +4,13 @@ Supplementary Figure — gene-level distribution of EVEE pathogenicity scores in
 
 Vertical (portrait) dot plot: pathogenicity score on y-axis, genes as columns.
 Named pathway genes get individual columns; everything else collapses into a
-single "Other" column. High-priority variants (≥0.75) drawn as saturated dots
+single "Other" column. High-priority variants (≥0.90) drawn as saturated dots
 with white edges; below-threshold variants as translucent dots.
 
 Filter (matches the Mayo abstract numbers exactly):
   - source: 299 rare variants (gnomAD AF ≤1%) from the Mayo RA cohort
   - candidate_bin == "uncertain_conflicting_or_unannotated" (n=225)
-  - EVEE pathogenicity ≥ 0.75 → 18 variants
+  - EVEE score ≥ 0.90 → 14 variants (no benign/likely-benign variant exceeds 0.90)
 
 Pathway groupings:
   - Immune regulation:           IFIH1, NOD2, IL10RA
@@ -43,7 +43,7 @@ from theme.theme import (
 ARTIFACTS = ROOT / "artifacts"
 OUT_STEM = ROOT / "figures" / "supplement" / "supfig_ra_cohort"
 
-THRESHOLD = 0.75
+THRESHOLD = 0.90
 UNCERTAIN_BIN = "uncertain_conflicting_or_unannotated"
 
 INNATE_IMMUNE = ["IFIH1", "NOD2", "IL10RA"]
