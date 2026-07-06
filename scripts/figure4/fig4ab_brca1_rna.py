@@ -34,7 +34,9 @@ ARTIFACT_PROFILE = ROOT / "artifacts" / "brca1_disruption_profile.feather"
 ARTIFACT_DATA    = ROOT / "artifacts" / "brca1_e22_data.json"
 OUT_STEM         = ROOT / "figures" / "figure4" / "fig4ab_brca1_rna"
 
-# Compressed-intron splice diagram axis (introns shrunk, exons 1:1)
+# Compressed-intron splice diagram axis (introns shrunk, exons 1:1).
+# Internal segment keys follow GENCODE transcript rank; display labels use the
+# conventional clinical BRCA1 exon numbering used for NM_007294.4.
 SEGMENTS = [
     ("exon23",   43_049_121, 43_049_194,    0,  55),
     ("intron22", 43_049_195, 43_051_061,   55, 115),
@@ -42,6 +44,11 @@ SEGMENTS = [
     ("intron21", 43_051_117, 43_057_050,  185, 245),
     ("exon21",   43_057_051, 43_057_134,  245, 315),
 ]
+CLINICAL_EXON_LABELS = {
+    "exon23": "Exon 21",
+    "exon22": "Exon 20",
+    "exon21": "Exon 19",
+}
 DISPLAY_HI = SEGMENTS[-1][4]
 
 
@@ -215,7 +222,7 @@ def main(out_stem=None, fig_width=14):
             ax_mid.add_patch(Rectangle((dlo, EXON_Y - EXON_H / 2), dhi - dlo, EXON_H,
                                        facecolor="#3a7ca5", edgecolor="black", lw=0.7, zorder=3))
             ax_mid.text((dlo + dhi) / 2, EXON_Y + EXON_H / 2 + 0.16,
-                        name.replace("exon", "Exon "), fontsize=14, ha="center", va="bottom",
+                        CLINICAL_EXON_LABELS[name], fontsize=14, ha="center", va="bottom",
                         color="#1b4d72", fontweight="bold")
 
     trunc_lo = to_disp(NOTCH_LO); trunc_hi = to_disp(NOTCH_HI)
@@ -295,7 +302,7 @@ def main(out_stem=None, fig_width=14):
 
     bot_legend = [
         plt.Line2D([0], [0], color="#d04646", lw=3.5, label="Cryptic +8 acceptor"),
-        plt.Line2D([0], [0], color="#e89a2c", lw=3.5, label="Full exon-22 skip"),
+        plt.Line2D([0], [0], color="#e89a2c", lw=3.5, label="Full exon-20 skip"),
         plt.Line2D([0], [0], color="#666",    lw=2.5, label="Canonical junction"),
         plt.Line2D([0], [0], color="#888",    lw=1.2, ls=(0, (1, 1.8)), label="0 reads (suppressed)"),
     ]
