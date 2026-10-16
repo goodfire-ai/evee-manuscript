@@ -53,7 +53,7 @@ evee-manuscript/
     ├── figure4/             # Figure 4 — RNA-seq validation (a–c)
     ├── figure5/             # Figure 5 — clinical & population validation (a–d)
     ├── supplement/          # Supplementary figures
-    └── prepare/             # Data generation (internal, needs goodfire-core)
+    └── prepare/             # Data generation (internal)
 ```
 
 ## Commands
@@ -61,7 +61,24 @@ evee-manuscript/
 | Command | Description |
 |---------|-------------|
 | `uv run evee-ms figures` | Generate all figures from cached artifacts |
-| `uv run evee-ms prepare` | Regenerate artifacts from raw data (internal) |
+| `uv run evee-ms prepare` | Run selected internal data-preparation scripts |
+
+## Reproducing the analyses
+
+| Task | Public resources and scope |
+|------|----------------------------|
+| Reproduce figures | `uv run evee-ms figures` uses the supplied cached artifacts; no internal infrastructure is needed for this step. |
+| Run covariance-probe inference | [Inference notebook](notebooks/demo_probe_inference.ipynb), [probe weights](artifacts/samples/probe.safetensors), and [sample inputs](artifacts/samples/). The notebook includes the probe implementation and starts from pre-extracted Evo 2 activations for eight variants. Open it with `uv run jupyter lab notebooks/demo_probe_inference.ipynb`. |
+| Prepare underlying data | `uv run evee-ms prepare` runs selected preparation scripts that require internal dependencies and source data; it is not a complete embedding-extraction or training pipeline. |
+
+Bulk embedding extraction and probe training used internal infrastructure. The original training orchestration is not included in this release. Figure 1 caches contain aggregate metrics for plotting. The protocol below describes how benchmark predictions were generated, separately from the commands that reproduce figures from those caches.
+
+## Figure 1 benchmark protocol
+
+1. **Inputs and preprocessing.** Use ClinVar release 2026-03-21 on GRCh38 and GENCODE v49. Exclude multiallelic, MNV and unannotated entries, and validate gene boundaries and reference alleles. The pathogenicity benchmarks use P/LP versus B/LB variants with at least one review star in genes no longer than 100 kb. The deconfounded subset reduces label imbalance within consequence types while accounting for their prevalence, with variants selected round-robin over genes; Methods ("Clinical variant datasets") and Supplementary Figure S5 describe the sampling and composition.
+2. **Representations.** Extract Evo 2-7B layer-27 embeddings in both sequence directions using the 65-kb context described in Methods. Retain the 256 positions per direction with greatest reference–alternate cosine divergence and form alternate-minus-reference features. For indels, align the sequences and discard unmatched positions before comparison.
+3. **Training and held-out predictions.** The covariance and mean-pooled probes used the same five gene partitions. Each fold trained on four partitions and predicted only the fifth, excluding the evaluated genes from that model's training. The 80/20 split describes each fold of this five-fold procedure. Covariance-probe hyperparameters were fixed without hyperparameter-based model selection. Mean-pooled features were standardized on the training fold, with logistic-regression regularization selected by inner five-fold cross-validation. Methods ("Covariance probe", Training) gives the training settings.
+4. **Evaluation and figures.** Held-out predictions were evaluated by variant consequence for the SNV and deconfounded benchmarks. Figure 1d evaluates zero-shot transfer of the SNV-trained covariance probe to indels. The figure scripts read the resulting benchmark summaries listed below; comparator scoring procedures are described in Methods ("Baseline methods").
 
 ## Figures
 
